@@ -52,7 +52,7 @@ class Security {
 	 */
 	public static function verify_admin_nonce( $action = 'ace_admin_action' ) {
 		if ( ! isset( $_POST['ace_nonce'] ) || ! self::verify_nonce( sanitize_text_field( wp_unslash( $_POST['ace_nonce'] ) ), $action ) ) {
-			wp_die( esc_html__( 'Security check failed.', 'ai-content-engine' ) );
+			wp_die( esc_html__( 'Security check failed.', 'tonepress-ai' ) );
 		}
 	}
 

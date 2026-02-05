@@ -152,7 +152,7 @@ class Cache_Manager {
 				'rate_limit_exceeded',
 				sprintf(
 					/* translators: %d: Maximum requests per hour */
-					__( 'Rate limit exceeded. You can generate a maximum of %d articles per hour. Please try again later.', 'ai-content-engine' ),
+					__( 'Rate limit exceeded. You can generate a maximum of %d articles per hour. Please try again later.', 'tonepress-ai' ),
 					ACE_MAX_REQUESTS_PER_HOUR
 				)
 			);

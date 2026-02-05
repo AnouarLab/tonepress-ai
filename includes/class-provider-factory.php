@@ -57,7 +57,7 @@ class Provider_Factory {
 				'invalid_provider',
 				sprintf(
 					/* translators: %s: Provider ID */
-					__( 'Unknown AI provider: %s', 'ai-content-engine' ),
+					__( 'Unknown AI provider: %s', 'tonepress-ai' ),
 					$provider_id
 				)
 			);
@@ -70,7 +70,7 @@ class Provider_Factory {
 				'provider_not_loaded',
 				sprintf(
 					/* translators: %s: Provider class */
-					__( 'Provider class not found: %s', 'ai-content-engine' ),
+					__( 'Provider class not found: %s', 'tonepress-ai' ),
 					$class
 				)
 			);

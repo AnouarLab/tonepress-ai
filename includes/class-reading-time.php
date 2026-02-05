@@ -125,12 +125,12 @@ class Reading_Time {
 			</div>',
 			sprintf(
 				/* translators: %d: Number of minutes */
-				_n( '%d min read', '%d min read', $reading_time, 'ai-content-engine' ),
+				_n( '%d min read', '%d min read', $reading_time, 'tonepress-ai' ),
 				$reading_time
 			),
 			sprintf(
 				/* translators: %s: Number of words */
-				__( '%s words', 'ai-content-engine' ),
+				__( '%s words', 'tonepress-ai' ),
 				number_format( $word_count )
 			)
 		);

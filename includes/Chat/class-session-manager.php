@@ -339,7 +339,7 @@ class Session_Manager {
 	 */
 	private function generate_title( $topic ) {
 		if ( empty( $topic ) ) {
-			return __( 'New Chat', 'ai-content-engine' );
+			return __( 'New Chat', 'tonepress-ai' );
 		}
 
 		$title = wp_trim_words( $topic, 6, '...' );
@@ -355,7 +355,7 @@ class Session_Manager {
 	 * @return string Updated title.
 	 */
 	public function maybe_update_title( $session_id, $old_title, $conversation ) {
-		if ( $old_title !== __( 'New Chat', 'ai-content-engine' ) ) {
+		if ( $old_title !== __( 'New Chat', 'tonepress-ai' ) ) {
 			return $old_title;
 		}
 

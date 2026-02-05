@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="ace-wizard-container">
 	<div class="ace-wizard-header">
 		<div class="ace-wizard-logo">
-			<h1><?php esc_html_e( 'AI Content Engine', 'ai-content-engine' ); ?></h1>
+			<h1><?php esc_html_e( 'AI Content Engine', 'tonepress-ai' ); ?></h1>
 		</div>
 		
 		<div class="ace-wizard-progress">
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="progress-text">
 				<?php
 				/* translators: 1: current step, 2: total steps */
-				printf( esc_html__( 'Step %1$d of %2$d', 'ai-content-engine' ), (int) $step_number, (int) $total_steps );
+				printf( esc_html__( 'Step %1$d of %2$d', 'tonepress-ai' ), (int) $step_number, (int) $total_steps );
 				?>
 			</div>
 		</div>
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		if ( file_exists( $step_file ) ) {
 			include $step_file;
 		} else {
-			echo '<p>' . esc_html__( 'Step not found.', 'ai-content-engine' ) . '</p>';
+			echo '<p>' . esc_html__( 'Step not found.', 'tonepress-ai' ) . '</p>';
 		}
 		?>
 	</div>
@@ -55,23 +55,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="ace-wizard-footer">
 		<?php if ( 'welcome' !== $current_step && 'complete' !== $current_step ) : ?>
 			<button type="button" class="button button-secondary ace-wizard-back">
-				<?php esc_html_e( '← Back', 'ai-content-engine' ); ?>
+				<?php esc_html_e( '← Back', 'tonepress-ai' ); ?>
 			</button>
 		<?php endif; ?>
 		
 		<?php if ( 'complete' !== $current_step ) : ?>
 			<button type="button" class="button button-primary ace-wizard-next">
-				<?php echo 'welcome' === $current_step ? esc_html__( 'Get Started →', 'ai-content-engine' ) : esc_html__( 'Continue →', 'ai-content-engine' ); ?>
+				<?php echo 'welcome' === $current_step ? esc_html__( 'Get Started →', 'tonepress-ai' ) : esc_html__( 'Continue →', 'tonepress-ai' ); ?>
 			</button>
 		<?php else : ?>
 			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ai-content-engine' ) ); ?>" class="button button-primary">
-				<?php esc_html_e( 'Go to Dashboard →', 'ai-content-engine' ); ?>
+				<?php esc_html_e( 'Go to Dashboard →', 'tonepress-ai' ); ?>
 			</a>
 		<?php endif; ?>
 		
 		<?php if ( 'welcome' !== $current_step && 'complete' !== $current_step ) : ?>
 			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ai-content-engine' ) ); ?>" class="ace-wizard-skip">
-				<?php esc_html_e( 'Skip setup', 'ai-content-engine' ); ?>
+				<?php esc_html_e( 'Skip setup', 'tonepress-ai' ); ?>
 			</a>
 		<?php endif; ?>
 	</div>

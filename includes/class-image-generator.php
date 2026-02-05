@@ -59,7 +59,7 @@ class Image_Generator {
 		if ( empty( $this->api_key ) ) {
 			return new \WP_Error(
 				'missing_api_key',
-				__( 'OpenAI API key is not configured.', 'ai-content-engine' )
+				__( 'OpenAI API key is not configured.', 'tonepress-ai' )
 			);
 		}
 
@@ -92,7 +92,7 @@ class Image_Generator {
 				'api_request_failed',
 				sprintf(
 					/* translators: %s: Error message */
-					__( 'Image generation request failed: %s', 'ai-content-engine' ),
+					__( 'Image generation request failed: %s', 'tonepress-ai' ),
 					$response->get_error_message()
 				)
 			);
@@ -103,7 +103,7 @@ class Image_Generator {
 
 		if ( 200 !== $response_code ) {
 			$error_data = json_decode( $response_body, true );
-			$error_message = $error_data['error']['message'] ?? __( 'Unknown API error', 'ai-content-engine' );
+			$error_message = $error_data['error']['message'] ?? __( 'Unknown API error', 'tonepress-ai' );
 
 			return new \WP_Error( 'api_error', $error_message, array( 'status' => $response_code ) );
 		}
@@ -114,7 +114,7 @@ class Image_Generator {
 		if ( ! isset( $data['data'][0]['url'] ) ) {
 			return new \WP_Error(
 				'invalid_response',
-				__( 'Invalid response from OpenAI Images API.', 'ai-content-engine' )
+				__( 'Invalid response from OpenAI Images API.', 'tonepress-ai' )
 			);
 		}
 

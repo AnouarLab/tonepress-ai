@@ -212,7 +212,7 @@ class Content_Parser {
 					'invalid_json',
 					sprintf(
 						/* translators: %s: Missing field name */
-						__( 'Invalid JSON structure: Missing required field "%s".', 'ai-content-engine' ),
+						__( 'Invalid JSON structure: Missing required field "%s".', 'tonepress-ai' ),
 						$field
 					)
 				);
@@ -223,7 +223,7 @@ class Content_Parser {
 		if ( ! isset( $data['meta']['description'] ) || ! isset( $data['meta']['keywords'] ) ) {
 			return new \WP_Error(
 				'invalid_json',
-				__( 'Invalid JSON structure: Meta must contain "description" and "keywords".', 'ai-content-engine' )
+				__( 'Invalid JSON structure: Meta must contain "description" and "keywords".', 'tonepress-ai' )
 			);
 		}
 
@@ -235,7 +235,7 @@ class Content_Parser {
 						'invalid_json',
 						sprintf(
 							/* translators: %d: Table index */
-							__( 'Invalid JSON structure: Table %d is missing "html" field.', 'ai-content-engine' ),
+							__( 'Invalid JSON structure: Table %d is missing "html" field.', 'tonepress-ai' ),
 							$index
 						)
 					);
@@ -253,7 +253,7 @@ class Content_Parser {
 							'invalid_json',
 							sprintf(
 								/* translators: 1: Chart index, 2: Missing field name */
-								__( 'Invalid JSON structure: Chart %1$d is missing "%2$s" field.', 'ai-content-engine' ),
+								__( 'Invalid JSON structure: Chart %1$d is missing "%2$s" field.', 'tonepress-ai' ),
 								$index,
 								$field
 							)

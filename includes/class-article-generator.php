@@ -82,7 +82,7 @@ class Article_Generator {
 	public function generate_article( $topic, $options = array() ) {
 		// 1. Validate inputs.
 		if ( empty( $topic ) ) {
-			return new \WP_Error( 'empty_topic', __( 'Article topic cannot be empty.', 'ai-content-engine' ) );
+			return new \WP_Error( 'empty_topic', __( 'Article topic cannot be empty.', 'tonepress-ai' ) );
 		}
 
 		// 2. Check rate limit.
@@ -133,7 +133,7 @@ class Article_Generator {
 				'invalid_json',
 				sprintf(
 					/* translators: %s: JSON error message */
-					__( 'Failed to parse AI response as JSON: %s', 'ai-content-engine' ),
+					__( 'Failed to parse AI response as JSON: %s', 'tonepress-ai' ),
 					json_last_error_msg()
 				)
 			);
@@ -582,7 +582,7 @@ class Article_Generator {
 	public function generate_article_data( $topic, $options = array() ) {
 		// 1. Validate inputs.
 		if ( empty( $topic ) ) {
-			return new \WP_Error( 'empty_topic', __( 'Article topic cannot be empty.', 'ai-content-engine' ) );
+			return new \WP_Error( 'empty_topic', __( 'Article topic cannot be empty.', 'tonepress-ai' ) );
 		}
 
 		// 2. Check rate limit.
@@ -619,7 +619,7 @@ class Article_Generator {
 				'invalid_json',
 				sprintf(
 					/* translators: %s: JSON error message */
-					__( 'Failed to parse AI response as JSON: %s', 'ai-content-engine' ),
+					__( 'Failed to parse AI response as JSON: %s', 'tonepress-ai' ),
 					json_last_error_msg()
 				)
 			);

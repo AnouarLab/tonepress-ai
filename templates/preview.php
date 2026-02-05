@@ -22,22 +22,22 @@ $token = get_query_var( 'ace_preview_token' );
 $token = $token ? sanitize_text_field( wp_unslash( $token ) ) : '';
 
 if ( empty( $token ) ) {
-	wp_die( esc_html__( 'Missing preview token.', 'ai-content-engine' ) );
+	wp_die( esc_html__( 'Missing preview token.', 'tonepress-ai' ) );
 }
 
 $data = get_transient( 'ace_chat_preview_' . $token );
 if ( empty( $data ) || ! is_array( $data ) ) {
-	wp_die( esc_html__( 'Preview expired or invalid.', 'ai-content-engine' ) );
+	wp_die( esc_html__( 'Preview expired or invalid.', 'tonepress-ai' ) );
 }
 
 if ( (int) ( $data['user_id'] ?? 0 ) !== get_current_user_id() ) {
-	wp_die( esc_html__( 'Preview not authorized.', 'ai-content-engine' ) );
+	wp_die( esc_html__( 'Preview not authorized.', 'tonepress-ai' ) );
 }
 
 nocache_headers();
 header( 'X-Robots-Tag: noindex, nofollow', true );
 
-$title   = $data['title'] ?? __( 'Preview', 'ai-content-engine' );
+$title   = $data['title'] ?? __( 'Preview', 'tonepress-ai' );
 $content = $data['content'] ?? '';
 
 // Output a simple, standalone preview page that doesn't rely on theme templates.

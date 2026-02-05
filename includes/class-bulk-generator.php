@@ -74,7 +74,7 @@ class Bulk_Generator {
 		// Process one item every 2 minutes to respect rate limits.
 		$schedules['ace_bulk_interval'] = array(
 			'interval' => 120, // 2 minutes
-			'display'  => __( 'Every 2 Minutes (ACE Bulk)', 'ai-content-engine' ),
+			'display'  => __( 'Every 2 Minutes (ACE Bulk)', 'tonepress-ai' ),
 		);
 		return $schedules;
 	}
@@ -87,19 +87,19 @@ class Bulk_Generator {
 	 */
 	public function parse_csv( $file_path ) {
 		if ( ! file_exists( $file_path ) ) {
-			return new \WP_Error( 'file_not_found', __( 'CSV file not found.', 'ai-content-engine' ) );
+			return new \WP_Error( 'file_not_found', __( 'CSV file not found.', 'tonepress-ai' ) );
 		}
 
 		$handle = fopen( $file_path, 'r' );
 		if ( ! $handle ) {
-			return new \WP_Error( 'file_read_error', __( 'Could not read CSV file.', 'ai-content-engine' ) );
+			return new \WP_Error( 'file_read_error', __( 'Could not read CSV file.', 'tonepress-ai' ) );
 		}
 
 		// Read header row.
 		$header = fgetcsv( $handle );
 		if ( ! $header ) {
 			fclose( $handle );
-			return new \WP_Error( 'invalid_csv', __( 'Invalid CSV format.', 'ai-content-engine' ) );
+			return new \WP_Error( 'invalid_csv', __( 'Invalid CSV format.', 'tonepress-ai' ) );
 		}
 
 		// Validate required columns.
@@ -111,7 +111,7 @@ class Bulk_Generator {
 					'missing_column',
 					sprintf(
 						/* translators: %s: Column name */
-						__( 'Missing required column: %s', 'ai-content-engine' ),
+						__( 'Missing required column: %s', 'tonepress-ai' ),
 						$column
 					)
 				);
@@ -172,7 +172,7 @@ class Bulk_Generator {
 		fclose( $handle );
 
 		if ( empty( $items ) ) {
-			return new \WP_Error( 'no_valid_rows', __( 'No valid rows found in CSV.', 'ai-content-engine' ) );
+			return new \WP_Error( 'no_valid_rows', __( 'No valid rows found in CSV.', 'tonepress-ai' ) );
 		}
 
 		// Create queue.
@@ -356,7 +356,7 @@ class Bulk_Generator {
 		$queue = $this->get_queue( $queue_id );
 
 		if ( ! $queue ) {
-			return new \WP_Error( 'queue_not_found', __( 'Queue not found.', 'ai-content-engine' ) );
+			return new \WP_Error( 'queue_not_found', __( 'Queue not found.', 'tonepress-ai' ) );
 		}
 
 		// Build CSV.
@@ -397,12 +397,12 @@ class Bulk_Generator {
 
 		$subject = sprintf(
 			/* translators: %d: Number of articles */
-			__( 'Bulk Generation Complete: %d Articles Generated', 'ai-content-engine' ),
+			__( 'Bulk Generation Complete: %d Articles Generated', 'tonepress-ai' ),
 			$queue['completed']
 		);
 
 		$message = sprintf(
-			__( "Your bulk article generation is complete!\n\nTotal: %d\nSuccessful: %d\nFailed: %d\n\nView results: %s", 'ai-content-engine' ),
+			__( "Your bulk article generation is complete!\n\nTotal: %d\nSuccessful: %d\nFailed: %d\n\nView results: %s", 'tonepress-ai' ),
 			$queue['total'],
 			$queue['completed'],
 			$queue['failed'],

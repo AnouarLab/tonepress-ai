@@ -60,8 +60,8 @@ class Template_Manager {
 	private static function get_default_template() {
 		return array(
 			'id'          => 'default',
-			'name'        => __( 'Default Article', 'ai-content-engine' ),
-			'description' => __( 'Standard blog article format', 'ai-content-engine' ),
+			'name'        => __( 'Default Article', 'tonepress-ai' ),
+			'description' => __( 'Standard blog article format', 'tonepress-ai' ),
 			'prompt_additions' => '',
 			'required_sections' => array(),
 		);
@@ -75,8 +75,8 @@ class Template_Manager {
 	private static function get_how_to_template() {
 		return array(
 			'id'          => 'how_to',
-			'name'        => __( 'How-To Guide', 'ai-content-engine' ),
-			'description' => __( 'Step-by-step instructional article', 'ai-content-engine' ),
+			'name'        => __( 'How-To Guide', 'tonepress-ai' ),
+			'description' => __( 'Step-by-step instructional article', 'tonepress-ai' ),
 			'prompt_additions' => "\n\nSTRUCTURE REQUIREMENTS:\n" .
 				"- Start with a brief introduction explaining what the reader will learn\n" .
 				"- Include a 'What You'll Need' or 'Prerequisites' section\n" .
@@ -99,8 +99,8 @@ class Template_Manager {
 	private static function get_review_template() {
 		return array(
 			'id'          => 'review',
-			'name'        => __( 'Product Review', 'ai-content-engine' ),
-			'description' => __( 'Comprehensive product evaluation', 'ai-content-engine' ),
+			'name'        => __( 'Product Review', 'tonepress-ai' ),
+			'description' => __( 'Comprehensive product evaluation', 'tonepress-ai' ),
 			'prompt_additions' => "\n\nSTRUCTURE REQUIREMENTS:\n" .
 				"- Start with a brief overview and rating (out of 5 or 10)\n" .
 				"- Include 'Key Specifications' section with bullet points\n" .
@@ -124,8 +124,8 @@ class Template_Manager {
 	private static function get_comparison_template() {
 		return array(
 			'id'          => 'comparison',
-			'name'        => __( 'Comparison Article', 'ai-content-engine' ),
-			'description' => __( 'Side-by-side comparison of options', 'ai-content-engine' ),
+			'name'        => __( 'Comparison Article', 'tonepress-ai' ),
+			'description' => __( 'Side-by-side comparison of options', 'tonepress-ai' ),
 			'prompt_additions' => "\n\nSTRUCTURE REQUIREMENTS:\n" .
 				"- Introduction explaining what's being compared and why\n" .
 				"- Quick comparison table showing key differences at a glance\n" .
@@ -149,8 +149,8 @@ class Template_Manager {
 	private static function get_listicle_template() {
 		return array(
 			'id'          => 'listicle',
-			'name'        => __( 'Listicle (Top 10, Best Of)', 'ai-content-engine' ),
-			'description' => __( 'Numbered list article format', 'ai-content-engine' ),
+			'name'        => __( 'Listicle (Top 10, Best Of)', 'tonepress-ai' ),
+			'description' => __( 'Numbered list article format', 'tonepress-ai' ),
 			'prompt_additions' => "\n\nSTRUCTURE REQUIREMENTS:\n" .
 				"- Engaging introduction explaining the list topic\n" .
 				"- Each item should have:\n" .

@@ -69,7 +69,7 @@ class Provider_Gemini extends AI_Provider {
 	 */
 	public function generate_content( $system_prompt, $user_prompt, $options = array() ) {
 		if ( ! $this->is_configured() ) {
-			return new \WP_Error( 'not_configured', __( 'Gemini API key not configured.', 'ai-content-engine' ) );
+			return new \WP_Error( 'not_configured', __( 'Gemini API key not configured.', 'tonepress-ai' ) );
 		}
 
 		$model       = $options['model'] ?? get_option( 'ace_gemini_model', $this->default_model );
@@ -115,7 +115,7 @@ class Provider_Gemini extends AI_Provider {
 		$body = json_decode( wp_remote_retrieve_body( $response ), true );
 
 		if ( 200 !== $code ) {
-			$error_msg = $body['error']['message'] ?? __( 'Unknown Gemini API error', 'ai-content-engine' );
+			$error_msg = $body['error']['message'] ?? __( 'Unknown Gemini API error', 'tonepress-ai' );
 			return new \WP_Error( 'api_error', $error_msg );
 		}
 
@@ -151,7 +151,7 @@ class Provider_Gemini extends AI_Provider {
 	 */
 	public function test_connection() {
 		if ( ! $this->is_configured() ) {
-			return new \WP_Error( 'not_configured', __( 'API key not set.', 'ai-content-engine' ) );
+			return new \WP_Error( 'not_configured', __( 'API key not set.', 'tonepress-ai' ) );
 		}
 
 		$endpoint = sprintf(
@@ -167,7 +167,7 @@ class Provider_Gemini extends AI_Provider {
 		}
 
 		$code = wp_remote_retrieve_response_code( $response );
-		return 200 === $code ? true : new \WP_Error( 'api_error', __( 'Invalid API key.', 'ai-content-engine' ) );
+		return 200 === $code ? true : new \WP_Error( 'api_error', __( 'Invalid API key.', 'tonepress-ai' ) );
 	}
 
 	/**

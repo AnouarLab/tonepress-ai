@@ -70,7 +70,7 @@ class Provider_Claude extends AI_Provider {
 	 */
 	public function generate_content( $system_prompt, $user_prompt, $options = array() ) {
 		if ( ! $this->is_configured() ) {
-			return new \WP_Error( 'not_configured', __( 'Claude API key not configured.', 'ai-content-engine' ) );
+			return new \WP_Error( 'not_configured', __( 'Claude API key not configured.', 'tonepress-ai' ) );
 		}
 
 		$model       = $options['model'] ?? get_option( 'ace_claude_model', $this->default_model );
@@ -105,7 +105,7 @@ class Provider_Claude extends AI_Provider {
 		}
 
 		if ( 200 !== $response['code'] ) {
-			$error_msg = $response['body']['error']['message'] ?? __( 'Unknown Claude API error', 'ai-content-engine' );
+			$error_msg = $response['body']['error']['message'] ?? __( 'Unknown Claude API error', 'tonepress-ai' );
 			return new \WP_Error( 'api_error', $error_msg );
 		}
 
@@ -133,7 +133,7 @@ class Provider_Claude extends AI_Provider {
 	 */
 	public function test_connection() {
 		if ( ! $this->is_configured() ) {
-			return new \WP_Error( 'not_configured', __( 'API key not set.', 'ai-content-engine' ) );
+			return new \WP_Error( 'not_configured', __( 'API key not set.', 'tonepress-ai' ) );
 		}
 
 		// Make a minimal request to test
@@ -158,7 +158,7 @@ class Provider_Claude extends AI_Provider {
 			return $response;
 		}
 
-		return 200 === $response['code'] ? true : new \WP_Error( 'api_error', __( 'Invalid API key.', 'ai-content-engine' ) );
+		return 200 === $response['code'] ? true : new \WP_Error( 'api_error', __( 'Invalid API key.', 'tonepress-ai' ) );
 	}
 
 	/**

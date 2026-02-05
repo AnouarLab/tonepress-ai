@@ -96,8 +96,8 @@ class Onboarding_Wizard {
 	public function register_wizard_page() {
 		add_submenu_page(
 			null, // No parent = hidden from menu.
-			__( 'AI Content Engine - Setup Wizard', 'ai-content-engine' ),
-			__( 'Setup Wizard', 'ai-content-engine' ),
+			__( 'AI Content Engine - Setup Wizard', 'tonepress-ai' ),
+			__( 'Setup Wizard', 'tonepress-ai' ),
 			'manage_options',
 			'ace-wizard',
 			array( $this, 'render_wizard' )
@@ -178,14 +178,14 @@ class Onboarding_Wizard {
 		check_ajax_referer( 'ace_wizard_nonce', 'nonce' );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$step = isset( $_POST['step'] ) ? sanitize_key( $_POST['step'] ) : '';
 		$data = isset( $_POST['data'] ) ? wp_unslash( $_POST['data'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 		if ( empty( $step ) || ! isset( $this->steps[ $step ] ) ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid step.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Invalid step.', 'tonepress-ai' ) ) );
 		}
 
 		// Save step data.
@@ -291,14 +291,14 @@ class Onboarding_Wizard {
 		check_ajax_referer( 'ace_wizard_nonce', 'nonce' );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$provider = isset( $_POST['provider'] ) ? sanitize_text_field( $_POST['provider'] ) : '';
 		$api_key  = isset( $_POST['api_key'] ) ? sanitize_text_field( $_POST['api_key'] ) : '';
 
 		if ( empty( $provider ) || empty( $api_key ) ) {
-			wp_send_json_error( array( 'message' => __( 'Provider and API key are required.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Provider and API key are required.', 'tonepress-ai' ) ) );
 		}
 
 		// Test the API connection.
@@ -323,7 +323,7 @@ class Onboarding_Wizard {
 
 			wp_send_json_success(
 				array(
-					'message' => __( 'Connection successful!', 'ai-content-engine' ),
+					'message' => __( 'Connection successful!', 'tonepress-ai' ),
 				)
 			);
 		} catch ( \Exception $e ) {
@@ -342,13 +342,13 @@ class Onboarding_Wizard {
 		check_ajax_referer( 'ace_wizard_nonce', 'nonce' );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$topic = isset( $_POST['topic'] ) ? sanitize_text_field( $_POST['topic'] ) : '';
 
 		if ( empty( $topic ) ) {
-			wp_send_json_error( array( 'message' => __( 'Topic is required.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Topic is required.', 'tonepress-ai' ) ) );
 		}
 
 		// Generate article.

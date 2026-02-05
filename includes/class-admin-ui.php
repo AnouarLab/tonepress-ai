@@ -87,10 +87,10 @@ class Admin_UI {
 	public function add_admin_menu() {
 		add_submenu_page(
 			'tools.php',
-			__( 'AI Content Engine', 'ai-content-engine' ),
-			__( 'AI Content Engine', 'ai-content-engine' ),
+			__( 'AI Content Engine', 'tonepress-ai' ),
+			__( 'AI Content Engine', 'tonepress-ai' ),
 			'publish_posts',
-			'ai-content-engine',
+			'tonepress-ai',
 			array( $this, 'render_admin_page' )
 		);
 		
@@ -98,8 +98,8 @@ class Admin_UI {
 		/*
 		add_submenu_page(
 			'tools.php',
-			__( 'AI Chat Builder', 'ai-content-engine' ),
-			__( 'AI Chat Builder', 'ai-content-engine' ),
+			__( 'AI Chat Builder', 'tonepress-ai' ),
+			__( 'AI Chat Builder', 'tonepress-ai' ),
 			'publish_posts',
 			'ai-chat-builder',
 			array( $this, 'render_chat_builder_page' )
@@ -158,136 +158,136 @@ class Admin_UI {
 		// Settings sections.
 		add_settings_section(
 			'ace_api_settings',
-			__( 'API Configuration', 'ai-content-engine' ),
+			__( 'API Configuration', 'tonepress-ai' ),
 			array( $this, 'render_api_settings_section' ),
-			'ai-content-engine'
+			'tonepress-ai'
 		);
 
 		add_settings_section(
 			'ace_default_settings',
-			__( 'Default Article Settings', 'ai-content-engine' ),
+			__( 'Default Article Settings', 'tonepress-ai' ),
 			array( $this, 'render_default_settings_section' ),
-			'ai-content-engine'
+			'tonepress-ai'
 		);
 
 		add_settings_section(
 			'ace_performance_settings',
-			__( 'Performance & Security', 'ai-content-engine' ),
+			__( 'Performance & Security', 'tonepress-ai' ),
 			array( $this, 'render_performance_settings_section' ),
-			'ai-content-engine'
+			'tonepress-ai'
 		);
 
 		add_settings_section(
 			'ace_chat_settings',
-			__( 'Chat Builder Models', 'ai-content-engine' ),
+			__( 'Chat Builder Models', 'tonepress-ai' ),
 			array( $this, 'render_chat_settings_section' ),
-			'ai-content-engine'
+			'tonepress-ai'
 		);
 
 		// API fields.
 		add_settings_field(
 			'ace_ai_provider',
-			__( 'AI Provider', 'ai-content-engine' ),
+			__( 'AI Provider', 'tonepress-ai' ),
 			array( $this, 'render_provider_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_api_settings'
 		);
 
 		add_settings_field(
 			'ace_openai_api_key',
-			__( 'OpenAI API Key', 'ai-content-engine' ),
+			__( 'OpenAI API Key', 'tonepress-ai' ),
 			array( $this, 'render_api_key_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_api_settings'
 		);
 
 		add_settings_field(
 			'ace_openai_model',
-			__( 'OpenAI Model', 'ai-content-engine' ),
+			__( 'OpenAI Model', 'tonepress-ai' ),
 			array( $this, 'render_model_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_api_settings'
 		);
 
 		add_settings_field(
 			'ace_claude_api_key',
-			__( 'Claude API Key', 'ai-content-engine' ),
+			__( 'Claude API Key', 'tonepress-ai' ),
 			array( $this, 'render_claude_key_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_api_settings'
 		);
 
 		add_settings_field(
 			'ace_gemini_api_key',
-			__( 'Gemini API Key', 'ai-content-engine' ),
+			__( 'Gemini API Key', 'tonepress-ai' ),
 			array( $this, 'render_gemini_key_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_api_settings'
 		);
 
 		// Default settings fields.
 		add_settings_field(
 			'ace_default_length',
-			__( 'Default Article Length', 'ai-content-engine' ),
+			__( 'Default Article Length', 'tonepress-ai' ),
 			array( $this, 'render_length_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_default_settings'
 		);
 
 		add_settings_field(
 			'ace_default_tone',
-			__( 'Default Writing Tone', 'ai-content-engine' ),
+			__( 'Default Writing Tone', 'tonepress-ai' ),
 			array( $this, 'render_tone_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_default_settings'
 		);
 
 		// Performance fields.
 		add_settings_field(
 			'ace_enable_cache',
-			__( 'Enable Caching', 'ai-content-engine' ),
+			__( 'Enable Caching', 'tonepress-ai' ),
 			array( $this, 'render_cache_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_performance_settings'
 		);
 
 		add_settings_field(
 			'ace_enable_rate_limit',
-			__( 'Enable Rate Limiting', 'ai-content-engine' ),
+			__( 'Enable Rate Limiting', 'tonepress-ai' ),
 			array( $this, 'render_rate_limit_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_performance_settings'
 		);
 
 		add_settings_field(
 			'ace_enable_content_styles',
-			__( 'Content Block Styling', 'ai-content-engine' ),
+			__( 'Content Block Styling', 'tonepress-ai' ),
 			array( $this, 'render_content_styles_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_performance_settings'
 		);
 
 		add_settings_field(
 			'ace_openai_enabled_models',
-			__( 'OpenAI Chat Models', 'ai-content-engine' ),
+			__( 'OpenAI Chat Models', 'tonepress-ai' ),
 			array( $this, 'render_openai_enabled_models_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_chat_settings'
 		);
 
 		add_settings_field(
 			'ace_claude_enabled_models',
-			__( 'Claude Chat Models', 'ai-content-engine' ),
+			__( 'Claude Chat Models', 'tonepress-ai' ),
 			array( $this, 'render_claude_enabled_models_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_chat_settings'
 		);
 
 		add_settings_field(
 			'ace_gemini_enabled_models',
-			__( 'Gemini Chat Models', 'ai-content-engine' ),
+			__( 'Gemini Chat Models', 'tonepress-ai' ),
 			array( $this, 'render_gemini_enabled_models_field' ),
-			'ai-content-engine',
+			'tonepress-ai',
 			'ace_chat_settings'
 		);
 	}
@@ -320,7 +320,7 @@ class Admin_UI {
 	 */
 	public function render_admin_page() {
 		if ( ! current_user_can( 'publish_posts' ) ) {
-			wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'ai-content-engine' ) );
+			wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'tonepress-ai' ) );
 		}
 
 		// Load the template.
@@ -331,28 +331,28 @@ class Admin_UI {
 	 * Render API settings section.
 	 */
 	public function render_api_settings_section() {
-		echo '<p>' . esc_html__( 'Configure your OpenAI API credentials. Get your API key from', 'ai-content-engine' ) . ' <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a>.</p>';
+		echo '<p>' . esc_html__( 'Configure your OpenAI API credentials. Get your API key from', 'tonepress-ai' ) . ' <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a>.</p>';
 	}
 
 	/**
 	 * Render default settings section.
 	 */
 	public function render_default_settings_section() {
-		echo '<p>' . esc_html__( 'Set default values for article generation. These can be overridden when generating individual articles.', 'ai-content-engine' ) . '</p>';
+		echo '<p>' . esc_html__( 'Set default values for article generation. These can be overridden when generating individual articles.', 'tonepress-ai' ) . '</p>';
 	}
 
 	/**
 	 * Render performance settings section.
 	 */
 	public function render_performance_settings_section() {
-		echo '<p>' . esc_html__( 'Configure caching and rate limiting to optimize API usage and costs.', 'ai-content-engine' ) . '</p>';
+		echo '<p>' . esc_html__( 'Configure caching and rate limiting to optimize API usage and costs.', 'tonepress-ai' ) . '</p>';
 	}
 
 	/**
 	 * Render chat settings section.
 	 */
 	public function render_chat_settings_section() {
-		echo '<p>' . esc_html__( 'Choose which models are available in the Chat Builder.', 'ai-content-engine' ) . '</p>';
+		echo '<p>' . esc_html__( 'Choose which models are available in the Chat Builder.', 'tonepress-ai' ) . '</p>';
 	}
 
 	/**
@@ -433,7 +433,7 @@ class Admin_UI {
 	private function render_enabled_models_field( $provider, $option ) {
 		$provider_instance = Provider_Factory::get( $provider );
 		if ( is_wp_error( $provider_instance ) ) {
-			echo '<p class="description">' . esc_html__( 'Provider not available.', 'ai-content-engine' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'Provider not available.', 'tonepress-ai' ) . '</p>';
 			return;
 		}
 
@@ -453,7 +453,7 @@ class Admin_UI {
 			);
 		}
 		echo '</div>';
-		echo '<p class="description">' . esc_html__( 'Select models to show in Chat Builder. If none selected, all are available.', 'ai-content-engine' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'Select models to show in Chat Builder. If none selected, all are available.', 'tonepress-ai' ) . '</p>';
 	}
 
 	/**
@@ -464,8 +464,8 @@ class Admin_UI {
 		$masked_key    = ! empty( $encrypted_key ) ? 'sk-************************************' : '';
 
 		echo '<input type="password" name="ace_openai_api_key" value="' . esc_attr( $masked_key ) . '" class="regular-text" placeholder="sk-..." />';
-		echo '<p class="description">' . esc_html__( 'Your API key is encrypted and stored securely.', 'ai-content-engine' ) . '</p>';
-		echo '<button type="button" class="button" id="ace-test-api-key">' . esc_html__( 'Test API Key', 'ai-content-engine' ) . '</button>';
+		echo '<p class="description">' . esc_html__( 'Your API key is encrypted and stored securely.', 'tonepress-ai' ) . '</p>';
+		echo '<button type="button" class="button" id="ace-test-api-key">' . esc_html__( 'Test API Key', 'tonepress-ai' ) . '</button>';
 		echo '<span id="ace-api-test-result"></span>';
 	}
 
@@ -480,7 +480,7 @@ class Admin_UI {
 			<option value="gpt-4" <?php selected( $model, 'gpt-4' ); ?>>GPT-4 (Higher Quality, More Expensive)</option>
 			<option value="gpt-4-turbo" <?php selected( $model, 'gpt-4-turbo' ); ?>>GPT-4 Turbo (Balanced)</option>
 		</select>
-		<p class="description"><?php esc_html_e( 'Select the OpenAI model to use for generation.', 'ai-content-engine' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Select the OpenAI model to use for generation.', 'tonepress-ai' ); ?></p>
 		<?php
 	}
 
@@ -495,7 +495,7 @@ class Admin_UI {
 			<option value="claude" <?php selected( $provider, 'claude' ); ?>>Anthropic Claude (Claude 3)</option>
 			<option value="gemini" <?php selected( $provider, 'gemini' ); ?>>Google Gemini</option>
 		</select>
-		<p class="description"><?php esc_html_e( 'Select the AI provider to use for content generation.', 'ai-content-engine' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Select the AI provider to use for content generation.', 'tonepress-ai' ); ?></p>
 		<?php
 	}
 
@@ -515,8 +515,8 @@ class Admin_UI {
 			placeholder="<?php echo esc_attr( $masked ?: 'sk-ant-...' ); ?>"
 		/>
 		<p class="description">
-			<?php esc_html_e( 'Enter your Anthropic Claude API key.', 'ai-content-engine' ); ?>
-			<a href="https://console.anthropic.com/" target="_blank"><?php esc_html_e( 'Get API Key', 'ai-content-engine' ); ?></a>
+			<?php esc_html_e( 'Enter your Anthropic Claude API key.', 'tonepress-ai' ); ?>
+			<a href="https://console.anthropic.com/" target="_blank"><?php esc_html_e( 'Get API Key', 'tonepress-ai' ); ?></a>
 		</p>
 		<?php
 	}
@@ -537,8 +537,8 @@ class Admin_UI {
 			placeholder="<?php echo esc_attr( $masked ?: 'AIza...' ); ?>"
 		/>
 		<p class="description">
-			<?php esc_html_e( 'Enter your Google Gemini API key.', 'ai-content-engine' ); ?>
-			<a href="https://makersuite.google.com/app/apikey" target="_blank"><?php esc_html_e( 'Get API Key', 'ai-content-engine' ); ?></a>
+			<?php esc_html_e( 'Enter your Google Gemini API key.', 'tonepress-ai' ); ?>
+			<a href="https://makersuite.google.com/app/apikey" target="_blank"><?php esc_html_e( 'Get API Key', 'tonepress-ai' ); ?></a>
 		</p>
 		<?php
 	}
@@ -550,9 +550,9 @@ class Admin_UI {
 		$length = get_option( 'ace_default_length', 'medium' );
 		?>
 		<select name="ace_default_length">
-			<option value="short" <?php selected( $length, 'short' ); ?>><?php esc_html_e( 'Short (800-1200 words)', 'ai-content-engine' ); ?></option>
-			<option value="medium" <?php selected( $length, 'medium' ); ?>><?php esc_html_e( 'Medium (1200-1800 words)', 'ai-content-engine' ); ?></option>
-			<option value="long" <?php selected( $length, 'long' ); ?>><?php esc_html_e( 'Long (1800-2500+ words)', 'ai-content-engine' ); ?></option>
+			<option value="short" <?php selected( $length, 'short' ); ?>><?php esc_html_e( 'Short (800-1200 words)', 'tonepress-ai' ); ?></option>
+			<option value="medium" <?php selected( $length, 'medium' ); ?>><?php esc_html_e( 'Medium (1200-1800 words)', 'tonepress-ai' ); ?></option>
+			<option value="long" <?php selected( $length, 'long' ); ?>><?php esc_html_e( 'Long (1800-2500+ words)', 'tonepress-ai' ); ?></option>
 		</select>
 		<?php
 	}
@@ -564,11 +564,11 @@ class Admin_UI {
 		$tone = get_option( 'ace_default_tone', 'professional' );
 		?>
 		<select name="ace_default_tone">
-			<option value="professional" <?php selected( $tone, 'professional' ); ?>><?php esc_html_e( 'Professional', 'ai-content-engine' ); ?></option>
-			<option value="conversational" <?php selected( $tone, 'conversational' ); ?>><?php esc_html_e( 'Conversational', 'ai-content-engine' ); ?></option>
-			<option value="authoritative" <?php selected( $tone, 'authoritative' ); ?>><?php esc_html_e( 'Authoritative', 'ai-content-engine' ); ?></option>
-			<option value="friendly" <?php selected( $tone, 'friendly' ); ?>><?php esc_html_e( 'Friendly', 'ai-content-engine' ); ?></option>
-			<option value="academic" <?php selected( $tone, 'academic' ); ?>><?php esc_html_e( 'Academic', 'ai-content-engine' ); ?></option>
+			<option value="professional" <?php selected( $tone, 'professional' ); ?>><?php esc_html_e( 'Professional', 'tonepress-ai' ); ?></option>
+			<option value="conversational" <?php selected( $tone, 'conversational' ); ?>><?php esc_html_e( 'Conversational', 'tonepress-ai' ); ?></option>
+			<option value="authoritative" <?php selected( $tone, 'authoritative' ); ?>><?php esc_html_e( 'Authoritative', 'tonepress-ai' ); ?></option>
+			<option value="friendly" <?php selected( $tone, 'friendly' ); ?>><?php esc_html_e( 'Friendly', 'tonepress-ai' ); ?></option>
+			<option value="academic" <?php selected( $tone, 'academic' ); ?>><?php esc_html_e( 'Academic', 'tonepress-ai' ); ?></option>
 		</select>
 		<?php
 	}
@@ -582,7 +582,7 @@ class Admin_UI {
 		<label class="ace-toggle">
 			<input type="checkbox" name="ace_enable_cache" value="1" <?php checked( $enabled, '1' ); ?> />
 			<span class="ace-toggle-slider"></span>
-			<span class="ace-toggle-label"><?php esc_html_e( 'Cache generated articles to reduce API costs', 'ai-content-engine' ); ?></span>
+			<span class="ace-toggle-label"><?php esc_html_e( 'Cache generated articles to reduce API costs', 'tonepress-ai' ); ?></span>
 		</label>
 		<?php
 	}
@@ -600,7 +600,7 @@ class Admin_UI {
 				<?php
 				printf(
 					/* translators: %d: Maximum requests per hour */
-					esc_html__( 'Limit to %d generations per hour per user', 'ai-content-engine' ),
+					esc_html__( 'Limit to %d generations per hour per user', 'tonepress-ai' ),
 					ACE_MAX_REQUESTS_PER_HOUR
 				);
 				?>
@@ -618,9 +618,9 @@ class Admin_UI {
 		<label class="ace-toggle">
 			<input type="checkbox" name="ace_enable_content_styles" value="1" <?php checked( $enabled, '1' ); ?> />
 			<span class="ace-toggle-slider"></span>
-			<span class="ace-toggle-label"><?php esc_html_e( 'Add styling for FAQs, callouts, pros/cons, and other rich content blocks', 'ai-content-engine' ); ?></span>
+			<span class="ace-toggle-label"><?php esc_html_e( 'Add styling for FAQs, callouts, pros/cons, and other rich content blocks', 'tonepress-ai' ); ?></span>
 		</label>
-		<p class="description"><?php esc_html_e( 'Disable if your theme already provides styling for these elements.', 'ai-content-engine' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Disable if your theme already provides styling for these elements.', 'tonepress-ai' ); ?></p>
 		<?php
 	}
 
@@ -667,13 +667,13 @@ class Admin_UI {
 				'templates' => self::get_template_descriptions(),
 				'model'    => get_option( 'ace_openai_model', 'gpt-3.5-turbo' ),
 				'strings'  => array(
-					'generating'    => __( 'Generating article... This may take a minute.', 'ai-content-engine' ),
-					'success'       => __( 'Article generated successfully!', 'ai-content-engine' ),
-					'error'         => __( 'An error occurred:', 'ai-content-engine' ),
-					'testing'       => __( 'Testing...', 'ai-content-engine' ),
-					'test_success'  => __( '✓ API key is valid', 'ai-content-engine' ),
-					'test_failed'   => __( '✗ API key test failed', 'ai-content-engine' ),
-					'empty_topic'   => __( 'Please enter an article topic.', 'ai-content-engine' ),
+					'generating'    => __( 'Generating article... This may take a minute.', 'tonepress-ai' ),
+					'success'       => __( 'Article generated successfully!', 'tonepress-ai' ),
+					'error'         => __( 'An error occurred:', 'tonepress-ai' ),
+					'testing'       => __( 'Testing...', 'tonepress-ai' ),
+					'test_success'  => __( '✓ API key is valid', 'tonepress-ai' ),
+					'test_failed'   => __( '✗ API key test failed', 'tonepress-ai' ),
+					'empty_topic'   => __( 'Please enter an article topic.', 'tonepress-ai' ),
 				),
 			)
 		);
@@ -756,7 +756,7 @@ class Admin_UI {
 
 		// Check permissions.
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'You do not have permission to generate articles.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'You do not have permission to generate articles.', 'tonepress-ai' ) ) );
 		}
 
 		// Get POST data.
@@ -822,7 +822,7 @@ class Admin_UI {
 
 		// Check permissions.
 		if ( ! Security::can_manage_settings() ) {
-			wp_send_json_error( array( 'message' => __( 'You do not have permission to test API keys.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'You do not have permission to test API keys.', 'tonepress-ai' ) ) );
 		}
 
 		$provider = Provider_Factory::get_active();
@@ -837,14 +837,14 @@ class Admin_UI {
 			wp_send_json_error( array( 'message' => $result->get_error_message() ) );
 		}
 
-		wp_send_json_success( array( 'message' => __( 'API key is valid and working!', 'ai-content-engine' ) ) );
+		wp_send_json_success( array( 'message' => __( 'API key is valid and working!', 'tonepress-ai' ) ) );
 	}
 
 	/**
 	 * Handle direct actions (CSV template download, results export).
 	 */
 	public function handle_direct_actions() {
-		if ( ! isset( $_GET['page'] ) || 'ai-content-engine' !== $_GET['page'] || ! isset( $_GET['action'] ) ) {
+		if ( ! isset( $_GET['page'] ) || 'tonepress-ai' !== $_GET['page'] || ! isset( $_GET['action'] ) ) {
 			return;
 		}
 
@@ -881,11 +881,11 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		if ( empty( $_FILES['csv_file'] ) ) {
-			wp_send_json_error( array( 'message' => __( 'No file uploaded.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'No file uploaded.', 'tonepress-ai' ) ) );
 		}
 
 		$file = $_FILES['csv_file']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
@@ -919,7 +919,7 @@ class Admin_UI {
 			array(
 				'message'    => sprintf(
 					/* translators: %d: Number of articles */
-					__( 'Queue created successfully! Processing %d articles in the background.', 'ai-content-engine' ),
+					__( 'Queue created successfully! Processing %d articles in the background.', 'tonepress-ai' ),
 					$result['item_count']
 				),
 				'queue_id'   => $result['queue_id'],
@@ -935,7 +935,7 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$queue_id = isset( $_POST['queue_id'] ) ? sanitize_text_field( wp_unslash( $_POST['queue_id'] ) ) : '';
@@ -944,9 +944,9 @@ class Admin_UI {
 		$success = $generator->pause_queue( $queue_id );
 
 		if ( $success ) {
-			wp_send_json_success( array( 'message' => __( 'Queue paused.', 'ai-content-engine' ) ) );
+			wp_send_json_success( array( 'message' => __( 'Queue paused.', 'tonepress-ai' ) ) );
 		} else {
-			wp_send_json_error( array( 'message' => __( 'Failed to pause queue.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Failed to pause queue.', 'tonepress-ai' ) ) );
 		}
 	}
 
@@ -957,7 +957,7 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$queue_id = isset( $_POST['queue_id'] ) ? sanitize_text_field( wp_unslash( $_POST['queue_id'] ) ) : '';
@@ -966,9 +966,9 @@ class Admin_UI {
 		$success = $generator->resume_queue( $queue_id );
 
 		if ( $success ) {
-			wp_send_json_success( array( 'message' => __( 'Queue resumed.', 'ai-content-engine' ) ) );
+			wp_send_json_success( array( 'message' => __( 'Queue resumed.', 'tonepress-ai' ) ) );
 		} else {
-			wp_send_json_error( array( 'message' => __( 'Failed to resume queue.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Failed to resume queue.', 'tonepress-ai' ) ) );
 		}
 	}
 
@@ -979,7 +979,7 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$queue_id = isset( $_POST['queue_id'] ) ? sanitize_text_field( wp_unslash( $_POST['queue_id'] ) ) : '';
@@ -988,9 +988,9 @@ class Admin_UI {
 		$success = $generator->delete_queue( $queue_id );
 
 		if ( $success ) {
-			wp_send_json_success( array( 'message' => __( 'Queue deleted.', 'ai-content-engine' ) ) );
+			wp_send_json_success( array( 'message' => __( 'Queue deleted.', 'tonepress-ai' ) ) );
 		} else {
-			wp_send_json_error( array( 'message' => __( 'Failed to delete queue.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Failed to delete queue.', 'tonepress-ai' ) ) );
 		}
 	}
 
@@ -1033,7 +1033,7 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$message      = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
@@ -1075,7 +1075,7 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id   = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
@@ -1085,7 +1085,7 @@ class Admin_UI {
 		$professional = ! empty( $_POST['professional'] );
 
 		if ( empty( $session_id ) || empty( $message ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID or message.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID or message.', 'tonepress-ai' ) ) );
 		}
 
 		try {
@@ -1126,7 +1126,7 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		try {
@@ -1148,20 +1148,20 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 
 		if ( empty( $session_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
 		$session = $chat_builder->get_session( $session_id );
 
 		if ( ! $session ) {
-			wp_send_json_error( array( 'message' => __( 'Session not found.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Session not found.', 'tonepress-ai' ) ) );
 		}
 
 		$meta  = json_decode( $session->meta_data, true );
@@ -1191,13 +1191,13 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 
 		if ( empty( $session_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
@@ -1220,13 +1220,13 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 
 		if ( empty( $session_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
@@ -1249,14 +1249,14 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 		$title      = isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : '';
 
 		if ( empty( $session_id ) || empty( $title ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID or title.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID or title.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
@@ -1276,20 +1276,20 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 
 		if ( empty( $session_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
 		$result       = $chat_builder->delete_session( $session_id );
 
 		if ( is_wp_error( $result ) || ! $result ) {
-			$message = is_wp_error( $result ) ? $result->get_error_message() : __( 'Failed to delete session.', 'ai-content-engine' );
+			$message = is_wp_error( $result ) ? $result->get_error_message() : __( 'Failed to delete session.', 'tonepress-ai' );
 			wp_send_json_error( array( 'message' => $message ) );
 		}
 
@@ -1303,13 +1303,13 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 
 		if ( empty( $session_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
@@ -1329,14 +1329,14 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 		$pinned     = isset( $_POST['pinned'] ) ? (int) $_POST['pinned'] : 0;
 
 		if ( empty( $session_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
@@ -1356,13 +1356,13 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 
 		if ( empty( $session_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session ID.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
@@ -1382,14 +1382,14 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
 		$session_id = isset( $_POST['session_id'] ) ? sanitize_text_field( wp_unslash( $_POST['session_id'] ) ) : '';
 		$version_id = isset( $_POST['version_id'] ) ? absint( $_POST['version_id'] ) : 0;
 
 		if ( empty( $session_id ) || empty( $version_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Missing session or version ID.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Missing session or version ID.', 'tonepress-ai' ) ) );
 		}
 
 		$chat_builder = new \Chat_Builder();
@@ -1409,14 +1409,14 @@ class Admin_UI {
 		check_ajax_referer( 'ace_ajax', 'nonce' );
 
 		if ( ! Security::can_generate_content() ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'tonepress-ai' ) ) );
 		}
 
-		$title   = isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : __( 'Preview', 'ai-content-engine' );
+		$title   = isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : __( 'Preview', 'tonepress-ai' );
 		$content = isset( $_POST['content'] ) ? wp_unslash( $_POST['content'] ) : '';
 
 		if ( empty( $content ) ) {
-			wp_send_json_error( array( 'message' => __( 'No content to preview.', 'ai-content-engine' ) ) );
+			wp_send_json_error( array( 'message' => __( 'No content to preview.', 'tonepress-ai' ) ) );
 		}
 
 		$content = Security::sanitize_ai_content( $content );
@@ -1559,7 +1559,7 @@ class Admin_UI {
 			return new \WP_REST_Response(
 				array(
 					'success' => false,
-					'message' => __( 'Chat Builder not available', 'ai-content-engine' ),
+					'message' => __( 'Chat Builder not available', 'tonepress-ai' ),
 				),
 				400
 			);
@@ -1619,7 +1619,7 @@ class Admin_UI {
 			return new \WP_REST_Response(
 				array(
 					'success' => false,
-					'message' => __( 'Template name is required.', 'ai-content-engine' ),
+					'message' => __( 'Template name is required.', 'tonepress-ai' ),
 				),
 				400
 			);
@@ -1631,7 +1631,7 @@ class Admin_UI {
 			array(
 				'success' => true,
 				'id'      => $id,
-				'message' => __( 'Template saved successfully.', 'ai-content-engine' ),
+				'message' => __( 'Template saved successfully.', 'tonepress-ai' ),
 			),
 			200
 		);
@@ -1652,7 +1652,7 @@ class Admin_UI {
 			return new \WP_REST_Response(
 				array(
 					'success' => false,
-					'message' => __( 'Template not found.', 'ai-content-engine' ),
+					'message' => __( 'Template not found.', 'tonepress-ai' ),
 				),
 				404
 			);
@@ -1661,7 +1661,7 @@ class Admin_UI {
 		return new \WP_REST_Response(
 			array(
 				'success' => true,
-				'message' => __( 'Template deleted successfully.', 'ai-content-engine' ),
+				'message' => __( 'Template deleted successfully.', 'tonepress-ai' ),
 			),
 			200
 		);
@@ -1678,7 +1678,7 @@ class Admin_UI {
 			return new \WP_REST_Response(
 				array(
 					'success' => false,
-					'message' => __( 'Chat Builder not available', 'ai-content-engine' ),
+					'message' => __( 'Chat Builder not available', 'tonepress-ai' ),
 				),
 				400
 			);

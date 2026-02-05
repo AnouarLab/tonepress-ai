@@ -21,9 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="ace-wizard-step ace-step-templates">
-	<h2><?php esc_html_e( 'Choose Starter Templates', 'ai-content-engine' ); ?></h2>
+	<h2><?php esc_html_e( 'Choose Starter Templates', 'tonepress-ai' ); ?></h2>
 	<p class="step-description">
-		<?php esc_html_e( 'Select pre-built templates to speed up your content creation.', 'ai-content-engine' ); ?>
+		<?php esc_html_e( 'Select pre-built templates to speed up your content creation.', 'tonepress-ai' ); ?>
 	</p>
 
 	<form id="templates-form" class="wizard-form">
@@ -34,9 +34,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="card-icon">
 						<span class="dashicons dashicons-editor-help"></span>
 					</div>
-					<h3><?php esc_html_e( 'How-To Guide', 'ai-content-engine' ); ?></h3>
-					<p><?php esc_html_e( 'Step-by-step tutorials and instructional content', 'ai-content-engine' ); ?></p>
-					<span class="card-badge"><?php esc_html_e( 'Recommended', 'ai-content-engine' ); ?></span>
+					<h3><?php esc_html_e( 'How-To Guide', 'tonepress-ai' ); ?></h3>
+					<p><?php esc_html_e( 'Step-by-step tutorials and instructional content', 'tonepress-ai' ); ?></p>
+					<span class="card-badge"><?php esc_html_e( 'Recommended', 'tonepress-ai' ); ?></span>
 				</div>
 			</label>
 
@@ -46,9 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="card-icon">
 						<span class="dashicons dashicons-list-view"></span>
 					</div>
-					<h3><?php esc_html_e( 'Listicle', 'ai-content-engine' ); ?></h3>
-					<p><?php esc_html_e( 'Top 10 lists, roundups, and numbered articles', 'ai-content-engine' ); ?></p>
-					<span class="card-badge"><?php esc_html_e( 'Popular', 'ai-content-engine' ); ?></span>
+					<h3><?php esc_html_e( 'Listicle', 'tonepress-ai' ); ?></h3>
+					<p><?php esc_html_e( 'Top 10 lists, roundups, and numbered articles', 'tonepress-ai' ); ?></p>
+					<span class="card-badge"><?php esc_html_e( 'Popular', 'tonepress-ai' ); ?></span>
 				</div>
 			</label>
 
@@ -58,8 +58,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="card-icon">
 						<span class="dashicons dashicons-star-filled"></span>
 					</div>
-					<h3><?php esc_html_e( 'Product Review', 'ai-content-engine' ); ?></h3>
-					<p><?php esc_html_e( 'Detailed reviews with pros, cons, and ratings', 'ai-content-engine' ); ?></p>
+					<h3><?php esc_html_e( 'Product Review', 'tonepress-ai' ); ?></h3>
+					<p><?php esc_html_e( 'Detailed reviews with pros, cons, and ratings', 'tonepress-ai' ); ?></p>
 				</div>
 			</label>
 
@@ -69,8 +69,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="card-icon">
 						<span class="dashicons dashicons-leftright"></span>
 					</div>
-					<h3><?php esc_html_e( 'Comparison', 'ai-content-engine' ); ?></h3>
-					<p><?php esc_html_e( 'Compare products, services, or solutions', 'ai-content-engine' ); ?></p>
+					<h3><?php esc_html_e( 'Comparison', 'tonepress-ai' ); ?></h3>
+					<p><?php esc_html_e( 'Compare products, services, or solutions', 'tonepress-ai' ); ?></p>
 				</div>
 			</label>
 
@@ -80,8 +80,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="card-icon">
 						<span class="dashicons dashicons-chart-line"></span>
 					</div>
-					<h3><?php esc_html_e( 'Case Study', 'ai-content-engine' ); ?></h3>
-					<p><?php esc_html_e( 'Success stories with data and outcomes', 'ai-content-engine' ); ?></p>
+					<h3><?php esc_html_e( 'Case Study', 'tonepress-ai' ); ?></h3>
+					<p><?php esc_html_e( 'Success stories with data and outcomes', 'tonepress-ai' ); ?></p>
 				</div>
 			</label>
 
@@ -91,8 +91,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="card-icon">
 						<span class="dashicons dashicons-megaphone"></span>
 					</div>
-					<h3><?php esc_html_e( 'Industry News', 'ai-content-engine' ); ?></h3>
-					<p><?php esc_html_e( 'News updates and trend analysis', 'ai-content-engine' ); ?></p>
+					<h3><?php esc_html_e( 'Industry News', 'tonepress-ai' ); ?></h3>
+					<p><?php esc_html_e( 'News updates and trend analysis', 'tonepress-ai' ); ?></p>
 				</div>
 			</label>
 		</div>
@@ -100,7 +100,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="template-note">
 			<p class="description">
 				<span class="dashicons dashicons-info"></span>
-				<?php esc_html_e( 'You can add or remove templates later from the Templates page.', 'ai-content-engine' ); ?>
+				<?php esc_html_e( 'You can add or remove templates later from the Templates page.', 'tonepress-ai' ); ?>
 			</p>
 		</div>
 	</form>

@@ -7,7 +7,7 @@
  * Author URI: https://anouarlab.fr
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain: ai-content-engine
+ * Text Domain: tonepress-ai
  * Domain Path: /languages
  * Requires at least: 5.8
  * Requires PHP: 7.4
@@ -102,8 +102,8 @@ function ace_activate() {
 	if ( version_compare( get_bloginfo( 'version' ), '5.8', '<' ) ) {
 		deactivate_plugins( ACE_PLUGIN_BASENAME );
 		wp_die(
-			esc_html__( 'AI Content Engine requires WordPress 5.8 or higher.', 'ai-content-engine' ),
-			esc_html__( 'Plugin Activation Error', 'ai-content-engine' ),
+			esc_html__( 'AI Content Engine requires WordPress 5.8 or higher.', 'tonepress-ai' ),
+			esc_html__( 'Plugin Activation Error', 'tonepress-ai' ),
 			array( 'back_link' => true )
 		);
 	}
@@ -112,8 +112,8 @@ function ace_activate() {
 	if ( version_compare( PHP_VERSION, '7.4', '<' ) ) {
 		deactivate_plugins( ACE_PLUGIN_BASENAME );
 		wp_die(
-			esc_html__( 'AI Content Engine requires PHP 7.4 or higher.', 'ai-content-engine' ),
-			esc_html__( 'Plugin Activation Error', 'ai-content-engine' ),
+			esc_html__( 'AI Content Engine requires PHP 7.4 or higher.', 'tonepress-ai' ),
+			esc_html__( 'Plugin Activation Error', 'tonepress-ai' ),
 			array( 'back_link' => true )
 		);
 	}
@@ -168,12 +168,8 @@ register_deactivation_hook( __FILE__, 'ace_deactivate' );
  * Initialize the plugin.
  */
 function ace_init() {
-	// Load text domain for internationalization.
-	load_plugin_textdomain(
-		'ai-content-engine',
-		false,
-		dirname( ACE_PLUGIN_BASENAME ) . '/languages'
-	);
+	// Load text domain for internationalization (automatically handled by WordPress.org).
+	// load_plugin_textdomain( 'tonepress-ai', false, dirname( ACE_PLUGIN_BASENAME ) . '/languages' );
 
 	// Initialize Admin UI (handles admin pages, settings, AND REST API routes).
 	// Must run on all contexts (admin, REST API, frontend) to register REST endpoints.
@@ -244,7 +240,7 @@ function ace_add_settings_link( $links ) {
 	$settings_link = sprintf(
 		'<a href="%s">%s</a>',
 		esc_url( admin_url( 'tools.php?page=ai-content-engine' ) ),
-		esc_html__( 'Settings', 'ai-content-engine' )
+		esc_html__( 'Settings', 'tonepress-ai' )
 	);
 	array_unshift( $links, $settings_link );
 	return $links;

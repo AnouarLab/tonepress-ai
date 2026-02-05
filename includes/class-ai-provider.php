@@ -177,7 +177,7 @@ abstract class AI_Provider {
 				'api_request_failed',
 				sprintf(
 					/* translators: %s: Error message */
-					__( 'API request failed: %s', 'ai-content-engine' ),
+					__( 'API request failed: %s', 'tonepress-ai' ),
 					$response->get_error_message()
 				)
 			);

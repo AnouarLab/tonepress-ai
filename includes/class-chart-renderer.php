@@ -131,7 +131,7 @@ class Chart_Renderer {
 					'invalid_chart_data',
 					sprintf(
 						/* translators: %s: Missing field name */
-						__( 'Chart data missing required field: %s', 'ai-content-engine' ),
+						__( 'Chart data missing required field: %s', 'tonepress-ai' ),
 						$field
 					)
 				);
@@ -145,7 +145,7 @@ class Chart_Renderer {
 				'invalid_chart_type',
 				sprintf(
 					/* translators: %s: Invalid chart type */
-					__( 'Invalid chart type: %s. Must be one of: bar, line, pie, doughnut, radar, polarArea.', 'ai-content-engine' ),
+					__( 'Invalid chart type: %s. Must be one of: bar, line, pie, doughnut, radar, polarArea.', 'tonepress-ai' ),
 					$chart['type']
 				)
 			);
@@ -155,7 +155,7 @@ class Chart_Renderer {
 		if ( ! is_array( $chart['datasets'] ) || empty( $chart['datasets'] ) ) {
 			return new \WP_Error(
 				'invalid_chart_datasets',
-				__( 'Chart must have at least one dataset.', 'ai-content-engine' )
+				__( 'Chart must have at least one dataset.', 'tonepress-ai' )
 			);
 		}
 
@@ -163,7 +163,7 @@ class Chart_Renderer {
 			if ( ! isset( $dataset['data'] ) || ! is_array( $dataset['data'] ) ) {
 				return new \WP_Error(
 					'invalid_dataset',
-					__( 'Each dataset must have a "data" array.', 'ai-content-engine' )
+					__( 'Each dataset must have a "data" array.', 'tonepress-ai' )
 				);
 			}
 		}

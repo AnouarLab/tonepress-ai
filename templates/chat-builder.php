@@ -56,7 +56,7 @@ $stats        = $chat_builder->get_stats();
 									</span>
 								</div>
 								<div class="ace-session-actions">
-									<button type="button" class="ace-session-action ace-session-pin" data-action="pin" title="<?php echo ! empty( $session->pinned ) ? esc_attr__( 'Unpin', 'ai-content-engine' ) : esc_attr__( 'Pin', 'ai-content-engine' ); ?>" data-pinned="<?php echo ! empty( $session->pinned ) ? 1 : 0; ?>">
+									<button type="button" class="ace-session-action ace-session-pin" data-action="pin" title="<?php echo ! empty( $session->pinned ) ? esc_attr__( 'Unpin', 'tonepress-ai' ) : esc_attr__( 'Pin', 'tonepress-ai' ); ?>" data-pinned="<?php echo ! empty( $session->pinned ) ? 1 : 0; ?>">
 										<span class="dashicons dashicons-star-filled"></span>
 									</button>
 									<button type="button" class="ace-session-action" data-action="rename" title="Rename">
