@@ -77,7 +77,7 @@ export default function Edit({ attributes, setAttributes }) {
      */
     const handleGenerate = async () => {
         if (!topic.trim()) {
-            setError(__('Please enter a topic', 'ai-content-engine'));
+            setError(__('Please enter a topic', 'tonepress-ai'));
             return;
         }
 
@@ -104,10 +104,10 @@ export default function Edit({ attributes, setAttributes }) {
                     generatedTitle: response.data.title || '',
                 });
             } else {
-                throw new Error(response.message || __('Generation failed', 'ai-content-engine'));
+                throw new Error(response.message || __('Generation failed', 'tonepress-ai'));
             }
         } catch (err) {
-            setError(err.message || __('An error occurred', 'ai-content-engine'));
+            setError(err.message || __('An error occurred', 'tonepress-ai'));
         } finally {
             setIsGenerating(false);
         }
@@ -136,39 +136,39 @@ export default function Edit({ attributes, setAttributes }) {
     return (
         <>
             <InspectorControls>
-                <PanelBody title={__('Content Settings', 'ai-content-engine')}>
+                <PanelBody title={__('Content Settings', 'tonepress-ai')}>
                     <SelectControl
-                        label={__('Article Length', 'ai-content-engine')}
+                        label={__('Article Length', 'tonepress-ai')}
                         value={length}
                         options={[
-                            { label: __('Short (800-1200 words)', 'ai-content-engine'), value: 'short' },
-                            { label: __('Medium (1200-1800 words)', 'ai-content-engine'), value: 'medium' },
-                            { label: __('Long (1800-2500+ words)', 'ai-content-engine'), value: 'long' },
+                            { label: __('Short (800-1200 words)', 'tonepress-ai'), value: 'short' },
+                            { label: __('Medium (1200-1800 words)', 'tonepress-ai'), value: 'medium' },
+                            { label: __('Long (1800-2500+ words)', 'tonepress-ai'), value: 'long' },
                         ]}
                         onChange={(value) => setAttributes({ length: value })}
                     />
 
                     <SelectControl
-                        label={__('Writing Tone', 'ai-content-engine')}
+                        label={__('Writing Tone', 'tonepress-ai')}
                         value={tone}
                         options={[
-                            { label: __('Professional', 'ai-content-engine'), value: 'professional' },
-                            { label: __('Conversational', 'ai-content-engine'), value: 'conversational' },
-                            { label: __('Authoritative', 'ai-content-engine'), value: 'authoritative' },
-                            { label: __('Friendly', 'ai-content-engine'), value: 'friendly' },
-                            { label: __('Academic', 'ai-content-engine'), value: 'academic' },
+                            { label: __('Professional', 'tonepress-ai'), value: 'professional' },
+                            { label: __('Conversational', 'tonepress-ai'), value: 'conversational' },
+                            { label: __('Authoritative', 'tonepress-ai'), value: 'authoritative' },
+                            { label: __('Friendly', 'tonepress-ai'), value: 'friendly' },
+                            { label: __('Academic', 'tonepress-ai'), value: 'academic' },
                         ]}
                         onChange={(value) => setAttributes({ tone: value })}
                     />
 
                     <ToggleControl
-                        label={__('Include Data Tables', 'ai-content-engine')}
+                        label={__('Include Data Tables', 'tonepress-ai')}
                         checked={includeTables}
                         onChange={(value) => setAttributes({ includeTables: value })}
                     />
 
                     <ToggleControl
-                        label={__('Include Charts', 'ai-content-engine')}
+                        label={__('Include Charts', 'tonepress-ai')}
                         checked={includeCharts}
                         onChange={(value) => setAttributes({ includeCharts: value })}
                     />
@@ -179,23 +179,23 @@ export default function Edit({ attributes, setAttributes }) {
                 {!generatedContent ? (
                     <Placeholder
                         icon={starFilled}
-                        label={__('AI Content Generator', 'ai-content-engine')}
-                        instructions={__('Generate high-quality, SEO-optimized content with AI', 'ai-content-engine')}
+                        label={__('AI Content Generator', 'tonepress-ai')}
+                        instructions={__('Generate high-quality, SEO-optimized content with AI', 'tonepress-ai')}
                     >
                         <div className="ace-generator-form">
                             <TextControl
-                                label={__('Topic or Title', 'ai-content-engine')}
+                                label={__('Topic or Title', 'tonepress-ai')}
                                 value={topic}
                                 onChange={(value) => setAttributes({ topic: value })}
-                                placeholder={__('Enter your article topic...', 'ai-content-engine')}
+                                placeholder={__('Enter your article topic...', 'tonepress-ai')}
                                 disabled={isGenerating}
                             />
 
                             <TextControl
-                                label={__('Keywords (comma-separated)', 'ai-content-engine')}
+                                label={__('Keywords (comma-separated)', 'tonepress-ai')}
                                 value={keywords}
                                 onChange={(value) => setAttributes({ keywords: value })}
-                                placeholder={__('AI, content, WordPress...', 'ai-content-engine')}
+                                placeholder={__('AI, content, WordPress...', 'tonepress-ai')}
                                 disabled={isGenerating}
                             />
 
@@ -213,10 +213,10 @@ export default function Edit({ attributes, setAttributes }) {
                             >
                                 {isGenerating ? (
                                     <>
-                                        <Spinner /> {__('Generating...', 'ai-content-engine')}
+                                        <Spinner /> {__('Generating...', 'tonepress-ai')}
                                     </>
                                 ) : (
-                                    __('Generate Content', 'ai-content-engine')
+                                    __('Generate Content', 'tonepress-ai')
                                 )}
                             </Button>
                         </div>
@@ -224,28 +224,28 @@ export default function Edit({ attributes, setAttributes }) {
                 ) : (
                     <div className="ace-generated-content">
                         <div className="ace-content-header">
-                            <h3>{__('Generated Content', 'ai-content-engine')}</h3>
+                            <h3>{__('Generated Content', 'tonepress-ai')}</h3>
                             <div className="ace-content-actions">
                                 <Button
                                     variant="secondary"
                                     onClick={handleClear}
                                     disabled={isGenerating}
                                 >
-                                    {__('Clear', 'ai-content-engine')}
+                                    {__('Clear', 'tonepress-ai')}
                                 </Button>
                                 <Button
                                     variant="primary"
                                     onClick={handleGenerate}
                                     disabled={isGenerating}
                                 >
-                                    {__('Regenerate', 'ai-content-engine')}
+                                    {__('Regenerate', 'tonepress-ai')}
                                 </Button>
                             </div>
                         </div>
 
                         {generatedTitle && (
                             <div className="ace-generated-title">
-                                <strong>{__('Suggested Title:', 'ai-content-engine')}</strong> {generatedTitle}
+                                <strong>{__('Suggested Title:', 'tonepress-ai')}</strong> {generatedTitle}
                             </div>
                         )}
 
@@ -255,7 +255,7 @@ export default function Edit({ attributes, setAttributes }) {
                         />
 
                         <Notice status="info" isDismissible={false}>
-                            {__('This content will be inserted when you save the block. You can edit it further in the editor.', 'ai-content-engine')}
+                            {__('This content will be inserted when you save the block. You can edit it further in the editor.', 'tonepress-ai')}
                         </Notice>
                     </div>
                 )}
