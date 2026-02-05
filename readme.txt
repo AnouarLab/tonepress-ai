@@ -2,7 +2,7 @@
 Contributors: anouarlab
 Tags: ai, content generator, openai, gpt, seo, blog automation, writing assistant
 Requires at least: 5.8
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 2.1.0
 License: GPL-2.0+

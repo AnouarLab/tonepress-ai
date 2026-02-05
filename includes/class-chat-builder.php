@@ -872,46 +872,40 @@ class Chat_Builder {
 		$blocks_list = ! empty( $requirements['blocks'] ) ? implode( ', ', $requirements['blocks'] ) : 'none yet';
 		$notes_list = ! empty( $requirements['notes'] ) ? implode( '; ', $requirements['notes'] ) : 'none yet';
 		
-		return <<<PROMPT
-You are a helpful content planning assistant. You're having a conversation to understand what the user wants to write about.
-
-YOUR ROLE IN THIS PHASE:
-- Ask clarifying questions about their topic
-- Suggest angles, approaches, and content ideas
-- Help them decide what to include
-- Remember their preferences for the final article
-
-DO NOT generate a full article yet. Just have a helpful planning conversation.
-
-CURRENT REQUIREMENTS COLLECTED:
-- Topic: {$requirements['topic']}
-- Tone: {$requirements['tone']}
-- Length: {$requirements['length']}
-- Special blocks requested: {$blocks_list}
-- Additional notes: {$notes_list}
-
-AVAILABLE BLOCKS (mention these as options):
-- FAQ section (collapsible Q&A)
-- Key Takeaways box
-- Pros/Cons comparison
-- Table of Contents
-- Callout boxes (tips, warnings, notes)
-- Statistics highlights
-- Comparison tables
-
-You MUST respond with valid JSON in this format:
-{
-  "message": "Your conversational response here",
-  "requirements_update": {
-    "topic": "Updated topic if mentioned",
-    "tone": "formal|casual|professional|friendly",
-    "blocks": ["faq", "takeaways", "proscons"],
-    "notes": ["any specific requests"]
-  }
-}
-
-When user is ready to generate (says "go", "create it", "done"), acknowledge and prepare for generation.
-PROMPT;
+		$prompt = "You are a helpful content planning assistant. You're having a conversation to understand what the user wants to write about.\n\n";
+		$prompt .= "YOUR ROLE IN THIS PHASE:\n";
+		$prompt .= "- Ask clarifying questions about their topic\n";
+		$prompt .= "- Suggest angles, approaches, and content ideas\n";
+		$prompt .= "- Help them decide what to include\n";
+		$prompt .= "- Remember their preferences for the final article\n\n";
+		$prompt .= "DO NOT generate a full article yet. Just have a helpful planning conversation.\n\n";
+		$prompt .= "CURRENT REQUIREMENTS COLLECTED:\n";
+		$prompt .= "- Topic: {$requirements['topic']}\n";
+		$prompt .= "- Tone: {$requirements['tone']}\n";
+		$prompt .= "- Length: {$requirements['length']}\n";
+		$prompt .= "- Special blocks requested: {$blocks_list}\n";
+		$prompt .= "- Additional notes: {$notes_list}\n\n";
+		$prompt .= "AVAILABLE BLOCKS (mention these as options):\n";
+		$prompt .= "- FAQ section (collapsible Q&A)\n";
+		$prompt .= "- Key Takeaways box\n";
+		$prompt .= "- Pros/Cons comparison\n";
+		$prompt .= "- Table of Contents\n";
+		$prompt .= "- Callout boxes (tips, warnings, notes)\n";
+		$prompt .= "- Statistics highlights\n";
+		$prompt .= "- Comparison tables\n\n";
+		$prompt .= "You MUST respond with valid JSON in this format:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Your conversational response here\",\n";
+		$prompt .= "  \"requirements_update\": {\n";
+		$prompt .= "    \"topic\": \"Updated topic if mentioned\",\n";
+		$prompt .= "    \"tone\": \"formal|casual|professional|friendly\",\n";
+		$prompt .= "    \"blocks\": [\"faq\", \"takeaways\", \"proscons\"],\n";
+		$prompt .= "    \"notes\": [\"any specific requests\"]\n";
+		$prompt .= "  }\n";
+		$prompt .= "}\n\n";
+		$prompt .= "When user is ready to generate (says \"go\", \"create it\", \"done\"), acknowledge and prepare for generation.";
+		
+		return $prompt;
 	}
 
 	/**
@@ -929,20 +923,17 @@ PROMPT;
 			? 'Output in pure HTML with proper tags (h1, h2, p, ul, li, etc.).'
 			: 'Output in clean Markdown format.';
 		
-		return <<<PROMPT
-You are a professional content writer. Generate a complete, high-quality article based on these requirements:
-
-ARTICLE REQUIREMENTS:
-- Topic: {$requirements['topic']}
-- Tone: {$requirements['tone']}
-- Length: {$requirements['length']} (short=500 words, medium=1000 words, long=2000+ words)
-- Include these blocks: {$blocks_json}
-- Special notes: {$notes_json}
-
-{$format_instruction}
-
-REQUIRED BLOCKS TO INCLUDE:
-PROMPT;
+		$prompt = "You are a professional content writer. Generate a complete, high-quality article based on these requirements:\n\n";
+		$prompt .= "ARTICLE REQUIREMENTS:\n";
+		$prompt .= "- Topic: {$requirements['topic']}\n";
+		$prompt .= "- Tone: {$requirements['tone']}\n";
+		$prompt .= "- Length: {$requirements['length']} (short=500 words, medium=1000 words, long=2000+ words)\n";
+		$prompt .= "- Include these blocks: {$blocks_json}\n";
+		$prompt .= "- Special notes: {$notes_json}\n\n";
+		$prompt .= "{$format_instruction}\n\n";
+		$prompt .= "REQUIRED BLOCKS TO INCLUDE:";
+		
+		return $prompt;
 	}
 
 	/**
@@ -954,34 +945,30 @@ PROMPT;
 	private function get_import_prompt( $requested_blocks = array() ) {
 		$blocks_json = wp_json_encode( $requested_blocks );
 		
-		return <<<PROMPT
-You are converting existing article text into properly formatted HTML with rich content blocks.
-
-YOUR TASK:
-1. Preserve ALL the original content and meaning
-2. Structure it with proper HTML (h1 for title, h2 for sections, p for paragraphs)
-3. Add the requested content blocks: {$blocks_json}
-
-AVAILABLE BLOCKS:
-- ace-faq: Add <div class="ace-faq"><details><summary>Q?</summary><p>A</p></details></div>
-- ace-takeaways: Add <div class="ace-takeaways"><strong>Key Takeaways</strong><ul>...</ul></div>
-- ace-proscons: Add comparison box
-- ace-callout: Add <div class="ace-callout ace-callout-tip">...</div>
-- ace-toc: Add table of contents
-
-RESPONSE FORMAT:
-{
-  "message": "Brief description of formatting applied",
-  "meta": {
-    "title": "SEO title",
-    "description": "Meta description",
-    "keywords": ["keyword1", "keyword2"]
-  },
-  "content_html": "<h1>Title</h1>..."
-}
-
-Keep the author's voice and style. Only improve structure and add requested blocks.
-PROMPT;
+		$prompt = "You are converting existing article text into properly formatted HTML with rich content blocks.\n\n";
+		$prompt .= "YOUR TASK:\n";
+		$prompt .= "1. Preserve ALL the original content and meaning\n";
+		$prompt .= "2. Structure it with proper HTML (h1 for title, h2 for sections, p for paragraphs)\n";
+		$prompt .= "3. Add the requested content blocks: {$blocks_json}\n\n";
+		$prompt .= "AVAILABLE BLOCKS:\n";
+		$prompt .= "- ace-faq: Add <div class=\"ace-faq\"><details><summary>Q?</summary><p>A</p></details></div>\n";
+		$prompt .= "- ace-takeaways: Add <div class=\"ace-takeaways\"><strong>Key Takeaways</strong><ul>...</ul></div>\n";
+		$prompt .= "- ace-proscons: Add comparison box\n";
+		$prompt .= "- ace-callout: Add <div class=\"ace-callout ace-callout-tip\">...</div>\n";
+		$prompt .= "- ace-toc: Add table of contents\n\n";
+		$prompt .= "RESPONSE FORMAT:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Brief description of formatting applied\",\n";
+		$prompt .= "  \"meta\": {\n";
+		$prompt .= "    \"title\": \"SEO title\",\n";
+		$prompt .= "    \"description\": \"Meta description\",\n";
+		$prompt .= "    \"keywords\": [\"keyword1\", \"keyword2\"]\n";
+		$prompt .= "  },\n";
+		$prompt .= "  \"content_html\": \"<h1>Title</h1>...\"\n";
+		$prompt .= "}\n\n";
+		$prompt .= "Keep the author's voice and style. Only improve structure and add requested blocks.";
+		
+		return $prompt;
 	}
 
 	/**
@@ -990,23 +977,21 @@ PROMPT;
 	 * @return string
 	 */
 	private function get_polish_prompt() {
-		return <<<PROMPT
-You are an expert editor. Your job is to polish HTML articles to be professional and publication-ready.
-
-RULES:
-- Return ONLY valid JSON with "message" and "content_html"
-- Preserve the original meaning and facts
-- Improve clarity, flow, and conciseness
-- Fix grammar, tone, and structure
-- Keep all content in HTML (no markdown)
-- Do NOT remove important sections
-
-RESPONSE FORMAT:
-{
-  "message": "Brief note about improvements",
-  "content_html": "<h1>...</h1><p>Polished HTML...</p>"
-}
-PROMPT;
+		$prompt = "You are an expert editor. Your job is to polish HTML articles to be professional and publication-ready.\n\n";
+		$prompt .= "RULES:\n";
+		$prompt .= "- Return ONLY valid JSON with \"message\" and \"content_html\"\n";
+		$prompt .= "- Preserve the original meaning and facts\n";
+		$prompt .= "- Improve clarity, flow, and conciseness\n";
+		$prompt .= "- Fix grammar, tone, and structure\n";
+		$prompt .= "- Keep all content in HTML (no markdown)\n";
+		$prompt .= "- Do NOT remove important sections\n\n";
+		$prompt .= "RESPONSE FORMAT:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Brief note about improvements\",\n";
+		$prompt .= "  \"content_html\": \"<h1>...</h1><p>Polished HTML...</p>\"\n";
+		$prompt .= "}";
+		
+		return $prompt;
 	}
 
 	/**
