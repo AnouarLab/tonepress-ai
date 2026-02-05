@@ -1,0 +1,43 @@
+{
+  "name": "ai-content-engine",
+  "version": "2.1.0",
+  "description": "AI-powered content generation for WordPress with multi-provider support",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "block",
+    "ai",
+    "content-generation",
+    "openai",
+    "gpt"
+  ],
+  "author": "Your Company",
+  "license": "GPL-2.0+",
+  "devDependencies": {
+    "@wordpress/scripts": "^27.0.0"
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^13.0.0",
+    "@wordpress/blocks": "^13.0.0",
+    "@wordpress/components": "^28.0.0",
+    "@wordpress/compose": "^7.0.0",
+    "@wordpress/data": "^10.0.0",
+    "@wordpress/edit-post": "^8.0.0",
+    "@wordpress/editor": "^14.0.0",
+    "@wordpress/element": "^6.0.0",
+    "@wordpress/i18n": "^5.0.0",
+    "@wordpress/icons": "^10.0.0",
+    "@wordpress/plugins": "^7.0.0",
+    "@wordpress/rich-text": "^7.0.0",
+    "@wordpress/api-fetch": "^7.0.0"
+  }
+}

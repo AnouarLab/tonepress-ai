@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ace/ai-content-generator",
+  "version": "1.0.0",
+  "title": "AI Content Generator",
+  "category": "text",
+  "icon": "brain",
+  "description": "Generate AI-powered content directly in your editor",
+  "keywords": [
+    "ai",
+    "content",
+    "generate",
+    "gpt",
+    "openai"
+  ],
+  "textdomain": "ai-content-engine",
+  "attributes": {
+    "topic": {
+      "type": "string",
+      "default": ""
+    },
+    "keywords": {
+      "type": "string",
+      "default": ""
+    },
+    "length": {
+      "type": "string",
+      "default": "medium",
+      "enum": [
+        "short",
+        "medium",
+        "long"
+      ]
+    },
+    "tone": {
+      "type": "string",
+      "default": "professional",
+      "enum": [
+        "professional",
+        "conversational",
+        "authoritative",
+        "friendly",
+        "academic"
+      ]
+    },
+    "includeTables": {
+      "type": "boolean",
+      "default": false
+    },
+    "includeCharts": {
+      "type": "boolean",
+      "default": false
+    },
+    "generatedContent": {
+      "type": "string",
+      "default": ""
+    },
+    "generatedTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "isGenerating": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css"
+}

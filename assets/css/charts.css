@@ -1,0 +1,74 @@
+/**
+ * Chart Styles for AI Content Engine.
+ *
+ * @package AI_Content_Engine
+ */
+
+.ai-chart-wrapper {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.ai-chart-wrapper canvas {
+    max-width: 100%;
+    height: auto !important;
+}
+
+.ai-table-wrapper {
+    margin: 30px 0;
+    overflow-x: auto;
+}
+
+.ai-table-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.ai-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.ai-table-wrapper th,
+.ai-table-wrapper td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.ai-table-wrapper th {
+    background: #f0f0f0;
+    font-weight: 600;
+    color: #333;
+}
+
+.ai-table-wrapper tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.ai-table-wrapper tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* Responsive tables */
+@media screen and (max-width: 768px) {
+    .ai-chart-wrapper {
+        padding: 15px;
+    }
+
+    .ai-table-wrapper {
+        font-size: 14px;
+    }
+
+    .ai-table-wrapper th,
+    .ai-table-wrapper td {
+        padding: 8px;
+    }
+}
