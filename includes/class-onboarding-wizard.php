@@ -1,5 +1,14 @@
 <?php
 /**
+ * TonePress AI
+ *
+ * @package           TonePress AI
+ * @author            AnouarLab <https://anouarlab.fr>
+ * @copyright         2026 AnouarLab
+ * @license           GPL-2.0-or-later
+ */
+
+/**
  * Onboarding Wizard for AI Content Engine
  *
  * Guides new users through initial setup with a 7-step wizard.

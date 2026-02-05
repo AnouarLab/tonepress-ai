@@ -1,5 +1,14 @@
 <?php
 /**
+ * TonePress AI
+ *
+ * @package           TonePress AI
+ * @author            AnouarLab <https://anouarlab.fr>
+ * @copyright         2026 AnouarLab
+ * @license           GPL-2.0-or-later
+ */
+
+/**
  * Chat Handler for Chat Builder.
  *
  * Main orchestrator for chat operations.

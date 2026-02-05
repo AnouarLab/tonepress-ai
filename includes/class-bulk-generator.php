@@ -1,5 +1,14 @@
 <?php
 /**
+ * TonePress AI
+ *
+ * @package           TonePress AI
+ * @author            AnouarLab <https://anouarlab.fr>
+ * @copyright         2026 AnouarLab
+ * @license           GPL-2.0-or-later
+ */
+
+/**
  * Bulk Generator class for CSV-based batch article generation.
  *
  * @package AI_Content_Engine

@@ -1,5 +1,14 @@
 <?php
 /**
+ * TonePress AI
+ *
+ * @package           TonePress AI
+ * @author            AnouarLab <https://anouarlab.fr>
+ * @copyright         2026 AnouarLab
+ * @license           GPL-2.0-or-later
+ */
+
+/**
  * Example usage and code snippets for AI Content Engine.
  *
  * This file demonstrates how to use the plugin programmatically
