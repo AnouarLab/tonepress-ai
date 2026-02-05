@@ -891,11 +891,17 @@ class Admin_UI {
 		$file = $_FILES['csv_file']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 		// Move uploaded file.
-		$upload_dir = wp_upload_dir();
-		$temp_file = $upload_dir['basedir'] . '/ace-bulk-' . time() . '.csv';
-		
-		if ( ! move_uploaded_file( $file['tmp_name'], $temp_file ) ) {
-			wp_send_json_error( array( 'message' => __( 'Failed to upload file.', 'ai-content-engine' ) ) );
+		if ( ! function_exists( 'wp_handle_upload' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+		}
+
+		$upload_overrides = array( 'test_form' => false );
+		$movefile         = wp_handle_upload( $file, $upload_overrides );
+
+		if ( $movefile && ! isset( $movefile['error'] ) ) {
+			$temp_file = $movefile['file'];
+		} else {
+			wp_send_json_error( array( 'message' => $movefile['error'] ) );
 		}
 
 		// Parse CSV.

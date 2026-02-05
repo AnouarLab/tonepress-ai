@@ -65,6 +65,7 @@ zip -r "${DIST_DIR}/${ZIP_NAME}" "${PLUGIN_NAME}" \
     -x "${PLUGIN_NAME}/GUTENBERG_SETUP.md" \
     -x "*__MACOSX*" \
     -x "*.md" \
+    -x "*.sh" \
     > /dev/null
 
 echo ""

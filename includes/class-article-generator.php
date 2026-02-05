@@ -244,62 +244,56 @@ class Article_Generator {
 	 * @return string System prompt.
 	 */
 	private function build_system_prompt() {
-		$prompt = <<<PROMPT
-You are a professional blog article writer. You generate high-quality, SEO-optimized articles.
-
-STRICT OUTPUT RULES:
-1. Return ONLY valid JSON matching the exact schema provided
-2. Use ONLY HTML tags in content_html (h2, h3, h4, p, ul, ol, li, strong, em, a)
-3. ABSOLUTELY NO MARKDOWN - never use ##, **, __, ``` or any markdown syntax
-4. Headings must be pure HTML: <h2>Title</h2> NOT ## Title or <h2>Title</h2> mixed
-5. NO explanations, NO comments, NO text outside the JSON object
-6. Generate content that reads naturally and professionally
-7. Include proper HTML structure with semantic headings
-8. Ensure all HTML is properly closed and valid
-9. Do NOT mix markdown with HTML - use ONLY pure HTML tags
-
-CRITICAL: All headings must be formatted as: <h2>Heading Text</h2>
-WRONG: ## Heading</h2>
-WRONG: <h2>## Heading</h2>
-CORRECT: <h2>Heading Text</h2>
-
-JSON SCHEMA (YOU MUST MATCH THIS EXACTLY):
-{
-  "title": "string",
-  "meta": {
-    "description": "string (150-160 chars)",
-    "keywords": ["string", "string", "..."]
-  },
-  "content_html": "string (full HTML article body)",
-  "tables": [
-    {
-      "title": "string",
-      "html": "string (complete <table> HTML)"
-    }
-  ],
-  "charts": [
-    {
-      "id": "string (unique, e.g., 'chart1')",
-      "type": "bar|line|pie|doughnut",
-      "labels": ["string"],
-      "datasets": [
-        {
-          "label": "string",
-          "data": [number],
-          "backgroundColor": "string (optional)",
-          "borderColor": "string (optional)"
-        }
-      ]
-    }
-  ]
-}
-
-IMPORTANT: 
-- Ensure all JSON is valid
-- Escape quotes in strings properly
-- Use double quotes for JSON keys and strings
-- content_html should contain ONLY the article body (no <html>, <body>, or <head> tags)
-PROMPT;
+		$prompt = "You are a professional blog article writer. You generate high-quality, SEO-optimized articles.\n\n";
+		$prompt .= "STRICT OUTPUT RULES:\n";
+		$prompt .= "1. Return ONLY valid JSON matching the exact schema provided\n";
+		$prompt .= "2. Use ONLY HTML tags in content_html (h2, h3, h4, p, ul, ol, li, strong, em, a)\n";
+		$prompt .= "3. ABSOLUTELY NO MARKDOWN - never use ##, **, __, ``` or any markdown syntax\n";
+		$prompt .= "4. Headings must be pure HTML: <h2>Title</h2> NOT ## Title or <h2>Title</h2> mixed\n";
+		$prompt .= "5. NO explanations, NO comments, NO text outside the JSON object\n";
+		$prompt .= "6. Generate content that reads naturally and professionally\n";
+		$prompt .= "7. Include proper HTML structure with semantic headings\n";
+		$prompt .= "8. Ensure all HTML is properly closed and valid\n";
+		$prompt .= "9. Do NOT mix markdown with HTML - use ONLY pure HTML tags\n\n";
+		$prompt .= "CRITICAL: All headings must be formatted as: <h2>Heading Text</h2>\n";
+		$prompt .= "WRONG: ## Heading</h2>\n";
+		$prompt .= "WRONG: <h2>## Heading</h2>\n";
+		$prompt .= "CORRECT: <h2>Heading Text</h2>\n\n";
+		$prompt .= "JSON SCHEMA (YOU MUST MATCH THIS EXACTLY):\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"title\": \"string\",\n";
+		$prompt .= "  \"meta\": {\n";
+		$prompt .= "    \"description\": \"string (150-160 chars)\",\n";
+		$prompt .= "    \"keywords\": [\"string\", \"string\", \"...\"]\n";
+		$prompt .= "  },\n";
+		$prompt .= "  \"content_html\": \"string (full HTML article body)\",\n";
+		$prompt .= "  \"tables\": [\n";
+		$prompt .= "    {\n";
+		$prompt .= "      \"title\": \"string\",\n";
+		$prompt .= "      \"html\": \"string (complete <table> HTML)\"\n";
+		$prompt .= "    }\n";
+		$prompt .= "  ],\n";
+		$prompt .= "  \"charts\": [\n";
+		$prompt .= "    {\n";
+		$prompt .= "      \"id\": \"string (unique, e.g., 'chart1')\",\n";
+		$prompt .= "      \"type\": \"bar|line|pie|doughnut\",\n";
+		$prompt .= "      \"labels\": [\"string\"],\n";
+		$prompt .= "      \"datasets\": [\n";
+		$prompt .= "        {\n";
+		$prompt .= "          \"label\": \"string\",\n";
+		$prompt .= "          \"data\": [number],\n";
+		$prompt .= "          \"backgroundColor\": \"string (optional)\",\n";
+		$prompt .= "          \"borderColor\": \"string (optional)\"\n";
+		$prompt .= "        }\n";
+		$prompt .= "      ]\n";
+		$prompt .= "    }\n";
+		$prompt .= "  ]\n";
+		$prompt .= "}\n\n";
+		$prompt .= "IMPORTANT: \n";
+		$prompt .= "- Ensure all JSON is valid\n";
+		$prompt .= "- Escape quotes in strings properly\n";
+		$prompt .= "- Use double quotes for JSON keys and strings\n";
+		$prompt .= "- content_html should contain ONLY the article body (no <html>, <body>, or <head> tags)";
 
 		// Inject company context if enabled.
 		$company_context = $this->build_company_context();

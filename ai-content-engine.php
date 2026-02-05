@@ -1,6 +1,5 @@
 /**
  * Plugin Name: TonePress AI
- * Plugin URI: https://anouarlab.fr
  * Description: AI Content Generator for WordPress. Create SEO-optimized articles with custom tones, tables, and charts.
  * Version:           2.1.0
  * Author: AnouarLab
