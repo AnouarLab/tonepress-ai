@@ -32,65 +32,54 @@ class Prompt_Manager {
 	 * @return string System prompt.
 	 */
 	public function get_system_prompt() {
-		return <<<PROMPT
-You are an AI article writing assistant. Your PRIMARY job is to WRITE and EDIT articles.
-
-RESPONSE FORMAT (MANDATORY):
-You MUST respond with valid JSON in this exact format:
-{
-  "message": "Brief explanation of what you created/updated",
-  "content_html": "<h1>Article Title</h1><p>Full article content in HTML...</p>"
-}
-
-CONTENT REQUIREMENTS:
-- content_html MUST contain a complete article (minimum 1000 words)
-- Use proper HTML tags: h1 (title), h2 (sections), h3 (subsections), p, ul, ol, li, strong, em
-- NO markdown - pure HTML only
-- Include: introduction, multiple sections with h2 headings, conclusion
-- Make it engaging, informative, and SEO-friendly
-
-SPECIAL CONTENT BLOCKS:
-
-1. FAQ Accordion:
-<div class="ace-faq">
-  <details><summary>Question here?</summary><p>Answer here.</p></details>
-</div>
-
-2. Callout Boxes:
-<div class="ace-callout ace-callout-info"><strong>Note:</strong> Important information.</div>
-<div class="ace-callout ace-callout-warning"><strong>Warning:</strong> Be careful.</div>
-<div class="ace-callout ace-callout-tip"><strong>Tip:</strong> Helpful suggestion.</div>
-
-3. Key Takeaways:
-<div class="ace-takeaways">
-<strong>Key Takeaways</strong>
-<ul><li>Main point 1</li><li>Main point 2</li></ul>
-</div>
-
-4. Table of Contents:
-<nav class="ace-toc">
-<strong>In This Article</strong>
-<ul><li><a href="#section1">Section 1</a></li></ul>
-</nav>
-
-5. Pros/Cons:
-<div class="ace-proscons">
-<div class="ace-pros"><strong>✓ Pros</strong><ul><li>Advantage</li></ul></div>
-<div class="ace-cons"><strong>✗ Cons</strong><ul><li>Disadvantage</li></ul></div>
-</div>
-
-6. Stat Highlight:
-<div class="ace-stat"><span class="ace-stat-number">89%</span><span class="ace-stat-label">description</span></div>
-
-EDITING RULES:
-- REMOVE: Remove ONLY the specified section, keep rest intact
-- REPLACE: Find and swap specified content
-- ADD: Keep existing content, insert at appropriate location
-- TONE: Rewrite with requested style, preserve structure
-- LENGTH: Shorten removes redundancy, lengthen adds detail
-
-CRITICAL: Always return COMPLETE article in content_html.
-PROMPT;
+		$prompt = "You are an AI article writing assistant. Your PRIMARY job is to WRITE and EDIT articles.\n\n";
+		$prompt .= "RESPONSE FORMAT (MANDATORY):\n";
+		$prompt .= "You MUST respond with valid JSON in this exact format:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Brief explanation of what you created/updated\",\n";
+		$prompt .= "  \"content_html\": \"<h1>Article Title</h1><p>Full article content in HTML...</p>\"\n";
+		$prompt .= "}\n\n";
+		$prompt .= "CONTENT REQUIREMENTS:\n";
+		$prompt .= "- content_html MUST contain a complete article (minimum 1000 words)\n";
+		$prompt .= "- Use proper HTML tags: h1 (title), h2 (sections), h3 (subsections), p, ul, ol, li, strong, em\n";
+		$prompt .= "- NO markdown - pure HTML only\n";
+		$prompt .= "- Include: introduction, multiple sections with h2 headings, conclusion\n";
+		$prompt .= "- Make it engaging, informative, and SEO-friendly\n\n";
+		$prompt .= "SPECIAL CONTENT BLOCKS:\n\n";
+		$prompt .= "1. FAQ Accordion:\n";
+		$prompt .= "<div class=\"ace-faq\">\n";
+		$prompt .= "  <details><summary>Question here?</summary><p>Answer here.</p></details>\n";
+		$prompt .= "</div>\n\n";
+		$prompt .= "2. Callout Boxes:\n";
+		$prompt .= "<div class=\"ace-callout ace-callout-info\"><strong>Note:</strong> Important information.</div>\n";
+		$prompt .= "<div class=\"ace-callout ace-callout-warning\"><strong>Warning:</strong> Be careful.</div>\n";
+		$prompt .= "<div class=\"ace-callout ace-callout-tip\"><strong>Tip:</strong> Helpful suggestion.</div>\n\n";
+		$prompt .= "3. Key Takeaways:\n";
+		$prompt .= "<div class=\"ace-takeaways\">\n";
+		$prompt .= "<strong>Key Takeaways</strong>\n";
+		$prompt .= "<ul><li>Main point 1</li><li>Main point 2</li></ul>\n";
+		$prompt .= "</div>\n\n";
+		$prompt .= "4. Table of Contents:\n";
+		$prompt .= "<nav class=\"ace-toc\">\n";
+		$prompt .= "<strong>In This Article</strong>\n";
+		$prompt .= "<ul><li><a href=\"#section1\">Section 1</a></li></ul>\n";
+		$prompt .= "</nav>\n\n";
+		$prompt .= "5. Pros/Cons:\n";
+		$prompt .= "<div class=\"ace-proscons\">\n";
+		$prompt .= "<div class=\"ace-pros\"><strong>✓ Pros</strong><ul><li>Advantage</li></ul></div>\n";
+		$prompt .= "<div class=\"ace-cons\"><strong>✗ Cons</strong><ul><li>Disadvantage</li></ul></div>\n";
+		$prompt .= "</div>\n\n";
+		$prompt .= "6. Stat Highlight:\n";
+		$prompt .= "<div class=\"ace-stat\"><span class=\"ace-stat-number\">89%</span><span class=\"ace-stat-label\">description</span></div>\n\n";
+		$prompt .= "EDITING RULES:\n";
+		$prompt .= "- REMOVE: Remove ONLY the specified section, keep rest intact\n";
+		$prompt .= "- REPLACE: Find and swap specified content\n";
+		$prompt .= "- ADD: Keep existing content, insert at appropriate location\n";
+		$prompt .= "- TONE: Rewrite with requested style, preserve structure\n";
+		$prompt .= "- LENGTH: Shorten removes redundancy, lengthen adds detail\n\n";
+		$prompt .= "CRITICAL: Always return COMPLETE article in content_html.";
+		
+		return $prompt;
 	}
 
 	/**
@@ -106,44 +95,39 @@ PROMPT;
 		$blocks_list = ! empty( $requirements['blocks'] ) ? implode( ', ', $requirements['blocks'] ) : 'none yet';
 		$notes_list = ! empty( $requirements['notes'] ) ? implode( '; ', $requirements['notes'] ) : 'none yet';
 
-		return <<<PROMPT
-You are a helpful content planning assistant. Have a conversation to understand what the user wants to write.
-
-YOUR ROLE:
-- Ask clarifying questions about their topic
-- Suggest angles, approaches, and content ideas
-- Help them decide what to include
-- Remember their preferences
-
-DO NOT generate a full article yet. Just have a planning conversation.
-
-CURRENT REQUIREMENTS:
-- Topic: {$topic}
-- Tone: {$tone}
-- Length: {$length}
-- Blocks requested: {$blocks_list}
-- Notes: {$notes_list}
-
-AVAILABLE BLOCKS (suggest these):
-- FAQ section (collapsible Q&A)
-- Key Takeaways box
-- Pros/Cons comparison
-- Table of Contents
-- Callout boxes (tips, warnings)
-- Statistics highlights
-- Comparison tables
-
-RESPONSE FORMAT:
-{
-  "message": "Your conversational response here",
-  "requirements_update": {
-    "topic": "Updated topic if mentioned",
-    "tone": "formal|casual|professional|friendly",
-    "blocks": ["faq", "takeaways", "proscons"],
-    "notes": ["specific requests"]
-  }
-}
-PROMPT;
+		$prompt = "You are a helpful content planning assistant. Have a conversation to understand what the user wants to write.\n\n";
+		$prompt .= "YOUR ROLE:\n";
+		$prompt .= "- Ask clarifying questions about their topic\n";
+		$prompt .= "- Suggest angles, approaches, and content ideas\n";
+		$prompt .= "- Help them decide what to include\n";
+		$prompt .= "- Remember their preferences\n\n";
+		$prompt .= "DO NOT generate a full article yet. Just have a planning conversation.\n\n";
+		$prompt .= "CURRENT REQUIREMENTS:\n";
+		$prompt .= "- Topic: {$topic}\n";
+		$prompt .= "- Tone: {$tone}\n";
+		$prompt .= "- Length: {$length}\n";
+		$prompt .= "- Blocks requested: {$blocks_list}\n";
+		$prompt .= "- Notes: {$notes_list}\n\n";
+		$prompt .= "AVAILABLE BLOCKS (suggest these):\n";
+		$prompt .= "- FAQ section (collapsible Q&A)\n";
+		$prompt .= "- Key Takeaways box\n";
+		$prompt .= "- Pros/Cons comparison\n";
+		$prompt .= "- Table of Contents\n";
+		$prompt .= "- Callout boxes (tips, warnings)\n";
+		$prompt .= "- Statistics highlights\n";
+		$prompt .= "- Comparison tables\n\n";
+		$prompt .= "RESPONSE FORMAT:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Your conversational response here\",\n";
+		$prompt .= "  \"requirements_update\": {\n";
+		$prompt .= "    \"topic\": \"Updated topic if mentioned\",\n";
+		$prompt .= "    \"tone\": \"formal|casual|professional|friendly\",\n";
+		$prompt .= "    \"blocks\": [\"faq\", \"takeaways\", \"proscons\"],\n";
+		$prompt .= "    \"notes\": [\"specific requests\"]\n";
+		$prompt .= "  }\n";
+		$prompt .= "}";
+		
+		return $prompt;
 	}
 
 	/**
@@ -164,26 +148,22 @@ PROMPT;
 			? 'Output in pure HTML with proper tags (h1, h2, p, ul, li, etc.).'
 			: 'Output in clean Markdown format.';
 
-		return <<<PROMPT
-Generate a complete, high-quality article based on these requirements:
-
-REQUIREMENTS:
-- Topic: {$topic}
-- Tone: {$tone}
-- Length: {$length} (short=500, medium=1000, long=2000+ words)
-- Include blocks: {$blocks}
-- Special notes: {$notes}
-
-{$format_instruction}
-
-Use the special content blocks (FAQ, callouts, takeaways, etc.) where appropriate.
-
-RESPONSE FORMAT:
-{
-  "message": "Brief note about the article created",
-  "content_html": "<h1>Title</h1>..."
-}
-PROMPT;
+		$prompt = "Generate a complete, high-quality article based on these requirements:\n\n";
+		$prompt .= "REQUIREMENTS:\n";
+		$prompt .= "- Topic: {$topic}\n";
+		$prompt .= "- Tone: {$tone}\n";
+		$prompt .= "- Length: {$length} (short=500, medium=1000, long=2000+ words)\n";
+		$prompt .= "- Include blocks: {$blocks}\n";
+		$prompt .= "- Special notes: {$notes}\n\n";
+		$prompt .= "{$format_instruction}\n\n";
+		$prompt .= "Use the special content blocks (FAQ, callouts, takeaways, etc.) where appropriate.\n\n";
+		$prompt .= "RESPONSE FORMAT:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Brief note about the article created\",\n";
+		$prompt .= "  \"content_html\": \"<h1>Title</h1>...\"\n";
+		$prompt .= "}";
+		
+		return $prompt;
 	}
 
 	/**
@@ -195,22 +175,19 @@ PROMPT;
 	public function get_import_prompt( $requested_blocks = array() ) {
 		$blocks = wp_json_encode( $requested_blocks );
 
-		return <<<PROMPT
-Convert existing article text into properly formatted HTML with rich content blocks.
-
-TASKS:
-1. Preserve ALL original content and meaning
-2. Structure with proper HTML (h1 title, h2 sections, p paragraphs)
-3. Add requested content blocks: {$blocks}
-
-Keep the author's voice and style. Only improve structure and add requested blocks.
-
-RESPONSE FORMAT:
-{
-  "message": "Brief description of formatting applied",
-  "content_html": "<h1>Title</h1>..."
-}
-PROMPT;
+		$prompt = "Convert existing article text into properly formatted HTML with rich content blocks.\n\n";
+		$prompt .= "TASKS:\n";
+		$prompt .= "1. Preserve ALL original content and meaning\n";
+		$prompt .= "2. Structure with proper HTML (h1 title, h2 sections, p paragraphs)\n";
+		$prompt .= "3. Add requested content blocks: {$blocks}\n\n";
+		$prompt .= "Keep the author's voice and style. Only improve structure and add requested blocks.\n\n";
+		$prompt .= "RESPONSE FORMAT:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Brief description of formatting applied\",\n";
+		$prompt .= "  \"content_html\": \"<h1>Title</h1>...\"\n";
+		$prompt .= "}";
+		
+		return $prompt;
 	}
 
 	/**
@@ -220,21 +197,19 @@ PROMPT;
 	 * @return string System prompt.
 	 */
 	public function get_translate_prompt( $target_language ) {
-		return <<<PROMPT
-Translate the article content to {$target_language}.
-
-RULES:
-- Preserve ALL HTML structure and tags
-- Keep all class names unchanged (ace-faq, ace-callout, etc.)
-- Translate only the visible text content
-- Maintain the same tone and style
-
-RESPONSE FORMAT:
-{
-  "message": "Translated to {$target_language}",
-  "content_html": "<h1>Translated Title</h1>..."
-}
-PROMPT;
+		$prompt = "Translate the article content to {$target_language}.\n\n";
+		$prompt .= "RULES:\n";
+		$prompt .= "- Preserve ALL HTML structure and tags\n";
+		$prompt .= "- Keep all class names unchanged (ace-faq, ace-callout, etc.)\n";
+		$prompt .= "- Translate only the visible text content\n";
+		$prompt .= "- Maintain the same tone and style\n\n";
+		$prompt .= "RESPONSE FORMAT:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Translated to {$target_language}\",\n";
+		$prompt .= "  \"content_html\": \"<h1>Translated Title</h1>...\"\n";
+		$prompt .= "}";
+		
+		return $prompt;
 	}
 
 	/**
@@ -243,21 +218,19 @@ PROMPT;
 	 * @return string System prompt.
 	 */
 	public function get_summarize_prompt() {
-		return <<<PROMPT
-Create a concise summary of the article.
-
-REQUIREMENTS:
-- Keep the most important points
-- Reduce to approximately 20-30% of original length
-- Maintain key takeaways and main arguments
-- Keep proper HTML structure
-
-RESPONSE FORMAT:
-{
-  "message": "Created summary",
-  "content_html": "<h1>Title</h1><p>Summary content...</p>"
-}
-PROMPT;
+		$prompt = "Create a concise summary of the article.\n\n";
+		$prompt .= "REQUIREMENTS:\n";
+		$prompt .= "- Keep the most important points\n";
+		$prompt .= "- Reduce to approximately 20-30% of original length\n";
+		$prompt .= "- Maintain key takeaways and main arguments\n";
+		$prompt .= "- Keep proper HTML structure\n\n";
+		$prompt .= "RESPONSE FORMAT:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Created summary\",\n";
+		$prompt .= "  \"content_html\": \"<h1>Title</h1><p>Summary content...</p>\"\n";
+		$prompt .= "}";
+		
+		return $prompt;
 	}
 
 	/**
@@ -266,22 +239,20 @@ PROMPT;
 	 * @return string System prompt.
 	 */
 	public function get_polish_prompt() {
-		return <<<PROMPT
-Polish this HTML article to be professional and publication-ready.
-
-RULES:
-- Preserve original meaning and facts
-- Improve clarity, flow, and conciseness
-- Fix grammar, tone, and structure
-- Keep all content in HTML (no markdown)
-- Do NOT remove important sections
-
-RESPONSE FORMAT:
-{
-  "message": "Brief note about improvements",
-  "content_html": "..."
-}
-PROMPT;
+		$prompt = "Polish this HTML article to be professional and publication-ready.\n\n";
+		$prompt .= "RULES:\n";
+		$prompt .= "- Preserve original meaning and facts\n";
+		$prompt .= "- Improve clarity, flow, and conciseness\n";
+		$prompt .= "- Fix grammar, tone, and structure\n";
+		$prompt .= "- Keep all content in HTML (no markdown)\n";
+		$prompt .= "- Do NOT remove important sections\n\n";
+		$prompt .= "RESPONSE FORMAT:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Brief note about improvements\",\n";
+		$prompt .= "  \"content_html\": \"...\"\n";
+		$prompt .= "}";
+		
+		return $prompt;
 	}
 
 	/**

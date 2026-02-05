@@ -76,41 +76,37 @@ class Action_Handler {
 			? "An article already exists. For edit actions, return the COMPLETE updated article in content_html."
 			: "No article exists yet. Generate content when user requests it.";
 
-		return <<<PROMPT
-You are an AI article writing assistant. Use handle_user_request for EVERY response.
-
-{$content_context}
-
-ACTIONS (use the most appropriate one):
-- generate: Create a new article from scratch
-- regenerate: Redo/recreate the current article differently
-- add: Add new element (table, faq, section, image, callout, pros_cons, etc.)
-- remove: Delete/remove an element or section
-- replace: Change specific content (swap X with Y)
-- reorder: Move sections around, reorganize structure
-- format: Add formatting (bullets, headers, styles)
-- tone: Adjust writing style (casual, formal, professional)
-- length: Make shorter or longer (condense, expand)
-- translate: Translate to another language
-- summarize: Create a summary of the content
-- import: Format/structure pasted content from user
-- chat: Just respond conversationally (NO content_html needed)
-
-CONTENT FORMAT (content_html):
-- Use h1 for title, h2 for sections, p for paragraphs
-- Tables: <table><thead>...</thead><tbody>...</tbody></table>
-- FAQ: <div class="ace-faq"><details><summary>Q?</summary><p>A</p></details></div>
-- Callout: <div class="ace-callout ace-callout-info">...</div>
-- Pros/Cons: <div class="ace-proscons"><div class="ace-pros">...</div><div class="ace-cons">...</div></div>
-- Image placeholder: <figure class="ace-image-placeholder"><div>Image: description</div><figcaption>Caption</figcaption></figure>
-
-CRITICAL RULES:
-1. For ALL content actions: include content_html with COMPLETE article
-2. When user says "add", "just do it", "go", "now" - DO IT immediately, don't ask questions
-3. For edits: include ALL existing content plus your changes
-4. response = brief message explaining what you did
-5. content_html = full HTML article (empty ONLY for chat action)
-PROMPT;
+		$prompt = "You are an AI article writing assistant. Use handle_user_request for EVERY response.\n\n";
+		$prompt .= "{$content_context}\n\n";
+		$prompt .= "ACTIONS (use the most appropriate one):\n";
+		$prompt .= "- generate: Create a new article from scratch\n";
+		$prompt .= "- regenerate: Redo/recreate the current article differently\n";
+		$prompt .= "- add: Add new element (table, faq, section, image, callout, pros_cons, etc.)\n";
+		$prompt .= "- remove: Delete/remove an element or section\n";
+		$prompt .= "- replace: Change specific content (swap X with Y)\n";
+		$prompt .= "- reorder: Move sections around, reorganize structure\n";
+		$prompt .= "- format: Add formatting (bullets, headers, styles)\n";
+		$prompt .= "- tone: Adjust writing style (casual, formal, professional)\n";
+		$prompt .= "- length: Make shorter or longer (condense, expand)\n";
+		$prompt .= "- translate: Translate to another language\n";
+		$prompt .= "- summarize: Create a summary of the content\n";
+		$prompt .= "- import: Format/structure pasted content from user\n";
+		$prompt .= "- chat: Just respond conversationally (NO content_html needed)\n\n";
+		$prompt .= "CONTENT FORMAT (content_html):\n";
+		$prompt .= "- Use h1 for title, h2 for sections, p for paragraphs\n";
+		$prompt .= "- Tables: <table><thead>...</thead><tbody>...</tbody></table>\n";
+		$prompt .= "- FAQ: <div class=\"ace-faq\"><details><summary>Q?</summary><p>A</p></details></div>\n";
+		$prompt .= "- Callout: <div class=\"ace-callout ace-callout-info\">...</div>\n";
+		$prompt .= "- Pros/Cons: <div class=\"ace-proscons\"><div class=\"ace-pros\">...</div><div class=\"ace-cons\">...</div></div>\n";
+		$prompt .= "- Image placeholder: <figure class=\"ace-image-placeholder\"><div>Image: description</div><figcaption>Caption</figcaption></figure>\n\n";
+		$prompt .= "CRITICAL RULES:\n";
+		$prompt .= "1. For ALL content actions: include content_html with COMPLETE article\n";
+		$prompt .= "2. When user says \"add\", \"just do it\", \"go\", \"now\" - DO IT immediately, don't ask questions\n";
+		$prompt .= "3. For edits: include ALL existing content plus your changes\n";
+		$prompt .= "4. response = brief message explaining what you did\n";
+		$prompt .= "5. content_html = full HTML article (empty ONLY for chat action)";
+		
+		return $prompt;
 	}
 
 	/**
@@ -206,80 +202,70 @@ PROMPT;
 		$tone = $requirements['tone'] ?? 'professional';
 		$length = $requirements['length'] ?? 'medium';
 
-		return <<<PROMPT
-Generate a complete, high-quality article about: {$topic}
-
-Requirements:
-- Tone: {$tone}
-- Length: {$length} (short=500, medium=1000, long=2000+ words)
-- Include: {$blocks}
-
-Return ONLY valid HTML. Use h1 for title, h2 for sections, proper HTML formatting.
-Include special content blocks where appropriate (FAQ, callouts, pros/cons, etc.).
-PROMPT;
+		$prompt = "Generate a complete, high-quality article about: {$topic}\n\n";
+		$prompt .= "Requirements:\n";
+		$prompt .= "- Tone: {$tone}\n";
+		$prompt .= "- Length: {$length} (short=500, medium=1000, long=2000+ words)\n";
+		$prompt .= "- Include: {$blocks}\n\n";
+		$prompt .= "Return ONLY valid HTML. Use h1 for title, h2 for sections, proper HTML formatting.\n";
+		$prompt .= "Include special content blocks where appropriate (FAQ, callouts, pros/cons, etc.).";
+		
+		return $prompt;
 	}
 
 	/**
 	 * Get prompt for adding content.
 	 */
 	private static function get_add_prompt( $target, $details, $current_content ) {
-		return <<<PROMPT
-Add a {$target} to this article.
-Details: {$details}
-
-CURRENT ARTICLE:
-{$current_content}
-
-Return the COMPLETE updated article with the new {$target} added at an appropriate location.
-Use proper HTML formatting for the new element.
-PROMPT;
+		$prompt = "Add a {$target} to this article.\n";
+		$prompt .= "Details: {$details}\n\n";
+		$prompt .= "CURRENT ARTICLE:\n";
+		$prompt .= "{$current_content}\n\n";
+		$prompt .= "Return the COMPLETE updated article with the new {$target} added at an appropriate location.\n";
+		$prompt .= "Use proper HTML formatting for the new element.";
+		
+		return $prompt;
 	}
 
 	/**
 	 * Get prompt for removing content.
 	 */
 	private static function get_remove_prompt( $target, $current_content ) {
-		return <<<PROMPT
-Remove the {$target} from this article.
-
-CURRENT ARTICLE:
-{$current_content}
-
-Return the COMPLETE updated article WITHOUT the {$target}.
-Keep all other content intact.
-PROMPT;
+		$prompt = "Remove the {$target} from this article.\n\n";
+		$prompt .= "CURRENT ARTICLE:\n";
+		$prompt .= "{$current_content}\n\n";
+		$prompt .= "Return the COMPLETE updated article WITHOUT the {$target}.\n";
+		$prompt .= "Keep all other content intact.";
+		
+		return $prompt;
 	}
 
 	/**
 	 * Get prompt for replacing content.
 	 */
 	private static function get_replace_prompt( $target, $details, $current_content ) {
-		return <<<PROMPT
-Replace/change: {$target}
-With/To: {$details}
-
-CURRENT ARTICLE:
-{$current_content}
-
-Return the COMPLETE updated article with the replacement made.
-Keep all other content intact.
-PROMPT;
+		$prompt = "Replace/change: {$target}\n";
+		$prompt .= "With/To: {$details}\n\n";
+		$prompt .= "CURRENT ARTICLE:\n";
+		$prompt .= "{$current_content}\n\n";
+		$prompt .= "Return the COMPLETE updated article with the replacement made.\n";
+		$prompt .= "Keep all other content intact.";
+		
+		return $prompt;
 	}
 
 	/**
 	 * Get prompt for tone adjustment.
 	 */
 	private static function get_tone_prompt( $details, $current_content ) {
-		return <<<PROMPT
-Rewrite this article with a {$details} tone.
-
-CURRENT ARTICLE:
-{$current_content}
-
-Return the COMPLETE rewritten article.
-Keep the same structure, facts, and HTML formatting.
-Only change the writing style to be {$details}.
-PROMPT;
+		$prompt = "Rewrite this article with a {$details} tone.\n\n";
+		$prompt .= "CURRENT ARTICLE:\n";
+		$prompt .= "{$current_content}\n\n";
+		$prompt .= "Return the COMPLETE rewritten article.\n";
+		$prompt .= "Keep the same structure, facts, and HTML formatting.\n";
+		$prompt .= "Only change the writing style to be {$details}.";
+		
+		return $prompt;
 	}
 
 	/**
@@ -290,47 +276,41 @@ PROMPT;
 			? 'Make the article shorter by removing redundancy and condensing content.'
 			: 'Make the article longer by adding more detail, examples, and depth.';
 
-		return <<<PROMPT
-{$instruction}
-
-CURRENT ARTICLE:
-{$current_content}
-
-Return the COMPLETE adjusted article.
-Keep the HTML structure intact.
-PROMPT;
+		$prompt = "{$instruction}\n\n";
+		$prompt .= "CURRENT ARTICLE:\n";
+		$prompt .= "{$current_content}\n\n";
+		$prompt .= "Return the COMPLETE adjusted article.\n";
+		$prompt .= "Keep the HTML structure intact.";
+		
+		return $prompt;
 	}
 
 	/**
 	 * Get prompt for translation.
 	 */
 	private static function get_translate_prompt( $language, $current_content ) {
-		return <<<PROMPT
-Translate this article to {$language}.
-
-CURRENT ARTICLE:
-{$current_content}
-
-Return the COMPLETE translated article.
-Keep ALL HTML structure and class names intact.
-Only translate the visible text content.
-PROMPT;
+		$prompt = "Translate this article to {$language}.\n\n";
+		$prompt .= "CURRENT ARTICLE:\n";
+		$prompt .= "{$current_content}\n\n";
+		$prompt .= "Return the COMPLETE translated article.\n";
+		$prompt .= "Keep ALL HTML structure and class names intact.\n";
+		$prompt .= "Only translate the visible text content.";
+		
+		return $prompt;
 	}
 
 	/**
 	 * Get prompt for summarization.
 	 */
 	private static function get_summarize_prompt( $current_content ) {
-		return <<<PROMPT
-Create a summary of this article (about 20-30% of original length).
-
-CURRENT ARTICLE:
-{$current_content}
-
-Return a summary with:
-- Key points preserved
-- Main arguments intact
-- Proper HTML formatting
-PROMPT;
+		$prompt = "Create a summary of this article (about 20-30% of original length).\n\n";
+		$prompt .= "CURRENT ARTICLE:\n";
+		$prompt .= "{$current_content}\n\n";
+		$prompt .= "Return a summary with:\n";
+		$prompt .= "- Key points preserved\n";
+		$prompt .= "- Main arguments intact\n";
+		$prompt .= "- Proper HTML formatting";
+		
+		return $prompt;
 	}
 }

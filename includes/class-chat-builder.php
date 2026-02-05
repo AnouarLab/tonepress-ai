@@ -641,27 +641,23 @@ class Chat_Builder {
 		$word_count = str_word_count( $message );
 		$is_long_text = $word_count > 200;
 		
-		return <<<PROMPT
-Classify this user message into ONE category. Reply with ONLY the category name, nothing else.
-
-Categories:
-- conversation: Discussing topic ideas, asking for suggestions, general chat about what to write
-- request_block: Asking to add FAQ, pros/cons, table, callout, key takeaways to the plan
-- finalize: User is ready to generate (says "go", "create it", "generate", "done", "let's do it")
-- import: User is pasting/sharing existing article text to be formatted (usually long text with no question)
-- edit_add: Add new section/paragraph to existing content
-- edit_remove: Delete/remove content from existing article
-- edit_replace: Change/swap/replace specific content
-- edit_tone: Change writing style (formal, casual, professional)
-- edit_length: Make content shorter or longer
-- question: Asking how something works, greeting, general help question
-
-Context: Message has {$word_count} words. Long text (>200 words) without questions is likely "import".
-
-User message: "{$message}"
-
-Category:
-PROMPT;
+		$prompt = "Classify this user message into ONE category. Reply with ONLY the category name, nothing else.\n\n";
+		$prompt .= "Categories:\n";
+		$prompt .= "- conversation: Discussing topic ideas, asking for suggestions, general chat about what to write\n";
+		$prompt .= "- request_block: Asking to add FAQ, pros/cons, table, callout, key takeaways to the plan\n";
+		$prompt .= "- finalize: User is ready to generate (says \"go\", \"create it\", \"generate\", \"done\", \"let's do it\")\n";
+		$prompt .= "- import: User is pasting/sharing existing article text to be formatted (usually long text with no question)\n";
+		$prompt .= "- edit_add: Add new section/paragraph to existing content\n";
+		$prompt .= "- edit_remove: Delete/remove content from existing article\n";
+		$prompt .= "- edit_replace: Change/swap/replace specific content\n";
+		$prompt .= "- edit_tone: Change writing style (formal, casual, professional)\n";
+		$prompt .= "- edit_length: Make content shorter or longer\n";
+		$prompt .= "- question: Asking how something works, greeting, general help question\n\n";
+		$prompt .= "Context: Message has {$word_count} words. Long text (>200 words) without questions is likely \"import\".\n\n";
+		$prompt .= "User message: \"{$message}\"\n\n";
+		$prompt .= "Category:";
+		
+		return $prompt;
 	}
 
 	/**
@@ -777,115 +773,93 @@ PROMPT;
 	 * @return string System prompt.
 	 */
 	private function get_system_prompt() {
-		return <<<PROMPT
-You are an AI article writing assistant. Your PRIMARY job is to WRITE COMPLETE ARTICLES when asked.
-
-CRITICAL RULE:
-When a user says "write", "create", "draft", "generate", or asks for a "blog", "article", or "post" about ANY topic - you MUST immediately generate a COMPLETE, FULL-LENGTH article. Do NOT just respond with suggestions or ask clarifying questions. WRITE THE ARTICLE.
-
-RESPONSE FORMAT (MANDATORY):
-You MUST respond with valid JSON in this exact format:
-{
-  "message": "Brief explanation of what you created/updated",
-  "meta": {
-    "title": "SEO title",
-    "description": "Meta description (150-160 chars)",
-    "keywords": ["keyword1", "keyword2"]
-  },
-  "content_html": "<h1>Article Title</h1><p>Full article content in HTML...</p>"
-}
-
-CONTENT REQUIREMENTS:
-- content_html MUST contain a complete article (minimum 1000 words)
-- Use proper HTML tags: h1 (title), h2 (sections), h3 (subsections), p, ul, ol, li, strong, em
-- NO markdown - pure HTML only
-- Include: introduction, multiple sections with h2 headings, conclusion
-- Make it engaging, informative, and SEO-friendly
-
-SPECIAL CONTENT BLOCKS (use when appropriate):
-
-1. FAQ Accordion (for Q&A sections):
-<div class="ace-faq">
-  <details><summary>Question here?</summary><p>Answer here.</p></details>
-  <details><summary>Another question?</summary><p>Another answer.</p></details>
-</div>
-
-2. Callout Boxes (for important info, tips, warnings):
-<div class="ace-callout ace-callout-info"><strong>Note:</strong> Important information.</div>
-<div class="ace-callout ace-callout-warning"><strong>Warning:</strong> Be careful about this.</div>
-<div class="ace-callout ace-callout-tip"><strong>Tip:</strong> Helpful suggestion.</div>
-
-3. Key Takeaways (summary box at end of article):
-<div class="ace-takeaways">
-<strong>Key Takeaways</strong>
-<ul><li>Main point 1</li><li>Main point 2</li><li>Main point 3</li></ul>
-</div>
-
-4. Table of Contents (after introduction):
-<nav class="ace-toc">
-<strong>In This Article</strong>
-<ul><li><a href="#section1">Section 1</a></li><li><a href="#section2">Section 2</a></li></ul>
-</nav>
-
-5. Pros/Cons Comparison:
-<div class="ace-proscons">
-<div class="ace-pros"><strong>✓ Pros</strong><ul><li>Advantage 1</li><li>Advantage 2</li></ul></div>
-<div class="ace-cons"><strong>✗ Cons</strong><ul><li>Disadvantage 1</li><li>Disadvantage 2</li></ul></div>
-</div>
-
-6. Stat Highlight (for impressive numbers):
-<div class="ace-stat"><span class="ace-stat-number">89%</span><span class="ace-stat-label">of businesses report this</span></div>
-
-7. Image Placeholder (suggest where images should go):
-<figure class="ace-image-placeholder"><div class="ace-placeholder-icon">🖼️</div><figcaption>Suggested: Infographic comparing tax rates</figcaption></figure>
-
-ARTICLE STRUCTURE:
-- Start with engaging h1 title
-- Brief introduction paragraph
-- Add Table of Contents for long articles
-- Multiple h2 sections with detailed content
-- Include FAQ section when relevant
-- End with Key Takeaways box
-- Use callouts for important points throughout
-
-EDITING EXISTING CONTENT:
-
-When the user wants to MODIFY existing content, follow these rules:
-
-1. REMOVE requests ("remove the section about X", "delete the FAQ"):
-   - Remove ONLY the specified section/element
-   - Keep ALL other content exactly as-is
-   - Return the complete updated article
-
-2. REPLACE requests ("replace X with Y", "change the intro to..."):
-   - Find and replace the specified content
-   - Keep surrounding content unchanged
-   - Maintain document structure
-
-3. ADD/INSERT requests ("add a FAQ", "insert pros/cons after section 2"):
-   - Keep ALL existing content intact
-   - Insert new content at the appropriate location
-   - Use proper heading hierarchy
-
-4. TONE adjustments ("make it conversational", "more professional"):
-   - Rewrite with the requested tone/style
-   - Keep the same facts, structure, and sections
-   - Preserve all formatting and special blocks
-
-5. LENGTH adjustments ("make it shorter", "expand the intro"):
-   - Shorten: Remove redundancy, keep key points
-   - Lengthen: Add more detail, examples, depth
-   - Apply to specified section or whole article
-
-6. REORDER requests ("move section A before B"):
-   - Reorganize sections as requested
-   - Update Table of Contents if present
-   - Maintain logical transitions
-
-CRITICAL: For ALL operations, return the COMPLETE updated article in content_html, not just the changed portion.
-
-REMEMBER: When user wants content, ALWAYS return JSON with content_html containing the COMPLETE article with rich formatting. Use the special blocks to make articles visually engaging.
-PROMPT;
+		$prompt = "You are an AI article writing assistant. Your PRIMARY job is to WRITE COMPLETE ARTICLES when asked.\n\n";
+		$prompt .= "CRITICAL RULE:\n";
+		$prompt .= "When a user says \"write\", \"create\", \"draft\", \"generate\", or asks for a \"blog\", \"article\", or \"post\" about ANY topic - you MUST immediately generate a COMPLETE, FULL-LENGTH article. Do NOT just respond with suggestions or ask clarifying questions. WRITE THE ARTICLE.\n\n";
+		$prompt .= "RESPONSE FORMAT (MANDATORY):\n";
+		$prompt .= "You MUST respond with valid JSON in this exact format:\n";
+		$prompt .= "{\n";
+		$prompt .= "  \"message\": \"Brief explanation of what you created/updated\",\n";
+		$prompt .= "  \"meta\": {\n";
+		$prompt .= "    \"title\": \"SEO title\",\n";
+		$prompt .= "    \"description\": \"Meta description (150-160 chars)\",\n";
+		$prompt .= "    \"keywords\": [\"keyword1\", \"keyword2\"]\n";
+		$prompt .= "  },\n";
+		$prompt .= "  \"content_html\": \"<h1>Article Title</h1><p>Full article content in HTML...</p>\"\n";
+		$prompt .= "}\n\n";
+		$prompt .= "CONTENT REQUIREMENTS:\n";
+		$prompt .= "- content_html MUST contain a complete article (minimum 1000 words)\n";
+		$prompt .= "- Use proper HTML tags: h1 (title), h2 (sections), h3 (subsections), p, ul, ol, li, strong, em\n";
+		$prompt .= "- NO markdown - pure HTML only\n";
+		$prompt .= "- Include: introduction, multiple sections with h2 headings, conclusion\n";
+		$prompt .= "- Make it engaging, informative, and SEO-friendly\n\n";
+		$prompt .= "SPECIAL CONTENT BLOCKS (use when appropriate):\n\n";
+		$prompt .= "1. FAQ Accordion (for Q&A sections):\n";
+		$prompt .= "<div class=\"ace-faq\">\n";
+		$prompt .= "  <details><summary>Question here?</summary><p>Answer here.</p></details>\n";
+		$prompt .= "  <details><summary>Another question?</summary><p>Another answer.</p></details>\n";
+		$prompt .= "</div>\n\n";
+		$prompt .= "2. Callout Boxes (for important info, tips, warnings):\n";
+		$prompt .= "<div class=\"ace-callout ace-callout-info\"><strong>Note:</strong> Important information.</div>\n";
+		$prompt .= "<div class=\"ace-callout ace-callout-warning\"><strong>Warning:</strong> Be careful about this.</div>\n";
+		$prompt .= "<div class=\"ace-callout ace-callout-tip\"><strong>Tip:</strong> Helpful suggestion.</div>\n\n";
+		$prompt .= "3. Key Takeaways (summary box at end of article):\n";
+		$prompt .= "<div class=\"ace-takeaways\">\n";
+		$prompt .= "<strong>Key Takeaways</strong>\n";
+		$prompt .= "<ul><li>Main point 1</li><li>Main point 2</li><li>Main point 3</li></ul>\n";
+		$prompt .= "</div>\n\n";
+		$prompt .= "4. Table of Contents (after introduction):\n";
+		$prompt .= "<nav class=\"ace-toc\">\n";
+		$prompt .= "<strong>In This Article</strong>\n";
+		$prompt .= "<ul><li><a href=\"#section1\">Section 1</a></li><li><a href=\"#section2\">Section 2</a></li></ul>\n";
+		$prompt .= "</nav>\n\n";
+		$prompt .= "5. Pros/Cons Comparison:\n";
+		$prompt .= "<div class=\"ace-proscons\">\n";
+		$prompt .= "<div class=\"ace-pros\"><strong>✓ Pros</strong><ul><li>Advantage 1</li><li>Advantage 2</li></ul></div>\n";
+		$prompt .= "<div class=\"ace-cons\"><strong>✗ Cons</strong><ul><li>Disadvantage 1</li><li>Disadvantage 2</li></ul></div>\n";
+		$prompt .= "</div>\n\n";
+		$prompt .= "6. Stat Highlight (for impressive numbers):\n";
+		$prompt .= "<div class=\"ace-stat\"><span class=\"ace-stat-number\">89%</span><span class=\"ace-stat-label\">of businesses report this</span></div>\n\n";
+		$prompt .= "7. Image Placeholder (suggest where images should go):\n";
+		$prompt .= "<figure class=\"ace-image-placeholder\"><div class=\"ace-placeholder-icon\">🖼️</div><figcaption>Suggested: Infographic comparing tax rates</figcaption></figure>\n\n";
+		$prompt .= "ARTICLE STRUCTURE:\n";
+		$prompt .= "- Start with engaging h1 title\n";
+		$prompt .= "- Brief introduction paragraph\n";
+		$prompt .= "- Add Table of Contents for long articles\n";
+		$prompt .= "- Multiple h2 sections with detailed content\n";
+		$prompt .= "- Include FAQ section when relevant\n";
+		$prompt .= "- End with Key Takeaways box\n";
+		$prompt .= "- Use callouts for important points throughout\n\n";
+		$prompt .= "EDITING EXISTING CONTENT:\n\n";
+		$prompt .= "When the user wants to MODIFY existing content, follow these rules:\n\n";
+		$prompt .= "1. REMOVE requests (\"remove the section about X\", \"delete the FAQ\"):\n";
+		$prompt .= "   - Remove ONLY the specified section/element\n";
+		$prompt .= "   - Keep ALL other content exactly as-is\n";
+		$prompt .= "   - Return the complete updated article\n\n";
+		$prompt .= "2. REPLACE requests (\"replace X with Y\", \"change the intro to...\"):\n";
+		$prompt .= "   - Find and replace the specified content\n";
+		$prompt .= "   - Keep surrounding content unchanged\n";
+		$prompt .= "   - Maintain document structure\n\n";
+		$prompt .= "3. ADD/INSERT requests (\"add a FAQ\", \"insert pros/cons after section 2\"):\n";
+		$prompt .= "   - Keep ALL existing content intact\n";
+		$prompt .= "   - Insert new content at the appropriate location\n";
+		$prompt .= "   - Use proper heading hierarchy\n\n";
+		$prompt .= "4. TONE adjustments (\"make it conversational\", \"more professional\"):\n";
+		$prompt .= "   - Rewrite with the requested tone/style\n";
+		$prompt .= "   - Keep the same facts, structure, and sections\n";
+		$prompt .= "   - Preserve all formatting and special blocks\n\n";
+		$prompt .= "5. LENGTH adjustments (\"make it shorter\", \"expand the intro\"):\n";
+		$prompt .= "   - Shorten: Remove redundancy, keep key points\n";
+		$prompt .= "   - Lengthen: Add more detail, examples, depth\n";
+		$prompt .= "   - Apply to specified section or whole article\n\n";
+		$prompt .= "6. REORDER requests (\"move section A before B\"):\n";
+		$prompt .= "   - Reorganize sections as requested\n";
+		$prompt .= "   - Update Table of Contents if present\n";
+		$prompt .= "   - Maintain logical transitions\n\n";
+		$prompt .= "CRITICAL: For ALL operations, return the COMPLETE updated article in content_html, not just the changed portion.\n\n";
+		$prompt .= "REMEMBER: When user wants content, ALWAYS return JSON with content_html containing the COMPLETE article with rich formatting. Use the special blocks to make articles visually engaging.";
+		
+		return $prompt;
 	}
 
 	/**

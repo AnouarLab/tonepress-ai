@@ -172,30 +172,26 @@ class Intent_Classifier {
 	private function get_classification_prompt( $message ) {
 		$word_count = str_word_count( $message );
 
-		return <<<PROMPT
-Classify this user message into ONE category. Reply with ONLY the category name, nothing else.
-
-Categories:
-- conversation: Discussing topic ideas, asking for suggestions, general chat about what to write
-- request_block: Asking to add FAQ, pros/cons, table, callout, key takeaways to the plan
-- finalize: User is ready to generate (says "go", "create it", "generate", "done", "let's do it")
-- import: User is pasting/sharing existing article text to be formatted (usually long text with no question)
-- edit_add: Add new section/paragraph to existing content
-- edit_remove: Delete/remove content from existing article
-- edit_replace: Change/swap/replace specific content
-- edit_tone: Change writing style (formal, casual, professional)
-- edit_length: Make content shorter or longer
-- translate: Translate content to another language
-- summarize: Create a summary of the content
-- regenerate: Try again, redo, regenerate the content
-- question: Asking how something works, greeting, general help question
-
-Context: Message has {$word_count} words. Long text (>200 words) without questions is likely "import".
-
-User message: "{$message}"
-
-Category:
-PROMPT;
+		$prompt = "Classify this user message into ONE category. Reply with ONLY the category name, nothing else.\n\n";
+		$prompt .= "Categories:\n";
+		$prompt .= "- conversation: Discussing topic ideas, asking for suggestions, general chat about what to write\n";
+		$prompt .= "- request_block: Asking to add FAQ, pros/cons, table, callout, key takeaways to the plan\n";
+		$prompt .= "- finalize: User is ready to generate (says \"go\", \"create it\", \"generate\", \"done\", \"let's do it\")\n";
+		$prompt .= "- import: User is pasting/sharing existing article text to be formatted (usually long text with no question)\n";
+		$prompt .= "- edit_add: Add new section/paragraph to existing content\n";
+		$prompt .= "- edit_remove: Delete/remove content from existing article\n";
+		$prompt .= "- edit_replace: Change/swap/replace specific content\n";
+		$prompt .= "- edit_tone: Change writing style (formal, casual, professional)\n";
+		$prompt .= "- edit_length: Make content shorter or longer\n";
+		$prompt .= "- translate: Translate content to another language\n";
+		$prompt .= "- summarize: Create a summary of the content\n";
+		$prompt .= "- regenerate: Try again, redo, regenerate the content\n";
+		$prompt .= "- question: Asking how something works, greeting, general help question\n\n";
+		$prompt .= "Context: Message has {$word_count} words. Long text (>200 words) without questions is likely \"import\".\n\n";
+		$prompt .= "User message: \"{$message}\"\n\n";
+		$prompt .= "Category:";
+		
+		return $prompt;
 	}
 
 	/**
