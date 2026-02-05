@@ -1,3 +1,4 @@
+<?php
 /**
  * Plugin Name: TonePress AI
  * Description: AI Content Generator for WordPress. Create SEO-optimized articles with custom tones, tables, and charts.
