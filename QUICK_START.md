@@ -9,14 +9,14 @@
 ### Option A: Upload ZIP File (Recommended)
 1. Go to **WordPress Dashboard** → **Plugins** → **Add New**
 2. Click **Upload Plugin**
-3. Choose `ai-content-engine-v2.1.0.zip`
+3. Choose `tonepress-ai-v2.1.0.zip`
 4. Click **Install Now**
 5. Click **Activate**
 
 ### Option B: Manual FTP Upload
-1. Unzip `ai-content-engine-v2.1.0.zip`
-2. Upload the `ai-content-engine` folder to `/wp-content/plugins/`
-3. Go to **Plugins** → **Activate** AI Content Engine
+1. Unzip `tonepress-ai-v2.1.0.zip`
+2. Upload the `tonepress-ai` folder to `/wp-content/plugins/`
+3. Go to **Plugins** → **Activate** TonePress AI
 
 ---
 

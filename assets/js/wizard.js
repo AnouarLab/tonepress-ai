@@ -63,7 +63,7 @@
 
             if (currentIndex > 0) {
                 const prevStep = steps[currentIndex - 1];
-                window.location.href = `?page=ace-wizard&step=${prevStep}`;
+                window.location.href = `?page=tonepress-wizard&step=${prevStep}`;
             }
         },
 
@@ -128,7 +128,7 @@
                 url: aceWizard.ajax_url,
                 type: 'POST',
                 data: {
-                    action: 'ace_wizard_save_step',
+                    action: 'tonepress_wizard_save_step',
                     nonce: aceWizard.nonce,
                     step: step,
                     data: data
@@ -199,7 +199,7 @@
                 url: aceWizard.ajax_url,
                 type: 'POST',
                 data: {
-                    action: 'ace_wizard_test_api',
+                    action: 'tonepress_wizard_test_api',
                     nonce: aceWizard.nonce,
                     provider: provider,
                     api_key: apiKey
@@ -242,7 +242,7 @@
                 url: aceWizard.ajax_url,
                 type: 'POST',
                 data: {
-                    action: 'ace_wizard_generate_sample',
+                    action: 'tonepress_wizard_generate_sample',
                     nonce: aceWizard.nonce,
                     topic: topic
                 },

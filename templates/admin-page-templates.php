@@ -9,7 +9,7 @@
  */
 
 /**
- * Templates Tab Content for AI Content Engine Admin Page.
+ * Templates Tab Content for TonePress AI Admin Page.
  *
  * @package AI_Content_Engine
  */

@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<h1><?php esc_html_e( '🎉 You\'re All Set!', 'tonepress-ai' ); ?></h1>
 		<p class="lead">
-			<?php esc_html_e( 'Your AI Content Engine is configured and ready to generate amazing content.', 'tonepress-ai' ); ?>
+			<?php esc_html_e( 'Your TonePress AI is configured and ready to generate amazing content.', 'tonepress-ai' ); ?>
 		</p>
 	</div>
 
@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="step-content">
 					<h3><?php esc_html_e( 'Generate More Content', 'tonepress-ai' ); ?></h3>
 					<p><?php esc_html_e( 'Create individual articles or use bulk generation', 'tonepress-ai' ); ?></p>
-					<a href="<?php echo esc_url( admin_url( 'admin.php?page=ai-content-engine' ) ); ?>" class="button">
+					<a href="<?php echo esc_url( admin_url( 'tools.php?page=tonepress-ai' ) ); ?>" class="button">
 						<?php esc_html_e( 'Generate Article', 'tonepress-ai' ); ?>
 					</a>
 				</div>
@@ -62,7 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="step-content">
 					<h3><?php esc_html_e( 'Explore Templates', 'tonepress-ai' ); ?></h3>
 					<p><?php esc_html_e( 'Customize templates or create your own', 'tonepress-ai' ); ?></p>
-					<a href="<?php echo esc_url( admin_url( 'admin.php?page=ai-content-engine&tab=templates' ) ); ?>" class="button">
+					<a href="<?php echo esc_url( admin_url( 'tools.php?page=tonepress-ai&tab=templates' ) ); ?>" class="button">
 						<?php esc_html_e( 'View Templates', 'tonepress-ai' ); ?>
 					</a>
 				</div>
@@ -95,7 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 
 	<div class="completion-actions">
-		<a href="<?php echo esc_url( admin_url( 'admin.php?page=ai-content-engine' ) ); ?>" class="button button-primary button-hero">
+		<a href="<?php echo esc_url( admin_url( 'tools.php?page=tonepress-ai' ) ); ?>" class="button button-primary button-hero">
 			<span class="dashicons dashicons-dashboard"></span>
 			<?php esc_html_e( 'Go to Dashboard', 'tonepress-ai' ); ?>
 		</a>

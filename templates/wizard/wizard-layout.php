@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="ace-wizard-container">
 	<div class="ace-wizard-header">
 		<div class="ace-wizard-logo">
-			<h1><?php esc_html_e( 'AI Content Engine', 'tonepress-ai' ); ?></h1>
+			<h1><?php esc_html_e( 'TonePress AI', 'tonepress-ai' ); ?></h1>
 		</div>
 		
 		<div class="ace-wizard-progress">
@@ -64,14 +64,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php echo 'welcome' === $current_step ? esc_html__( 'Get Started →', 'tonepress-ai' ) : esc_html__( 'Continue →', 'tonepress-ai' ); ?>
 			</button>
 		<?php else : ?>
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ai-content-engine' ) ); ?>" class="button button-primary">
+			<a href="<?php echo esc_url( admin_url( 'tools.php?page=tonepress-ai' ) ); ?>" class="button button-primary">
 				<?php esc_html_e( 'Go to Dashboard →', 'tonepress-ai' ); ?>
-			</a>
-		<?php endif; ?>
-		
-		<?php if ( 'welcome' !== $current_step && 'complete' !== $current_step ) : ?>
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ai-content-engine' ) ); ?>" class="ace-wizard-skip">
-				<?php esc_html_e( 'Skip setup', 'tonepress-ai' ); ?>
 			</a>
 		<?php endif; ?>
 	</div>

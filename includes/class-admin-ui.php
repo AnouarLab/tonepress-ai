@@ -87,8 +87,8 @@ class Admin_UI {
 	public function add_admin_menu() {
 		add_submenu_page(
 			'tools.php',
-			__( 'AI Content Engine', 'tonepress-ai' ),
-			__( 'AI Content Engine', 'tonepress-ai' ),
+			__( 'TonePress AI', 'tonepress-ai' ),
+			__( 'TonePress AI', 'tonepress-ai' ),
 			'publish_posts',
 			'tonepress-ai',
 			array( $this, 'render_admin_page' )
@@ -630,7 +630,7 @@ class Admin_UI {
 	 * @param string $hook Current admin page hook.
 	 */
 	public function enqueue_admin_assets( $hook ) {
-		if ( 'tools_page_ai-content-engine' !== $hook ) {
+		if ( 'tools_page_tonepress-ai' !== $hook ) {
 			return;
 		}
 

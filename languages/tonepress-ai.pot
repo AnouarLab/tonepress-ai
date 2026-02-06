@@ -1,0 +1,1853 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TonePress AI 2.1.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-06 01:33\n"
+"X-Generator: Custom Python Script\n"
+
+#: templates/admin-page.php:700
+msgid "%1$s of %2$s"
+msgstr ""
+
+#: templates/admin-page.php:694
+msgid "%s items"
+msgstr ""
+
+#: includes/class-reading-time.php:133
+msgid "%s words"
+msgstr ""
+
+#: templates/company-profile-section.php:51
+msgid "A concise description of your business (1-2 sentences)"
+msgstr ""
+
+#: templates/admin-page-templates.php:49
+msgid "A descriptive name for this template."
+msgstr ""
+
+#: includes/class-admin-ui.php:101
+#: includes/class-admin-ui.php:102
+msgid "AI Chat Builder"
+msgstr ""
+
+#: tonepress-ai.php:115
+msgid "AI Content Engine requires PHP 7.4 or higher."
+msgstr ""
+
+#: tonepress-ai.php:105
+msgid "AI Content Engine requires WordPress 5.8 or higher."
+msgstr ""
+
+#: includes/class-admin-ui.php:190
+msgid "AI Provider"
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:38
+msgid "AI-Powered"
+msgstr ""
+
+#: includes/class-admin-ui.php:161
+#: templates/admin-page.php:722
+msgid "API Configuration"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:92
+msgid "API Key"
+msgstr ""
+
+#: includes/class-admin-ui.php:840
+msgid "API key is valid and working!"
+msgstr ""
+
+#: includes/class-provider-gemini.php:154
+#: includes/class-provider-claude.php:136
+#: includes/class-provider-openai.php:186
+msgid "API key not set."
+msgstr ""
+
+#: templates/admin-page.php:774
+msgid "API keys are encrypted before storage"
+msgstr ""
+
+#: includes/class-ai-provider.php:180
+msgid "API request failed: %s"
+msgstr ""
+
+#: includes/class-admin-ui.php:571
+#: templates/admin-page.php:153
+msgid "Academic"
+msgstr ""
+
+#: templates/admin-page.php:429
+#: templates/admin-page.php:651
+#: templates/admin-page.php:846
+#: templates/admin-page-templates.php:147
+msgid "Actions"
+msgstr ""
+
+#: templates/admin-page.php:817
+msgid "Active SEO Plugin"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:91
+msgid "Add a table of contents for articles with 3+ headings"
+msgstr ""
+
+#: templates/admin-page.php:323
+msgid "Add custom instructions for this article..."
+msgstr ""
+
+#: templates/admin-page-templates.php:115
+msgid "Add specific instructions for this template..."
+msgstr ""
+
+#: includes/class-admin-ui.php:621
+msgid "Add styling for FAQs, callouts, pros/cons, and other rich content blocks"
+msgstr ""
+
+#: templates/admin-page.php:230
+msgid "Advanced Options"
+msgstr ""
+
+#: includes/class-admin-ui.php:672
+msgid "An error occurred:"
+msgstr ""
+
+#: templates/admin-page.php:176
+msgid "Arabic (العربية)"
+msgstr ""
+
+#: templates/admin-page-templates.php:226
+msgid "Are you sure you want to delete this template?"
+msgstr ""
+
+#: templates/admin-page.php:132
+#: templates/admin-page-templates.php:99
+msgid "Article Length"
+msgstr ""
+
+#: templates/admin-page.php:112
+#: templates/wizard/steps/step-first_article.php:32
+msgid "Article Topic"
+msgstr ""
+
+#: includes/class-admin-ui.php:671
+msgid "Article generated successfully!"
+msgstr ""
+
+#: includes/class-article-generator.php:85
+#: includes/class-article-generator.php:585
+msgid "Article topic cannot be empty."
+msgstr ""
+
+#: templates/admin-page.php:519
+msgid "Article topic or title"
+msgstr ""
+
+#: includes/class-admin-ui.php:569
+#: templates/admin-page.php:151
+#: templates/admin-page-templates.php:89
+#: templates/wizard/steps/step-company.php:105
+msgid "Authoritative"
+msgstr ""
+
+#: templates/admin-page.php:307
+msgid "Auto-Generate Tags"
+msgstr ""
+
+#: templates/admin-page.php:295
+msgid "Auto-assign based on keywords"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:55
+msgid "Automatic Features"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:65
+msgid "Automatically create relevant featured images for articles"
+msgstr ""
+
+#: templates/admin-page.php:312
+msgid "Automatically generate tags from keywords and content"
+msgstr ""
+
+#: templates/company-profile-section.php:19
+msgid "Automatically include company context in all article prompts"
+msgstr ""
+
+#: templates/admin-page.php:629
+msgid "Avg Cost/Article"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:75
+msgid "Best Value"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:59
+msgid "Best for long-form articles and nuanced writing"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:78
+msgid "Best for research-heavy content and factual accuracy"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:41
+msgid "Best for technical content and detailed explanations"
+msgstr ""
+
+#: templates/admin-page.php:59
+msgid "Blog Post"
+msgstr ""
+
+#: templates/company-profile-section.php:77
+msgid "Brand Values"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:81
+#: templates/wizard/steps/step-welcome.php:44
+msgid "Brand Voice"
+msgstr ""
+
+#: templates/company-profile-section.php:87
+msgid "Brand Voice & Tone"
+msgstr ""
+
+#: templates/company-profile-section.php:50
+msgid "Brief description of what your company does..."
+msgstr ""
+
+#: templates/admin-page-templates.php:58
+msgid "Brief description of when to use this template"
+msgstr ""
+
+#: templates/wizard/steps/step-first_article.php:62
+msgid "Building prompt..."
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:51
+msgid "Built-in optimization for search engines"
+msgstr ""
+
+#: templates/admin-page.php:370
+msgid "Bulk Article Generation"
+msgstr ""
+
+#: templates/admin-page.php:33
+msgid "Bulk Generation"
+msgstr ""
+
+#: includes/class-bulk-generator.php:400
+msgid "Bulk Generation Complete: %d Articles Generated"
+msgstr ""
+
+#: templates/admin-page.php:384
+msgid "CSV File"
+msgstr ""
+
+#: templates/admin-page.php:501
+msgid "CSV Format Guide"
+msgstr ""
+
+#: includes/class-bulk-generator.php:90
+msgid "CSV file not found."
+msgstr ""
+
+#: includes/class-admin-ui.php:585
+msgid "Cache generated articles to reduce API costs"
+msgstr ""
+
+#: templates/admin-page.php:90
+msgid "Calling OpenAI API..."
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:83
+msgid "Case Study"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:97
+#: templates/wizard/steps/step-preferences.php:47
+msgid "Casual"
+msgstr ""
+
+#: templates/admin-page.php:284
+msgid "Categories"
+msgstr ""
+
+#: includes/class-chart-renderer.php:134
+msgid "Chart data missing required field: %s"
+msgstr ""
+
+#: includes/class-chart-renderer.php:158
+msgid "Chart must have at least one dataset."
+msgstr ""
+
+#: includes/class-admin-ui.php:182
+msgid "Chat Builder Models"
+msgstr ""
+
+#: includes/class-admin-ui.php:1562
+#: includes/class-admin-ui.php:1681
+msgid "Chat Builder not available"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:42
+msgid "Check out the sample article we created during setup"
+msgstr ""
+
+#: templates/admin-page.php:173
+msgid "Chinese (中文)"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:24
+msgid "Choose Starter Templates"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:26
+msgid "Choose Your AI Provider"
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:39
+msgid "Choose from OpenAI, Claude, or Gemini"
+msgstr ""
+
+#: includes/class-admin-ui.php:355
+msgid "Choose which models are available in the Chat Builder."
+msgstr ""
+
+#: includes/class-admin-ui.php:214
+msgid "Claude API Key"
+msgstr ""
+
+#: includes/class-provider-claude.php:73
+msgid "Claude API key not configured."
+msgstr ""
+
+#: includes/class-admin-ui.php:280
+msgid "Claude Chat Models"
+msgstr ""
+
+#: templates/admin-page.php:509
+msgid "Column"
+msgstr ""
+
+#: templates/admin-page.php:126
+msgid "Comma-separated keywords to include in the article (optional)."
+msgstr ""
+
+#: templates/company-profile-section.php:47
+msgid "Company Description"
+msgstr ""
+
+#: templates/company-profile-section.php:27
+#: templates/wizard/steps/step-company.php:34
+msgid "Company Name"
+msgstr ""
+
+#: templates/company-profile-section.php:6
+msgid "Company Profile"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:73
+msgid "Compare products, services, or solutions"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:72
+msgid "Comparison"
+msgstr ""
+
+#: includes/class-template-manager.php:127
+msgid "Comparison Article"
+msgstr ""
+
+#: includes/class-template-manager.php:103
+msgid "Comprehensive product evaluation"
+msgstr ""
+
+#: includes/class-admin-ui.php:348
+msgid "Configure caching and rate limiting to optimize API usage and costs."
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:26
+msgid "Configure default settings for your article generation."
+msgstr ""
+
+#: templates/admin-page.php:723
+msgid "Configure your AI provider API keys and select your preferred model."
+msgstr ""
+
+#: includes/class-admin-ui.php:334
+msgid "Configure your OpenAI API credentials. Get your API key from"
+msgstr ""
+
+#: includes/class-onboarding-wizard.php:326
+msgid "Connection successful!"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:61
+msgid "Consulting / Professional Services"
+msgstr ""
+
+#: includes/class-admin-ui.php:264
+msgid "Content Block Styling"
+msgstr ""
+
+#: templates/admin-page-templates.php:31
+msgid "Content Templates"
+msgstr ""
+
+#: templates/wizard/wizard-layout.php:64
+msgid "Continue →"
+msgstr ""
+
+#: includes/class-admin-ui.php:568
+#: templates/admin-page.php:150
+#: templates/admin-page-templates.php:88
+#: templates/wizard/steps/step-company.php:109
+#: templates/wizard/steps/step-preferences.php:50
+msgid "Conversational"
+msgstr ""
+
+#: templates/company-profile-section.php:81
+msgid "Core values that guide your company (comma-separated)"
+msgstr ""
+
+#: templates/admin-page.php:650
+msgid "Cost"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:83
+msgid "Cost: $"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:64
+msgid "Cost: $$"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:46
+msgid "Cost: $$$"
+msgstr ""
+
+#: includes/class-bulk-generator.php:95
+msgid "Could not read CSV file."
+msgstr ""
+
+#: templates/admin-page-templates.php:37
+msgid "Create New Template"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:53
+msgid "Create individual articles or use bulk generation"
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:30
+msgid "Create professional blog posts in minutes with the power of AI."
+msgstr ""
+
+#: templates/admin-page-templates.php:32
+msgid "Create reusable templates to streamline your blog article generation. Templates save your preferred settings and instructions for quick reuse."
+msgstr ""
+
+#: templates/admin-page.php:426
+#: templates/admin-page-templates.php:146
+msgid "Created"
+msgstr ""
+
+#: templates/admin-page.php:98
+#: templates/wizard/steps/step-first_article.php:70
+msgid "Creating post..."
+msgstr ""
+
+#: templates/admin-page.php:239
+msgid "Creativity (Temperature)"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:116
+msgid "Custom Brand Description (Optional)"
+msgstr ""
+
+#: templates/admin-page.php:320
+#: templates/admin-page-templates.php:112
+msgid "Custom Instructions"
+msgstr ""
+
+#: templates/admin-page.php:191
+msgid "Custom Word Count"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:64
+msgid "Customize templates or create your own"
+msgstr ""
+
+#: templates/admin-page.php:648
+#: templates/admin-page.php:843
+msgid "Date"
+msgstr ""
+
+#: includes/class-template-manager.php:63
+msgid "Default Article"
+msgstr ""
+
+#: includes/class-admin-ui.php:231
+#: templates/wizard/steps/step-preferences.php:32
+msgid "Default Article Length"
+msgstr ""
+
+#: includes/class-admin-ui.php:168
+#: templates/admin-page.php:737
+msgid "Default Article Settings"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:43
+msgid "Default Tone"
+msgstr ""
+
+#: includes/class-admin-ui.php:239
+msgid "Default Writing Tone"
+msgstr ""
+
+#: templates/company-profile-section.php:7
+msgid "Define your company context to ensure consistent brand voice across all generated content. This information will be automatically included in article generation prompts."
+msgstr ""
+
+#: templates/admin-page.php:487
+#: templates/admin-page-templates.php:167
+msgid "Delete"
+msgstr ""
+
+#: templates/admin-page.php:116
+msgid "Describe the topic or subject you want the AI to write about."
+msgstr ""
+
+#: templates/company-profile-section.php:90
+msgid "Describe your brand voice and tone..."
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:123
+msgid "Describe your brand voice, key messaging, or any specific guidelines..."
+msgstr ""
+
+#: templates/admin-page.php:511
+#: templates/admin-page-templates.php:55
+msgid "Description"
+msgstr ""
+
+#: templates/admin-page-templates.php:116
+msgid "Detailed instructions for how to structure the article. Examples: required sections, formatting guidelines, specific points to cover."
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:62
+msgid "Detailed reviews with pros, cons, and ratings"
+msgstr ""
+
+#: includes/class-admin-ui.php:623
+msgid "Disable if your theme already provides styling for these elements."
+msgstr ""
+
+#: templates/admin-page.php:552
+msgid "Download CSV Template"
+msgstr ""
+
+#: templates/admin-page.php:391
+msgid "Download Template"
+msgstr ""
+
+#: templates/admin-page.php:171
+msgid "Dutch (Nederlands)"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:55
+msgid "E-commerce / Retail"
+msgstr ""
+
+#: includes/class-chart-renderer.php:166
+msgid "Each dataset must have a "data" array."
+msgstr ""
+
+#: templates/admin-page.php:682
+#: templates/admin-page.php:861
+msgid "Edit"
+msgstr ""
+
+#: templates/wizard/steps/step-first_article.php:84
+msgid "Edit Draft"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:58
+msgid "Education / Training"
+msgstr ""
+
+#: includes/class-admin-ui.php:248
+msgid "Enable Caching"
+msgstr ""
+
+#: templates/company-profile-section.php:14
+msgid "Enable Company Context"
+msgstr ""
+
+#: includes/class-admin-ui.php:256
+msgid "Enable Rate Limiting"
+msgstr ""
+
+#: templates/admin-page-templates.php:92
+msgid "Engaging"
+msgstr ""
+
+#: templates/admin-page.php:165
+msgid "English"
+msgstr ""
+
+#: templates/wizard/steps/step-first_article.php:26
+msgid "Enter a topic and watch the magic happen. We'll create a draft article for you to review."
+msgstr ""
+
+#: templates/admin-page.php:115
+msgid "Enter the topic or title for your article..."
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:113
+msgid "Enter your %s API key. Don't have one?"
+msgstr ""
+
+#: includes/class-admin-ui.php:518
+msgid "Enter your Anthropic Claude API key."
+msgstr ""
+
+#: includes/class-admin-ui.php:540
+msgid "Enter your Google Gemini API key."
+msgstr ""
+
+#: templates/admin-page-templates.php:245
+msgid "Error deleting template."
+msgstr ""
+
+#: templates/admin-page-templates.php:219
+msgid "Error saving template."
+msgstr ""
+
+#: templates/admin-page.php:845
+msgid "Est. Cost"
+msgstr ""
+
+#: templates/admin-page.php:74
+msgid "Estimated Cost:"
+msgstr ""
+
+#: includes/class-bulk-generator.php:77
+msgid "Every 2 Minutes (ACE Bulk)"
+msgstr ""
+
+#: templates/admin-page.php:512
+msgid "Example"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:63
+msgid "Explore Templates"
+msgstr ""
+
+#: templates/admin-page.php:482
+msgid "Export Results"
+msgstr ""
+
+#: includes/class-admin-ui.php:993
+msgid "Failed to delete queue."
+msgstr ""
+
+#: includes/class-admin-ui.php:1292
+msgid "Failed to delete session."
+msgstr ""
+
+#: includes/class-article-generator.php:136
+#: includes/class-article-generator.php:622
+msgid "Failed to parse AI response as JSON: %s"
+msgstr ""
+
+#: includes/class-admin-ui.php:949
+msgid "Failed to pause queue."
+msgstr ""
+
+#: includes/class-admin-ui.php:971
+msgid "Failed to resume queue."
+msgstr ""
+
+#: templates/admin-page.php:102
+msgid "Finalizing..."
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:57
+msgid "Finance / Banking"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:49
+msgid "Formal"
+msgstr ""
+
+#: templates/admin-page.php:167
+msgid "French (Français)"
+msgstr ""
+
+#: includes/class-admin-ui.php:570
+#: templates/admin-page.php:152
+#: templates/admin-page-templates.php:90
+#: templates/wizard/steps/step-company.php:93
+#: templates/wizard/steps/step-preferences.php:48
+msgid "Friendly"
+msgstr ""
+
+#: includes/class-admin-ui.php:222
+msgid "Gemini API Key"
+msgstr ""
+
+#: includes/class-provider-gemini.php:72
+msgid "Gemini API key not configured."
+msgstr ""
+
+#: includes/class-admin-ui.php:288
+msgid "Gemini Chat Models"
+msgstr ""
+
+#: templates/admin-page.php:53
+msgid "Generate AI Article"
+msgstr ""
+
+#: templates/admin-page.php:30
+#: templates/admin-page.php:355
+#: templates/wizard/steps/step-complete.php:55
+#: templates/wizard/steps/step-first_article.php:51
+msgid "Generate Article"
+msgstr ""
+
+#: templates/admin-page.php:214
+msgid "Generate Featured Image (DALL-E)"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:64
+msgid "Generate Featured Images"
+msgstr ""
+
+#: templates/admin-page.php:219
+msgid "Generate Inline Images (DALL-E)"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:52
+msgid "Generate More Content"
+msgstr ""
+
+#: templates/admin-page.php:636
+msgid "Generated Articles"
+msgstr ""
+
+#: includes/class-admin-ui.php:670
+msgid "Generating article... This may take a minute."
+msgstr ""
+
+#: templates/wizard/steps/step-first_article.php:66
+msgid "Generating content..."
+msgstr ""
+
+#: templates/admin-page.php:566
+msgid "Generation History"
+msgstr ""
+
+#: templates/admin-page.php:410
+msgid "Generation Queues"
+msgstr ""
+
+#: templates/admin-page.php:362
+msgid "Generation Result"
+msgstr ""
+
+#: templates/admin-page.php:168
+msgid "German (Deutsch)"
+msgstr ""
+
+#: includes/class-admin-ui.php:519
+#: includes/class-admin-ui.php:541
+msgid "Get API Key"
+msgstr ""
+
+#: templates/wizard/wizard-layout.php:64
+msgid "Get Started →"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:117
+msgid "Get your API key →"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:100
+msgid "Go to Dashboard"
+msgstr ""
+
+#: templates/wizard/wizard-layout.php:68
+msgid "Go to Dashboard →"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:56
+msgid "Healthcare / Medical"
+msgstr ""
+
+#: templates/admin-page-templates.php:91
+msgid "Helpful"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:74
+msgid "Helpful Resources"
+msgstr ""
+
+#: templates/admin-page.php:177
+msgid "Hindi (हिन्दी)"
+msgstr ""
+
+#: templates/admin-page.php:39
+msgid "History"
+msgstr ""
+
+#: templates/company-profile-section.php:91
+msgid "How should your brand sound? (e.g., "Professional yet approachable, data-driven but human")"
+msgstr ""
+
+#: templates/admin-page-templates.php:67
+msgid "How to [achieve goal] with [product/feature]"
+msgstr ""
+
+#: includes/class-template-manager.php:78
+#: templates/admin-page.php:63
+#: templates/wizard/steps/step-templates.php:37
+msgid "How-To Guide"
+msgstr ""
+
+#: includes/class-image-generator.php:95
+msgid "Image generation request failed: %s"
+msgstr ""
+
+#: templates/admin-page.php:209
+msgid "Include Charts"
+msgstr ""
+
+#: templates/admin-page.php:200
+msgid "Include Features"
+msgstr ""
+
+#: templates/admin-page.php:204
+msgid "Include Tables"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:78
+msgid "Include meta descriptions, optimize titles, and add structured data"
+msgstr ""
+
+#: templates/admin-page.php:182
+msgid "Indonesian (Bahasa)"
+msgstr ""
+
+#: templates/company-profile-section.php:37
+#: templates/wizard/steps/step-company.php:50
+msgid "Industry"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:94
+msgid "Industry News"
+msgstr ""
+
+#: templates/admin-page-templates.php:174
+msgid "Instructions:"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:103
+msgid "Internal Linking"
+msgstr ""
+
+#: includes/class-provider-gemini.php:170
+#: includes/class-provider-claude.php:161
+#: includes/class-provider-openai.php:209
+msgid "Invalid API key."
+msgstr ""
+
+#: includes/class-bulk-generator.php:102
+msgid "Invalid CSV format."
+msgstr ""
+
+#: includes/class-content-parser.php:256
+msgid "Invalid JSON structure: Chart %1$d is missing "%2$s" field."
+msgstr ""
+
+#: includes/class-content-parser.php:226
+msgid "Invalid JSON structure: Meta must contain "description" and "keywords"."
+msgstr ""
+
+#: includes/class-content-parser.php:215
+msgid "Invalid JSON structure: Missing required field "%s"."
+msgstr ""
+
+#: includes/class-content-parser.php:238
+msgid "Invalid JSON structure: Table %d is missing "html" field."
+msgstr ""
+
+#: includes/class-chart-renderer.php:148
+msgid "Invalid chart type: %s. Must be one of: bar, line, pie, doughnut, radar, polarArea."
+msgstr ""
+
+#: includes/class-image-generator.php:117
+msgid "Invalid response from OpenAI Images API."
+msgstr ""
+
+#: includes/class-onboarding-wizard.php:188
+msgid "Invalid step."
+msgstr ""
+
+#: templates/admin-page.php:169
+msgid "Italian (Italiano)"
+msgstr ""
+
+#: templates/admin-page.php:174
+msgid "Japanese (日本語)"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:91
+msgid "Join the Community"
+msgstr ""
+
+#: templates/company-profile-section.php:67
+msgid "Key Products/Services"
+msgstr ""
+
+#: templates/admin-page-templates.php:74
+msgid "Keywords"
+msgstr ""
+
+#: templates/admin-page.php:175
+msgid "Korean (한국어)"
+msgstr ""
+
+#: templates/admin-page-templates.php:145
+msgid "Length"
+msgstr ""
+
+#: templates/wizard/steps/step-first_article.php:24
+msgid "Let's Create Your First Article!"
+msgstr ""
+
+#: includes/class-admin-ui.php:603
+msgid "Limit to %d generations per hour per user"
+msgstr ""
+
+#: templates/company-profile-section.php:70
+msgid "List your main products or services..."
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:49
+msgid "Listicle"
+msgstr ""
+
+#: includes/class-template-manager.php:152
+msgid "Listicle (Top 10, Best Of)"
+msgstr ""
+
+#: includes/class-admin-ui.php:555
+#: templates/admin-page.php:138
+#: templates/admin-page-templates.php:105
+msgid "Long (1800-2500+ words)"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:37
+msgid "Long (2000+ words)"
+msgstr ""
+
+#: templates/admin-page.php:244
+msgid "Lower = more focused and deterministic, Higher = more creative and varied (0.0 - 1.0)"
+msgstr ""
+
+#: templates/company-profile-section.php:71
+msgid "Main products or services you want to highlight in content"
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:45
+msgid "Maintain consistent tone across all content"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:59
+msgid "Marketing / Advertising"
+msgstr ""
+
+#: templates/admin-page.php:251
+msgid "Max Tokens"
+msgstr ""
+
+#: templates/admin-page.php:256
+msgid "Maximum tokens for generation (controls cost and maximum length)"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:36
+msgid "Medium (1000-1200 words)"
+msgstr ""
+
+#: includes/class-admin-ui.php:554
+#: templates/admin-page.php:137
+#: templates/admin-page-templates.php:104
+msgid "Medium (1200-1800 words)"
+msgstr ""
+
+#: templates/preview.php:25
+msgid "Missing preview token."
+msgstr ""
+
+#: includes/class-bulk-generator.php:114
+msgid "Missing required column: %s"
+msgstr ""
+
+#: includes/class-admin-ui.php:1088
+msgid "Missing session ID or message."
+msgstr ""
+
+#: includes/class-admin-ui.php:1259
+msgid "Missing session ID or title."
+msgstr ""
+
+#: includes/class-admin-ui.php:1157
+#: includes/class-admin-ui.php:1200
+#: includes/class-admin-ui.php:1229
+#: includes/class-admin-ui.php:1285
+#: includes/class-admin-ui.php:1312
+#: includes/class-admin-ui.php:1339
+#: includes/class-admin-ui.php:1365
+msgid "Missing session ID."
+msgstr ""
+
+#: includes/class-admin-ui.php:1392
+msgid "Missing session or version ID."
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:38
+msgid "Most Popular"
+msgstr ""
+
+#: templates/admin-page-templates.php:142
+msgid "Name"
+msgstr ""
+
+#: includes/Chat/class-session-manager.php:342
+#: includes/Chat/class-session-manager.php:358
+msgid "New Chat"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:95
+msgid "News updates and trend analysis"
+msgstr ""
+
+#: templates/admin-page.php:524
+#: templates/admin-page.php:530
+#: templates/admin-page.php:536
+#: templates/admin-page.php:542
+msgid "No"
+msgstr ""
+
+#: templates/admin-page.php:640
+msgid "No AI-generated articles found."
+msgstr ""
+
+#: includes/class-admin-ui.php:1419
+msgid "No content to preview."
+msgstr ""
+
+#: includes/class-admin-ui.php:888
+msgid "No file uploaded."
+msgstr ""
+
+#: templates/admin-page.php:420
+msgid "No queues found. Upload a CSV file to get started."
+msgstr ""
+
+#: templates/admin-page-templates.php:137
+msgid "No templates found. Create your first template above to get started!"
+msgstr ""
+
+#: includes/class-bulk-generator.php:175
+msgid "No valid rows found in CSV."
+msgstr ""
+
+#: templates/admin-page.php:829
+msgid "None (using fallback meta)"
+msgstr ""
+
+#: templates/admin-page.php:181
+msgid "Norwegian (Norsk)"
+msgstr ""
+
+#: includes/class-template-manager.php:153
+msgid "Numbered list article format"
+msgstr ""
+
+#: includes/class-admin-ui.php:198
+msgid "OpenAI API Key"
+msgstr ""
+
+#: includes/class-image-generator.php:62
+msgid "OpenAI API key is not configured."
+msgstr ""
+
+#: includes/class-provider-openai.php:74
+#: includes/class-provider-openai.php:133
+msgid "OpenAI API key not configured."
+msgstr ""
+
+#: includes/class-admin-ui.php:272
+msgid "OpenAI Chat Models"
+msgstr ""
+
+#: includes/class-admin-ui.php:206
+msgid "OpenAI Model"
+msgstr ""
+
+#: templates/admin-page.php:756
+msgid "Optimize performance and control usage limits."
+msgstr ""
+
+#: templates/admin-page.php:324
+msgid "Optional additional instructions for AI (e.g., "Include examples from the healthcare industry")"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:62
+msgid "Other"
+msgstr ""
+
+#: templates/admin-page.php:161
+msgid "Output Language"
+msgstr ""
+
+#: templates/admin-page.php:268
+msgid "Page"
+msgstr ""
+
+#: templates/admin-page.php:472
+msgid "Pause"
+msgstr ""
+
+#: includes/class-admin-ui.php:175
+#: templates/admin-page.php:755
+msgid "Performance & Security"
+msgstr ""
+
+#: includes/class-admin-ui.php:884
+#: includes/class-admin-ui.php:938
+#: includes/class-admin-ui.php:960
+#: includes/class-admin-ui.php:982
+#: includes/class-admin-ui.php:1036
+#: includes/class-admin-ui.php:1078
+#: includes/class-admin-ui.php:1129
+#: includes/class-admin-ui.php:1151
+#: includes/class-admin-ui.php:1194
+#: includes/class-admin-ui.php:1223
+#: includes/class-admin-ui.php:1252
+#: includes/class-admin-ui.php:1279
+#: includes/class-admin-ui.php:1306
+#: includes/class-admin-ui.php:1332
+#: includes/class-admin-ui.php:1359
+#: includes/class-admin-ui.php:1385
+#: includes/class-admin-ui.php:1412
+#: includes/class-onboarding-wizard.php:181
+#: includes/class-onboarding-wizard.php:294
+#: includes/class-onboarding-wizard.php:345
+msgid "Permission denied."
+msgstr ""
+
+#: templates/chat-builder.php:59
+msgid "Pin"
+msgstr ""
+
+#: includes/class-admin-ui.php:676
+msgid "Please enter an article topic."
+msgstr ""
+
+#: tonepress-ai.php:106
+#: tonepress-ai.php:116
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: templates/admin-page.php:179
+msgid "Polish (Polski)"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:51
+msgid "Popular"
+msgstr ""
+
+#: templates/admin-page.php:170
+msgid "Portuguese (Português)"
+msgstr ""
+
+#: templates/admin-page.php:267
+msgid "Post"
+msgstr ""
+
+#: templates/admin-page.php:331
+msgid "Post Status"
+msgstr ""
+
+#: templates/admin-page.php:263
+msgid "Post Type"
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:57
+msgid "Pre-built templates for common article types"
+msgstr ""
+
+#: includes/class-admin-ui.php:1415
+#: templates/preview.php:40
+#: templates/wizard/steps/step-first_article.php:76
+msgid "Preview"
+msgstr ""
+
+#: templates/preview.php:30
+msgid "Preview expired or invalid."
+msgstr ""
+
+#: templates/preview.php:34
+msgid "Preview not authorized."
+msgstr ""
+
+#: templates/admin-page.php:94
+msgid "Processing content..."
+msgstr ""
+
+#: includes/class-template-manager.php:102
+#: templates/admin-page.php:67
+#: templates/wizard/steps/step-templates.php:61
+msgid "Product Review"
+msgstr ""
+
+#: includes/class-admin-ui.php:567
+#: templates/admin-page.php:149
+#: templates/admin-page-templates.php:87
+#: templates/wizard/steps/step-company.php:89
+#: templates/wizard/steps/step-preferences.php:46
+msgid "Professional"
+msgstr ""
+
+#: templates/admin-page.php:427
+msgid "Progress"
+msgstr ""
+
+#: includes/class-onboarding-wizard.php:301
+msgid "Provider and API key are required."
+msgstr ""
+
+#: includes/class-provider-factory.php:73
+msgid "Provider class not found: %s"
+msgstr ""
+
+#: includes/class-admin-ui.php:436
+msgid "Provider not available."
+msgstr ""
+
+#: templates/admin-page.php:344
+msgid "Publish Date"
+msgstr ""
+
+#: templates/admin-page.php:336
+msgid "Publish Immediately"
+msgstr ""
+
+#: templates/admin-page.php:425
+msgid "Queue ID"
+msgstr ""
+
+#: includes/class-admin-ui.php:922
+msgid "Queue created successfully! Processing %d articles in the background."
+msgstr ""
+
+#: includes/class-admin-ui.php:991
+msgid "Queue deleted."
+msgstr ""
+
+#: includes/class-bulk-generator.php:359
+msgid "Queue not found."
+msgstr ""
+
+#: includes/class-admin-ui.php:947
+msgid "Queue paused."
+msgstr ""
+
+#: includes/class-admin-ui.php:969
+msgid "Queue resumed."
+msgstr ""
+
+#: templates/admin-page.php:827
+msgid "RankMath"
+msgstr ""
+
+#: includes/class-cache-manager.php:155
+msgid "Rate limit exceeded. You can generate a maximum of %d articles per hour. Please try again later."
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:79
+msgid "Read the Getting Started Guide"
+msgstr ""
+
+#: templates/admin-page.php:838
+msgid "Recently Generated Articles"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:39
+msgid "Recommended"
+msgstr ""
+
+#: templates/admin-page.php:510
+msgid "Required"
+msgstr ""
+
+#: templates/admin-page.php:476
+msgid "Resume"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:41
+msgid "Review Your Draft"
+msgstr ""
+
+#: templates/admin-page.php:172
+msgid "Russian (Русский)"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:77
+msgid "SEO Optimization"
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:50
+msgid "SEO Optimized"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:54
+msgid "SaaS / Software"
+msgstr ""
+
+#: templates/admin-page.php:771
+msgid "Save Settings"
+msgstr ""
+
+#: templates/admin-page-templates.php:124
+msgid "Save Template"
+msgstr ""
+
+#: templates/admin-page.php:335
+msgid "Save as Draft"
+msgstr ""
+
+#: templates/admin-page-templates.php:133
+msgid "Saved Templates"
+msgstr ""
+
+#: templates/admin-page.php:337
+msgid "Schedule for Later"
+msgstr ""
+
+#: includes/class-security.php:55
+msgid "Security check failed."
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:28
+msgid "Select an AI provider and enter your API key to get started."
+msgstr ""
+
+#: templates/admin-page.php:300
+msgid "Select category or leave at default for auto-assignment"
+msgstr ""
+
+#: includes/class-admin-ui.php:456
+msgid "Select models to show in Chat Builder. If none selected, all are available."
+msgstr ""
+
+#: templates/admin-page.php:277
+msgid "Select post type for the generated content"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:26
+msgid "Select pre-built templates to speed up your content creation."
+msgstr ""
+
+#: includes/class-admin-ui.php:498
+msgid "Select the AI provider to use for content generation."
+msgstr ""
+
+#: includes/class-admin-ui.php:483
+msgid "Select the OpenAI model to use for generation."
+msgstr ""
+
+#: templates/admin-page.php:184
+msgid "Select the language for the generated article."
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:84
+msgid "Select the tone that best represents your brand:"
+msgstr ""
+
+#: templates/admin-page.php:221
+msgid "Select what elements to include in the generated article."
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:53
+msgid "Select your industry..."
+msgstr ""
+
+#: includes/class-admin-ui.php:1164
+msgid "Session not found."
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:24
+msgid "Set Your Content Preferences"
+msgstr ""
+
+#: includes/class-admin-ui.php:341
+msgid "Set default values for article generation. These can be overridden when generating individual articles."
+msgstr ""
+
+#: templates/admin-page.php:738
+msgid "Set default values for new article generation."
+msgstr ""
+
+#: tonepress-ai.php:243
+#: templates/admin-page.php:42
+msgid "Settings"
+msgstr ""
+
+#: includes/class-onboarding-wizard.php:100
+msgid "Setup Wizard"
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:65
+msgid "Setup takes approximately 3 minutes"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:35
+msgid "Short (500-700 words)"
+msgstr ""
+
+#: includes/class-admin-ui.php:553
+#: templates/admin-page.php:136
+#: templates/admin-page-templates.php:103
+msgid "Short (800-1200 words)"
+msgstr ""
+
+#: includes/class-template-manager.php:128
+msgid "Side-by-side comparison of options"
+msgstr ""
+
+#: templates/wizard/wizard-layout.php:74
+msgid "Skip setup"
+msgstr ""
+
+#: templates/admin-page.php:166
+msgid "Spanish (Español)"
+msgstr ""
+
+#: templates/admin-page.php:195
+msgid "Specify exact word count (overrides length selection). Leave empty to use length preset."
+msgstr ""
+
+#: includes/class-template-manager.php:64
+msgid "Standard blog article format"
+msgstr ""
+
+#: templates/admin-page.php:45
+msgid "Statistics"
+msgstr ""
+
+#: templates/admin-page.php:428
+#: templates/admin-page.php:647
+msgid "Status"
+msgstr ""
+
+#: templates/wizard/wizard-layout.php:36
+msgid "Step %1$d of %2$d"
+msgstr ""
+
+#: templates/wizard/wizard-layout.php:50
+msgid "Step not found."
+msgstr ""
+
+#: includes/class-template-manager.php:79
+msgid "Step-by-step instructional article"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:38
+msgid "Step-by-step tutorials and instructional content"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:84
+msgid "Success stories with data and outcomes"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:104
+msgid "Suggest internal links to related articles"
+msgstr ""
+
+#: templates/admin-page.php:180
+msgid "Swedish (Svenska)"
+msgstr ""
+
+#: templates/wizard/steps/step-preferences.php:90
+msgid "Table of Contents"
+msgstr ""
+
+#: templates/company-profile-section.php:57
+#: templates/wizard/steps/step-company.php:68
+msgid "Target Audience"
+msgstr ""
+
+#: templates/admin-page.php:122
+msgid "Target Keywords"
+msgstr ""
+
+#: templates/admin-page.php:525
+msgid "Target keywords (comma-separated)"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:101
+msgid "Technical"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:60
+msgid "Technology / IT"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:26
+msgid "Tell Us About Your Business"
+msgstr ""
+
+#: templates/admin-page-templates.php:45
+msgid "Template Name"
+msgstr ""
+
+#: templates/admin-page-templates.php:240
+msgid "Template deleted successfully!"
+msgstr ""
+
+#: includes/class-admin-ui.php:1664
+msgid "Template deleted successfully."
+msgstr ""
+
+#: includes/class-admin-ui.php:1622
+msgid "Template name is required."
+msgstr ""
+
+#: includes/class-admin-ui.php:1655
+msgid "Template not found."
+msgstr ""
+
+#: templates/admin-page-templates.php:214
+msgid "Template saved successfully!"
+msgstr ""
+
+#: includes/class-admin-ui.php:1634
+msgid "Template saved successfully."
+msgstr ""
+
+#: templates/admin-page.php:537
+msgid "Template: default, how_to, review, comparison, listicle"
+msgstr ""
+
+#: templates/admin-page.php:36
+#: templates/wizard/steps/step-welcome.php:56
+msgid "Templates"
+msgstr ""
+
+#: templates/admin-page-templates.php:187
+msgid "Templates are available in:"
+msgstr ""
+
+#: includes/class-admin-ui.php:468
+msgid "Test API Key"
+msgstr ""
+
+#: templates/wizard/steps/step-provider.php:124
+msgid "Test Connection"
+msgstr ""
+
+#: includes/class-admin-ui.php:673
+msgid "Testing..."
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:28
+msgid "This helps us maintain your brand voice and consistency across all generated content."
+msgstr ""
+
+#: templates/wizard/steps/step-first_article.php:44
+msgid "Tip: Be specific! Better topics lead to better articles."
+msgstr ""
+
+#: templates/admin-page.php:645
+#: templates/admin-page.php:842
+msgid "Title"
+msgstr ""
+
+#: templates/admin-page.php:649
+msgid "Tokens"
+msgstr ""
+
+#: templates/admin-page.php:844
+msgid "Tokens Used"
+msgstr ""
+
+#: templates/admin-page-templates.php:144
+msgid "Tone"
+msgstr ""
+
+#: includes/class-admin-ui.php:90
+#: includes/class-admin-ui.php:91
+#: templates/wizard/wizard-layout.php:26
+msgid "TonePress AI"
+msgstr ""
+
+#: includes/class-onboarding-wizard.php:99
+msgid "TonePress AI - Setup Wizard"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:50
+msgid "Top 10 lists, roundups, and numbered articles"
+msgstr ""
+
+#: templates/admin-page-templates.php:64
+#: templates/admin-page-templates.php:143
+msgid "Topic Pattern"
+msgstr ""
+
+#: includes/class-onboarding-wizard.php:351
+msgid "Topic is required."
+msgstr ""
+
+#: templates/admin-page.php:809
+msgid "Total AI-Generated Articles"
+msgstr ""
+
+#: templates/admin-page.php:617
+msgid "Total Articles"
+msgstr ""
+
+#: templates/admin-page.php:621
+msgid "Total Cost"
+msgstr ""
+
+#: templates/admin-page.php:625
+msgid "Total Tokens"
+msgstr ""
+
+#: templates/wizard/steps/step-first_article.php:88
+msgid "Try Different Topic"
+msgstr ""
+
+#: templates/admin-page.php:178
+msgid "Turkish (Türkçe)"
+msgstr ""
+
+#: templates/admin-page.php:646
+msgid "Type"
+msgstr ""
+
+#: includes/class-provider-factory.php:60
+msgid "Unknown AI provider: %s"
+msgstr ""
+
+#: includes/class-provider-openai.php:108
+#: includes/class-provider-openai.php:160
+#: includes/class-image-generator.php:106
+msgid "Unknown API error"
+msgstr ""
+
+#: includes/class-provider-claude.php:108
+msgid "Unknown Claude API error"
+msgstr ""
+
+#: includes/class-provider-gemini.php:118
+msgid "Unknown Gemini API error"
+msgstr ""
+
+#: templates/chat-builder.php:59
+msgid "Unpin"
+msgstr ""
+
+#: templates/admin-page.php:376
+msgid "Upload CSV File"
+msgstr ""
+
+#: templates/admin-page.php:371
+msgid "Upload a CSV file to generate multiple articles automatically. The system will process articles in the background."
+msgstr ""
+
+#: templates/admin-page.php:389
+msgid "Upload a CSV file with article topics and options."
+msgstr ""
+
+#: templates/admin-page.php:401
+msgid "Upload and Start Generation"
+msgstr ""
+
+#: templates/admin-page.php:782
+msgid "Usage Statistics"
+msgstr ""
+
+#: templates/admin-page-templates.php:68
+msgid "Use [brackets] for variables. Example: "How to [achieve result]" or "Top [number] ways to [benefit]""
+msgstr ""
+
+#: templates/admin-page-templates.php:186
+msgid "Using Templates"
+msgstr ""
+
+#: templates/admin-page.php:86
+msgid "Validating inputs..."
+msgstr ""
+
+#: templates/admin-page.php:683
+#: templates/admin-page.php:862
+msgid "View"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:44
+msgid "View Drafts"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:66
+msgid "View Templates"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:85
+msgid "Watch Video Tutorials"
+msgstr ""
+
+#: templates/wizard/steps/step-welcome.php:28
+msgid "Welcome to TonePress AI!"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:35
+msgid "What's Next?"
+msgstr ""
+
+#: templates/company-profile-section.php:21
+msgid "When enabled, the information below will be added to generation prompts to maintain brand consistency."
+msgstr ""
+
+#: templates/company-profile-section.php:61
+msgid "Who is your primary audience?"
+msgstr ""
+
+#: templates/admin-page.php:145
+#: templates/admin-page-templates.php:83
+msgid "Writing Tone"
+msgstr ""
+
+#: templates/admin-page.php:518
+msgid "Yes"
+msgstr ""
+
+#: templates/admin-page.php:825
+msgid "Yoast SEO"
+msgstr ""
+
+#: templates/wizard/steps/step-templates.php:103
+msgid "You can add or remove templates later from the Templates page."
+msgstr ""
+
+#: includes/class-admin-ui.php:759
+msgid "You do not have permission to generate articles."
+msgstr ""
+
+#: includes/class-admin-ui.php:825
+msgid "You do not have permission to test API keys."
+msgstr ""
+
+#: includes/class-admin-ui.php:323
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/class-admin-ui.php:467
+msgid "Your API key is encrypted and stored securely."
+msgstr ""
+
+#: templates/admin-page.php:504
+msgid "Your CSV file should include the following columns:"
+msgstr ""
+
+#: templates/admin-page.php:813
+msgid "Your Current Hour Usage"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:30
+msgid "Your TonePress AI is configured and ready to generate amazing content."
+msgstr ""
+
+#: includes/class-bulk-generator.php:405
+msgid "Your bulk article generation is complete!\n\nTotal: %d\nSuccessful: %d\nFailed: %d\n\nView results: %s"
+msgstr ""
+
+#: templates/company-profile-section.php:31
+msgid "Your company or brand name"
+msgstr ""
+
+#: templates/company-profile-section.php:41
+msgid "Your industry or sector"
+msgstr ""
+
+#: templates/admin-page.php:543
+msgid "draft, publish, or future"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:42
+msgid "e.g., Acme Corp"
+msgstr ""
+
+#: templates/wizard/steps/step-first_article.php:40
+msgid "e.g., How to improve team productivity with AI tools"
+msgstr ""
+
+#: templates/company-profile-section.php:80
+msgid "e.g., Innovation, Transparency, Customer-first"
+msgstr ""
+
+#: templates/admin-page-templates.php:48
+msgid "e.g., Product Launch Post"
+msgstr ""
+
+#: templates/company-profile-section.php:40
+msgid "e.g., SaaS, E-commerce, Healthcare"
+msgstr ""
+
+#: templates/company-profile-section.php:60
+msgid "e.g., Small business owners, Enterprise IT managers"
+msgstr ""
+
+#: templates/wizard/steps/step-company.php:75
+msgid "e.g., Small business owners, Marketing professionals, Tech enthusiasts..."
+msgstr ""
+
+#: templates/admin-page.php:125
+#: templates/admin-page-templates.php:77
+msgid "keyword1, keyword2, keyword3"
+msgstr ""
+
+#: templates/admin-page.php:531
+msgid "short, medium, or long"
+msgstr ""
+
+#: templates/wizard/wizard-layout.php:58
+msgid "← Back"
+msgstr ""
+
+#: includes/class-admin-ui.php:674
+msgid "✓ API key is valid"
+msgstr ""
+
+#: templates/admin-page-templates.php:190
+msgid "✓ Bulk Generation - Reference template IDs in your CSV file"
+msgstr ""
+
+#: templates/admin-page-templates.php:189
+msgid "✓ Gutenberg Block Editor - Select from the template dropdown when adding the AI Content Generator block"
+msgstr ""
+
+#: includes/class-admin-ui.php:675
+msgid "✗ API key test failed"
+msgstr ""
+
+#: templates/wizard/steps/step-complete.php:28
+msgid "🎉 You're All Set!"
+msgstr ""
+

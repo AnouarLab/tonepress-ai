@@ -10,9 +10,9 @@
     --chat-border: #d9dee7;
     --chat-text: #0f172a;
     --chat-text-muted: #5b6576;
-    --chat-user-bg: #1f4db8;
+    --chat-user-bg: #667eea;
     --chat-ai-bg: #f1f4f9;
-    --chat-accent: #1f4db8;
+    --chat-accent: #667eea;
     --chat-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     --chat-shadow-soft: 0 4px 14px rgba(15, 23, 42, 0.06);
     --chat-radius-sm: 4px;
@@ -143,7 +143,7 @@
 .ace-context-tag {
     background: #eef2ff;
     border: 1px solid #dbe3ff;
-    color: #1f4db8;
+    color: #667eea;
     border-radius: 999px;
     padding: 2px 8px;
     font-size: 11px;
@@ -164,7 +164,7 @@
 
 .ace-session-item.active {
     background: #eef3ff;
-    border-color: rgba(31, 77, 184, 0.2);
+    border-color: rgba(102, 126, 234, 0.2);
 }
 
 .ace-session-title {

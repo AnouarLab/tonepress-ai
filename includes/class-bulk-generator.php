@@ -406,7 +406,7 @@ class Bulk_Generator {
 			$queue['total'],
 			$queue['completed'],
 			$queue['failed'],
-			admin_url( 'tools.php?page=ai-content-engine&tab=bulk&queue=' . $queue_id )
+			admin_url( 'tools.php?page=tonepress-ai&tab=bulk&queue=' . $queue_id )
 		);
 
 		wp_mail( $user->user_email, $subject, $message );

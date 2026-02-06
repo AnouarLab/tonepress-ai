@@ -14,7 +14,7 @@
     "gpt",
     "openai"
   ],
-  "textdomain": "ai-content-engine",
+  "textdomain": "tonepress-ai",
   "attributes": {
     "topic": {
       "type": "string",

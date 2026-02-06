@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="hero-icon">
 			<span class="dashicons dashicons-admin-page"></span>
 		</div>
-		<h1><?php esc_html_e( 'Welcome to AI Content Engine!', 'tonepress-ai' ); ?></h1>
+		<h1><?php esc_html_e( 'Welcome to TonePress AI!', 'tonepress-ai' ); ?></h1>
 		<p class="lead">
 			<?php esc_html_e( 'Create professional blog posts in minutes with the power of AI.', 'tonepress-ai' ); ?>
 		</p>

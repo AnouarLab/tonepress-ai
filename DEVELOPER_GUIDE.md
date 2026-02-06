@@ -9,8 +9,8 @@
 ### 1. Clone & Setup
 ```bash
 cd /path/to/wordpress/wp-content/plugins/
-git clone [your-repo] ai-content-engine
-cd ai-content-engine
+git clone [your-repo] tonepress-ai
+cd tonepress-ai
 npm install
 ```
 
@@ -32,8 +32,8 @@ npm run build
 ## 📁 Project Structure
 
 ```
-ai-content-engine/
-├── ai-content-engine.php          # Main plugin file
+tonepress-ai/
+├── tonepress-ai.php          # Main plugin file
 ├── includes/                       # PHP backend classes
 │   ├── class-admin-ui.php         # Admin interface & REST API
 │   ├── class-article-generator.php # Content generation logic
@@ -461,7 +461,7 @@ console.log(aceEditorData.apiUrl);
    - `assets/` directory ✅
    - Excludes: `src/`, `node_modules/`, dev files ❌
 
-**Output**: `ai-content-engine-v2.1.0.zip`
+**Output**: `tonepress-ai-v2.1.0.zip`
 
 ### Manual Build Process
 
@@ -478,7 +478,7 @@ npm run build
 
 # 4. Create clean zip
 cd ..
-zip -r ai-content-engine.zip ai-content-engine \
+zip -r tonepress-ai.zip tonepress-ai \
     -x "*node_modules/*" \
     -x "*src/*" \
     -x "*.git/*"

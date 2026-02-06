@@ -128,6 +128,7 @@ function ace_activate() {
 
 	// Set transient for wizard redirect.
 	set_transient( 'ace_activation_redirect', 1, 30 );
+	error_log( '[TonePress] Activated. Transient set.' );
 
 	// Create Chat Builder database table.
 	require_once ACE_PLUGIN_DIR . 'includes/class-chat-builder.php';
@@ -169,7 +170,7 @@ register_deactivation_hook( __FILE__, 'ace_deactivate' );
  */
 function ace_init() {
 	// Load text domain for internationalization (automatically handled by WordPress.org).
-	// load_plugin_textdomain( 'tonepress-ai', false, dirname( ACE_PLUGIN_BASENAME ) . '/languages' );
+	load_plugin_textdomain( 'tonepress-ai', false, dirname( ACE_PLUGIN_BASENAME ) . '/languages' );
 
 	// Initialize Admin UI (handles admin pages, settings, AND REST API routes).
 	// Must run on all contexts (admin, REST API, frontend) to register REST endpoints.
@@ -239,7 +240,7 @@ add_filter( 'template_include', 'ace_preview_template_include' );
 function ace_add_settings_link( $links ) {
 	$settings_link = sprintf(
 		'<a href="%s">%s</a>',
-		esc_url( admin_url( 'tools.php?page=ai-content-engine' ) ),
+		esc_url( admin_url( 'tools.php?page=tonepress-ai' ) ),
 		esc_html__( 'Settings', 'tonepress-ai' )
 	);
 	array_unshift( $links, $settings_link );

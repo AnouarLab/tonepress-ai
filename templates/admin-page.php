@@ -9,7 +9,7 @@
  */
 
 /**
- * Admin page template for AI Content Engine.
+ * Admin page template for TonePress AI.
  *
  * @package AI_Content_Engine
  */
@@ -26,22 +26,22 @@ $current_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['t
 	<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 
 	<nav class="nav-tab-wrapper">
-		<a href="?page=ai-content-engine&tab=generate" class="nav-tab <?php echo 'generate' === $current_tab ? 'nav-tab-active' : ''; ?>">
+		<a href="?page=tonepress-ai&tab=generate" class="nav-tab <?php echo 'generate' === $current_tab ? 'nav-tab-active' : ''; ?>">
 			<?php esc_html_e( 'Generate Article', 'tonepress-ai' ); ?>
 		</a>
-		<a href="?page=ai-content-engine&tab=bulk" class="nav-tab <?php echo 'bulk' === $current_tab ? 'nav-tab-active' : ''; ?>">
+		<a href="?page=tonepress-ai&tab=bulk" class="nav-tab <?php echo 'bulk' === $current_tab ? 'nav-tab-active' : ''; ?>">
 			<?php esc_html_e( 'Bulk Generation', 'tonepress-ai' ); ?>
 		</a>
-		<a href="?page=ai-content-engine&tab=templates" class="nav-tab <?php echo 'templates' === $current_tab ? 'nav-tab-active' : ''; ?>">
+		<a href="?page=tonepress-ai&tab=templates" class="nav-tab <?php echo 'templates' === $current_tab ? 'nav-tab-active' : ''; ?>">
 			<?php esc_html_e( 'Templates', 'tonepress-ai' ); ?>
 		</a>
-		<a href="?page=ai-content-engine&tab=history" class="nav-tab <?php echo 'history' === $current_tab ? 'nav-tab-active' : ''; ?>">
+		<a href="?page=tonepress-ai&tab=history" class="nav-tab <?php echo 'history' === $current_tab ? 'nav-tab-active' : ''; ?>">
 			<?php esc_html_e( 'History', 'tonepress-ai' ); ?>
 		</a>
-		<a href="?page=ai-content-engine&tab=settings" class="nav-tab <?php echo 'settings' === $current_tab ? 'nav-tab-active' : ''; ?>">
+		<a href="?page=tonepress-ai&tab=settings" class="nav-tab <?php echo 'settings' === $current_tab ? 'nav-tab-active' : ''; ?>">
 			<?php esc_html_e( 'Settings', 'tonepress-ai' ); ?>
 		</a>
-		<a href="?page=ai-content-engine&tab=stats" class="nav-tab <?php echo 'stats' === $current_tab ? 'nav-tab-active' : ''; ?>">
+		<a href="?page=tonepress-ai&tab=stats" class="nav-tab <?php echo 'stats' === $current_tab ? 'nav-tab-active' : ''; ?>">
 			<?php esc_html_e( 'Statistics', 'tonepress-ai' ); ?>
 		</a>
 	</nav>
@@ -107,6 +107,26 @@ $current_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['t
 			<form id="ace-generate-form">
 				<table class="form-table ace-form-table" role="presentation">
 						<tbody>
+							<tr>
+								<th scope="row">
+									<label for="ace-template"><?php esc_html_e( 'Article Template', 'tonepress-ai' ); ?></label>
+								</th>
+								<td>
+									<select id="ace-template" name="template_id">
+										<?php
+										$templates = ACE\Template_Manager::get_templates();
+										foreach ( $templates as $id => $template ) {
+											printf(
+												'<option value="%s">%s</option>',
+												esc_attr( $id ),
+												esc_html( $template['name'] )
+											);
+										}
+										?>
+									</select>
+									<p class="description" id="ace-template-description"><?php esc_html_e( 'Select a template to structure your article.', 'tonepress-ai' ); ?></p>
+								</td>
+							</tr>
 							<tr>
 								<th scope="row">
 									<label for="ace-topic"><?php esc_html_e( 'Article Topic', 'tonepress-ai' ); ?> <span class="required">*</span></label>
@@ -387,7 +407,7 @@ $current_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['t
 										<input type="file" id="ace-csv-file" name="csv_file" accept=".csv" required />
 										<p class="description">
 											<?php esc_html_e( 'Upload a CSV file with article topics and options.', 'tonepress-ai' ); ?>
-											<a href="<?php echo esc_url( admin_url( 'tools.php?page=ai-content-engine&action=download_template' ) ); ?>" class="button button-small">
+											<a href="<?php echo esc_url( admin_url( 'tools.php?page=tonepress-ai&action=download_template' ) ); ?>" class="button button-small">
 												<?php esc_html_e( 'Download Template', 'tonepress-ai' ); ?>
 											</a>
 										</p>
@@ -478,7 +498,7 @@ $current_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['t
 												<?php endif; ?>
 
 												<?php if ( 'completed' === $queue['status'] ) : ?>
-													<a href="<?php echo esc_url( admin_url( 'tools.php?page=ai-content-engine&action=export_results&queue=' . $queue_id ) ); ?>" class="button">
+													<a href="<?php echo esc_url( admin_url( 'tools.php?page=tonepress-ai&action=export_results&queue=' . $queue_id ) ); ?>" class="button">
 														<?php esc_html_e( 'Export Results', 'tonepress-ai' ); ?>
 													</a>
 												<?php endif; ?>
@@ -547,7 +567,7 @@ $current_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['t
 					</table>
 
 					<p>
-						<a href="<?php echo esc_url( admin_url( 'tools.php?page=ai-content-engine&action=download_template' ) ); ?>" class="button button-primary">
+						<a href="<?php echo esc_url( admin_url( 'tools.php?page=tonepress-ai&action=download_template' ) ); ?>" class="button button-primary">
 							<span class="dashicons dashicons-download"></span>
 							<?php esc_html_e( 'Download CSV Template', 'tonepress-ai' ); ?>
 						</a>

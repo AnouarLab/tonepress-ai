@@ -34,7 +34,7 @@ TonePress AI est un plugin WordPress professionnel pour la r\u00e9daction automa
 
 == Installation ==
 
-1. Upload the `ai-content-engine` folder to the `/wp-content/plugins/` directory.
+1. Upload the `tonepress-ai` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to **Tools -> TonePress AI** to configure settings.
 4. Enter your OpenAI API Key in the Settings tab.

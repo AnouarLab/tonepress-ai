@@ -1,5 +1,5 @@
 {
-  "name": "ai-content-engine",
+  "name": "tonepress-ai",
   "version": "2.1.0",
   "description": "AI-powered content generation for WordPress with multi-provider support",
   "main": "build/index.js",
