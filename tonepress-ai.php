@@ -2,7 +2,7 @@
 /**
  * Plugin Name: TonePress AI
  * Description: AI Content Generator for WordPress. Create SEO-optimized articles with custom tones, tables, and charts.
- * Version:           2.1.0
+ * Version:           2.1.2
  * Author: AnouarLab
  * Author URI: https://anouarlab.fr
  * License: GPL-2.0+
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Current plugin version.
  */
-define( 'ACE_VERSION', '2.1.0' );
+define( 'ACE_VERSION', '2.1.2' );
 
 /**
  * Plugin directory path.
@@ -169,8 +169,8 @@ register_deactivation_hook( __FILE__, 'ace_deactivate' );
  * Initialize the plugin.
  */
 function ace_init() {
-	// Load text domain for internationalization (automatically handled by WordPress.org).
-	load_plugin_textdomain( 'tonepress-ai', false, dirname( ACE_PLUGIN_BASENAME ) . '/languages' );
+	// Load text domain is automatically handled by WordPress.org for hosted plugins.
+	// load_plugin_textdomain( 'tonepress-ai', false, dirname( ACE_PLUGIN_BASENAME ) . '/languages' );
 
 	// Initialize Admin UI (handles admin pages, settings, AND REST API routes).
 	// Must run on all contexts (admin, REST API, frontend) to register REST endpoints.

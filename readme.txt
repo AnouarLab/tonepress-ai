@@ -4,7 +4,7 @@ Tags: ai, content generator, openai, gpt, seo, blog automation, writing assistan
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 2.1.0
+Stable tag: 2.1.2
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -58,6 +58,14 @@ Yes! TonePress AI automatically fills in the Focus Keyword, Meta Title, and Meta
 Absolutely. The plugin creates standard WordPress posts (Draft or Published) which you can edit just like any other post.
 
 == Changelog ==
+
+= 2.1.2 =
+* Fix: Removed discouraged `load_plugin_textdomain` function for better WordPress.org compliance.
+
+= 2.1.1 =
+* Improved Admin UI/UX with 2-column layout.
+* Added missing content template selector.
+* Fixed various UI bugs.
 
 = 2.1.0 =
 * Rebranded to TonePress AI.
