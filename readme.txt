@@ -42,9 +42,13 @@ TonePress AI est un plugin WordPress professionnel pour la r\u00e9daction automa
 
 == Screenshots ==
 
-1. TonePress AI Dashboard - Generate articles with ease.
-2. Settings Page - Configure API keys and defaults.
-3. Generated Article - Example of rich content with charts.
+1. **Generate Article** - The new 2-column interface for creating content.
+2. **Bulk Generation** - Generate multiple articles at once.
+3. **Templates** - Manage and customize your content templates.
+4. **History** - View and manage your generated content history.
+5. **Settings (General)** - Configure API keys and default models.
+6. **Settings (Fine-tuning)** - Adjust advanced parameters.
+7. **Gutenberg Editor** - Seamless integration with the block editor.
 
 == Frequently Asked Questions ==
 

@@ -78,6 +78,9 @@ rsync -av "$PLUGIN_DIR/" "$TARGET_DIR/" \
     --exclude '*.sh' \
     --exclude '*.py' \
     --exclude 'venv' \
+    --exclude 'assets/screenshot-*.png' \
+    --exclude 'assets/icon-*.png' \
+    --exclude 'assets/banner-*.png' \
     > /dev/null
 
 # Copy README.txt specifically if needed, but it's not excluded (it's .txt)
