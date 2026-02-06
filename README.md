@@ -1,8 +1,18 @@
 # TonePress AI — WordPress Blog Generator with Custom Tones & SEO Optimization
 
-![TonePress AI Banner](https://img.shields.io/badge/TonePress-AI-blue?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-2.1.0-blue.svg) ![WordPress Tested](https://img.shields.io/badge/WordPress-Tested-success.svg) ![Powered by OpenAI](https://img.shields.io/badge/Powered%20by-OpenAI-green.svg)
+![TonePress AI Banner](assets/banner-772x250.png)
 
-![TonePress AI Dashboard](https://placehold.co/800x400?text=TonePress+AI+Dashboard+Preview)
+![Version](https://img.shields.io/badge/Version-2.1.2-blue.svg) ![WordPress Tested](https://img.shields.io/badge/WordPress-Tested-success.svg) ![Powered by OpenAI](https://img.shields.io/badge/Powered%20by-OpenAI-green.svg)
+
+## 📸 Screenshots
+
+| **1. Modern Dashboard** | **3. Template Selection** |
+|:---:|:---:|
+| ![Generate Article](assets/screenshot-1.png) | ![Templates](assets/screenshot-3.png) |
+| **2. Bulk Generation** | **4. History & Archives** |
+| ![Bulk Tools](assets/screenshot-2.png) | ![History](assets/screenshot-4.png) |
+
+---
 
 ## 🇬🇧 English Description
 
@@ -12,10 +22,11 @@ Start creating **SEO-optimized blog articles** that engage your audience and dri
 
 ### 🚀 Why Use TonePress AI?
 Bloggers, agencies, and directory curators choose TonePress AI because:
-*   **Tailored Article Tone:** Choose from professional, friendly, conversational, or academic styles to match your brand voice.
-*   **Automatic SEO Optimization:** Built-in integration with Yoast SEO and RankMath ensures your content is ready to rank.
-*   **Rich Media Support:** Automatically creates and embeds interactive Chart.js visualizations and data tables.
-*   **Cost Control:** Monitor your token usage and costs directly from the dashboard.
+*   **🎨 Custom Tones:** Choose from professional, friendly, conversational, or academic styles to match your brand voice.
+*   **📐 Smart Templates:** Use built-in templates like "How-to Guide", "Listicle", or "Product Review" for structured content.
+*   **🔍 Automatic SEO:** Built-in integration with Yoast SEO and RankMath ensures your content is ready to rank.
+*   **📊 Rich Media:** Automatically creates and embeds interactive Chart.js visualizations and comparative data tables.
+*   **💰 Cost Control:** Monitor your token usage and costs directly from the dashboard.
 
 ### 🏆 Trusted by Content Creators
 > "We increased blog traffic 30% using TonePress AI. The custom tones make it impossible to tell it's AI-generated!"
@@ -33,6 +44,7 @@ Looking for expert advice? Visit our **[Consulting Page](https://anouarlab.fr)**
 
 **Fonctionnalités Clés :**
 *   **Rédaction IA Avancée :** Créez des articles longs (800-2500+ mots) adaptés à votre ligne éditoriale (ton professionnel, amical, académique...).
+*   **Modèles Intelligents :** Utilisez des templates comme "Tutoriel", "Top 10", ou "Test Produit" pour structurer vos articles.
 *   **Contenu Riche & Interactif :** Intégration automatique de tableaux de données et de graphiques interactifs pour captiver vos lecteurs.
 *   **SEO Ready :** Compatible nativement avec Yoast SEO et RankMath pour un référencement maximal.
 *   **Maîtrise des Coûts :** Suivi précis de la consommation de tokens et outils de limitation de budget.
@@ -51,7 +63,7 @@ Besoin de booster votre visibilité ? Visitez notre **[Page de Conseil](https://
 - **OpenAI API Key**: Required
 
 ### Installation
-1. **Upload**: Upload the `ai-content-engine` folder to `/wp-content/plugins/`.
+1. **Upload**: Upload the `tonepress-ai` folder to `/wp-content/plugins/`.
 2. **Activate**: Go to Plugins → Activate "TonePress AI".
 3. **Configure**: Settings → TonePress AI → Enter OpenAI API Key.
 
@@ -103,7 +115,7 @@ The core generator enforces a strict JSON schema for reliable output parsing:
 - Charts by [Chart.js](https://chartjs.org/)
 - **[AnouarLab](https://anouarlab.fr)** - SEO & CRO Testing
 
-**Version**: 2.1.0
+**Version**: 2.1.2
 **Author**: AnouarLab
 
 ---
